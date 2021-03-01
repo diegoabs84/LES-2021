@@ -25,6 +25,17 @@ body {
   background: url(../img/doctor.jpg) no-repeat;
   background-size: cover;
 }
+.medico:hover {
+  background: linear-gradient(
+      200deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../img/doctor.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .paciente {
   grid-area: paciente;
   display: flex;
@@ -32,6 +43,17 @@ body {
   justify-content: center;
   align-content: center;
   background: url(../img/paciente.jpg) no-repeat;
+
+  background-size: cover;
+}
+.paciente:hover {
+  background: linear-gradient(
+      555deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../img/paciente.jpg) no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
