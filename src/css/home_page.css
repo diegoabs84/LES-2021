@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: none;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'paciente medico';
+  background: linear-gradient(
+    555deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(255, 255, 255, 0.5)
+  );
+}
+
+.medico {
+  grid-area: medico;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background: url(../img/doctor.jpg) no-repeat;
+  background-size: cover;
+}
+.medico:hover {
+  background: linear-gradient(
+      200deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../img/doctor.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.paciente {
+  grid-area: paciente;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background: url(../img/paciente.jpg) no-repeat;
+
+  background-size: cover;
+}
+.paciente:hover {
+  background: linear-gradient(
+      555deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../img/paciente.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.item {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.item > h2 {
+  font-weight: 700;
+  font-size: 5rem;
+}
+.item > p {
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+.item > button {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 20px;
+  width: 300px;
+  border: none;
+  background-color: transparent;
+}
+
+.item > button:hover {
+  box-shadow: 0px -1px 20px 3px rgba(0, 0, 0, 0.5);
+}
