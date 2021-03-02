@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tela de Cadastro de Médico</title>
+</head>
+<body>
+<form method="POST" action="../controllers/cadastro_medico.php">
+    <label>Nome:</label>
+    <input type="text" name="nome" id="nome"/>
+    <br/>
+    <label>CRM:</label>
+    <input type="text" name="crm" id="crm"/>
+    <br/>
+    <label>Senha:</label>
+    <input type="password" name="senha" id="senha"/>
+    <br/>
+    <div>
+        <input type="checkbox" id="medico" name="medico">
+        <label for="medico">Médico</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="residente" name="residente">
+        <label for="residente">Residente</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="professor" name="professor">
+        <label for="professor">Professor</label>
+    </div>
+
+    <br/>
+    <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar"/>
+</form>
+</body>
+</html>
