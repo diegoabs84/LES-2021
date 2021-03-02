@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tela de Cadastro de Pacientes</title>
+  </head>
+  <body>
+    <form method="POST" action="../controllers/cadastro_paciente.php">
+      <label>Login:</label>
+      <input type="text" name="login" id="login" />
+        <br/>
+      <label>Senha:</label>
+      <input type="password" name="senha" id="senha" />
+        <br/>
+      <label>CPF:</label>
+      <input type="text" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" name="cpf" id="cpf" />
+        <br/>
+      <label for="data">Data de Nascimento:</label>
+      <input type="date" id="data" name="data" value="2020-01-01" min="1910-01-01" max="2022-01-01" >
+
+
+
+
+
+        <br/>
+      <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar" />
+    </form>
+  </body>
+</html>

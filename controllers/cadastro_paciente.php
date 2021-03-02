@@ -3,6 +3,8 @@
 
 $login = $_POST['login'];
 $senha = MD5($_POST['senha']);
+$cpf = $_POST['cpf'];
+$data = $_POST['data'];
 $connect = mysql_connect('localhost:3388','root','');
 $db = mysql_select_db('Hospital_db');
 $query_select = "SELECT login FROM usuarios WHERE login = '$login'";
@@ -10,7 +12,7 @@ $select = mysql_query($query_select,$connect);
 $array = mysql_fetch_array($select);
 $logarray = $array['login'];
 
-                                                // O Javascript dentro dos 'if-else' são pros pop-ups de avisos
+                                        // O Javascript dentro dos 'if-else' são pros pop-ups de avisos
 
   if($login == "" || $login == null){
     echo"<script language='javascript' type='text/javascript'>
@@ -26,13 +28,13 @@ $logarray = $array['login'];
         die();
 
       }else{
-        $query = "INSERT INTO usuarios (login,senha) VALUES ('$login','$senha')";
+        $query = "INSERT INTO usuarios (login,senha,cpf,data) VALUES ('$login','$senha','$cpf', '$data')";
         $insert = mysql_query($query,$connect);
 
         if($insert){
           echo"<script language='javascript' type='text/javascript'>
           alert('Usuário cadastrado com sucesso!');window.location.
-          href='login.html'</script>";
+          href='login_paciente.html'</script>";
         }else{
           echo"<script language='javascript' type='text/javascript'>
           alert('Não foi possível cadastrar esse usuário');window.location
