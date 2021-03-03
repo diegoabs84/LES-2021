@@ -5,6 +5,8 @@ $login = $_POST['login'];
 $senha = MD5($_POST['senha']);
 $cpf = $_POST['cpf'];
 $data = $_POST['data'];
+$sexo = $_POST['sexo'];
+$cor = $_POST['cor'];
 $connect = mysql_connect('localhost:3388','root','');
 $db = mysql_select_db('Hospital_db');
 $query_select = "SELECT login FROM usuarios WHERE login = '$login'";
@@ -13,6 +15,8 @@ $array = mysql_fetch_array($select);
 $logarray = $array['login'];
 
                                         // O Javascript dentro dos 'if-else' são pros pop-ups de avisos
+
+
 
   if($login == "" || $login == null){
     echo"<script language='javascript' type='text/javascript'>
@@ -28,7 +32,7 @@ $logarray = $array['login'];
         die();
 
       }else{
-        $query = "INSERT INTO usuarios (login,senha,cpf,data) VALUES ('$login','$senha','$cpf', '$data')";
+        $query = "INSERT INTO usuarios (login,senha,cpf,data,sexo,cor) VALUES ('$login','$senha','$cpf','$data','$sexo','$cor')";
         $insert = mysql_query($query,$connect);
 
         if($insert){
