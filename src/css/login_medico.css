@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+      555deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(255, 255, 255, 0.4)  
+    ), url(../img/imgloginmed/loginmed1.jpg) no-repeat;
+    background-size: cover;
+        
+  }
+
+  .container{
+      display: flex;
+      height: 100vh;
+      justify-content: center;   
+      align-items: center; 
+    
+  }
+
+  .label{     
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding: 70px;
+    background-color: rgba(34, 47, 62, 0.6);
+    box-shadow: 0px -1px 20px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+
+
+  .item-crm > input{
+    padding: 7px;
+    width: 250px;
+    font-size: 1.2rem;
+    margin-bottom: -10px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+
+ .item-senha > input{
+    padding: 7px;
+    width: 250px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+
+}
+
+.subbotao > input{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px ;
+    width: 80px;
+}
+
+.subbotao input:hover{
+    text-decoration: wavy;
+    background-color: skyblue;
+}
+
+.cadastro, p{ 
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+}
+
+.cadastro, a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;  
+    color: white;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: wavy;
+    color:skyblue;
+}
+
+
+
+
+
