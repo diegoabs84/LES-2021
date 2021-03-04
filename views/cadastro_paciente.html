@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../src/css/cadastro_paciente.css" />
     <title>Tela de Cadastro de Pacientes</title>
   </head>
   <body>
-    <form method="POST" action="../controllers/cadastro_paciente.php">
-      <label>Login:</label>
-      <input type="text" name="login" id="login" />
-        <br/>
-      <label>Senha:</label>
-      <input type="password" name="senha" id="senha" />
-        <br/>
-      <label>CPF:</label>
-      <input type="text" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" name="cpf" id="cpf" />
-        <br/>
-      <label>Cor:</label>
-      <input type="text" name="cor" id="cor" />
-       <br/>
-      <label for="data">Data de Nascimento:</label>
-      <input type="date" id="data" name="data" value="2020-01-01" min="1910-01-01" max="2022-01-01" >
-          <br/>
-      <p>Sexo</p>
-      <input type="radio" id="sexo1" name="sexo" value="masculino">
-          <label for="sexo1">Masculino</label><br>
-    <input type="radio" id="sexo2" name="sexo" value="feminino">
-          <label for="sexo2">Feminino</label><br>
-      <input type="radio" id="outro" name="sexo" value="outro">
-          <label for="outro">Outro</label><br>
+    <div class="container-cadastro">
+      <form method="POST" action="../controllers/cadastro_paciente.php">
+        <div class="items-cadastro">
+          <!-- -->
+          <div class="item item-cadastro-login">
+            <label>Login:</label> <br />
+            <input type="text" name="login" id="login" />
+          </div>
 
+          <div class="item item-cadastro-senha">
+            <label>Senha:</label> <br />
+            <input type="password" name="senha" id="senha" />
+          </div>
 
+          <div class="item item-cadastro-cpf">
+            <label>CPF:</label> <br />
+            <input
+              type="text"
+              class="form-control cpf-mask"
+              placeholder="Ex.: 000.000.000-00"
+              name="cpf"
+              id="cpf"
+            />
+          </div>
 
+          <div class="item item-cadastro-cor">
+            <label>Cor:</label> <br />
+            <select name="cor" id="cor">
+              <option selected value="null">---|---</option>
+              <option value="BRANCO">Branco</option>
+              <option value="NEGRO">Negro</option>
+              <option value="PARDO">Pardo</option>
+              <option value="AMARELO">Amarelo</option>
+            </select>
+          </div>
+          <!-- Avisar mudanca-->
 
+          <div class="item item-cadastro-nascimento">
+            <label for="data">Data de Nascimento:</label> <br />
+            <input
+              type="date"
+              id="data"
+              name="data"
+              value="2020-01-01"
+              min="1910-01-01"
+              max="2022-01-01"
+            />
+          </div>
+          <br />
+          <div class="item item-cadastro-sexo">
+            <select name="Sexo">
+              <option selected value="null">Sexo</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
 
-
-
-
-        <br/>
-      <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar" />
-    </form>
+          <input
+            type="submit"
+            value="Cadastrar"
+            id="cadastrar"
+            name="cadastrar"
+          />
+        </div>
+      </form>
+    </div>
   </body>
 </html>

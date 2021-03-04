@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Tela de Cadastro de Médico</title>
-</head>
-<body>
-<form method="POST" action="../controllers/cadastro_medico.php">
-    <label>Nome:</label>
-    <input type="text" name="nome" id="nome"/>
-    <br/>
-    <label>CRM:</label>
-    <input type="text" name="crm" id="crm"/>
-    <br/>
-    <label>Senha:</label>
-    <input type="password" name="senha" id="senha"/>
-    <br/>
+  </head>
+  <body>
+    <form method="POST" action="../controllers/cadastro_medico.php">
+      <label>Nome:</label>
+      <input type="text" name="nome" id="nome" />
+      <br />
+      <label>CRM:</label>
+      <input type="text" name="crm" id="crm" />
+      <br />
+      <label>Senha:</label>
+      <input type="password" name="senha" id="senha" />
+      <br />
 
+      <input type="radio" id="medico1" name="medico" value="medico" />
+      <label for="medico1">Médico</label><br />
+      <input type="radio" id="medico2" name="medico" value="residente" />
+      <label for="medico2">Residente</label><br />
+      <input type="radio" id="medico3" name="medico" value="professor" />
+      <label for="medico3">Professor</label>
 
-    <input type="radio" id="medico1" name="medico" value="medico">
-          <label for="medico1">Médico</label><br>
-    <input type="radio" id="medico2" name="medico" value="residente">
-          <label for="medico2">Residente</label><br>
-    <input type="radio" id="medico3" name="medico" value="professor">
-          <label for="medico3">Professor</label>
-
-
-
-    <br/>
-    <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar"/>
-</form>
-</body>
+      <br />
+      <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar" />
+    </form>
+  </body>
 </html>
