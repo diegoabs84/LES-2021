@@ -2,9 +2,12 @@
 <html>
   <head>
     <title>Tela de Cadastro de Médico</title>
+      <link rel="stylesheet" href="../src/css/cadastro_medico.css" />
+
   </head>
   <body>
-    <form method="POST" action="../controllers/cadastro_medico.php">
+      <div class="container-cadastro_medico">
+      <form method="POST" action="../controllers/cadastro_medico.php">
       <label>Nome:</label>
       <input type="text" name="nome" id="nome" />
       <br />
@@ -15,15 +18,43 @@
       <input type="password" name="senha" id="senha" />
       <br />
 
-      <input type="radio" id="medico1" name="medico" value="medico" />
-      <label for="medico1">Médico</label><br />
-      <input type="radio" id="medico2" name="medico" value="residente" />
-      <label for="medico2">Residente</label><br />
-      <input type="radio" id="medico3" name="medico" value="professor" />
-      <label for="medico3">Professor</label>
+
+      <div class="item item-cadastro-tipo-medico">
+            <label>Medico</label> <br />
+            <select name="medico" id="medico">
+              <option selected value="null">---|---</option>
+              <option value="medico">Médico</option>
+              <option value="residente">Residente</option>
+              <option value="professor">Professor</option>
+            </select>
+<br/>
+        <div class="item-residencia">
+            <label>Ano da residencia</label><br />
+            <select name="ano_residente" id="ano_residente">
+                <option selected value="null">---|---</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+      </div>
+
+          <div class="tipo-medico">
+              <label>Tipo de medico</label>
+              <select name="tipo_medico" id="tipo_medico">
+                  <option selected value="null">---|---</option>
+                  <option value="mestre">Mestre</option>
+                  <option value="doutor">Doutor</option>
+                  <option value="phd">Phd</option>
+              </select>
+
+          </div>
+      </div>
 
       <br />
       <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar" />
     </form>
-  </body>
+      </div>
+
+      </body>
 </html>

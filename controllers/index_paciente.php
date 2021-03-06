@@ -5,7 +5,7 @@
       echo"Bem vindo";
     }else{
       echo"Bem-Vindo, voce não está logado <br>";
-      echo"Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";
-      echo"<br><a href='login.html'>Faça Login</a> Para ter acesso à página";
+      echo"Essas informacoees <font color='red'>NAO PODEM</font> ser acessadas por voce";
+      echo"<br><a href='login.html'>Faça Login</a> Para ter acesso a pagina";
     }
 ?>
