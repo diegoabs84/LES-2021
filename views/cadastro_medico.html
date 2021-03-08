@@ -2,59 +2,82 @@
 <html>
   <head>
     <title>Tela de Cadastro de Médico</title>
-      <link rel="stylesheet" href="../src/css/cadastro_medico.css" />
-
+    <link rel="stylesheet" href="../src/css/cadastro_medico.css" />
   </head>
   <body>
-      <div class="container-cadastro_medico">
+    <div class="container-cadastro">
       <form method="POST" action="../controllers/cadastro_medico.php">
-      <label>Nome:</label>
-      <input type="text" name="nome" id="nome" />
-      <br />
-      <label>CRM:</label>
-      <input type="text" name="crm" id="crm" />
-      <br />
-      <label>Senha:</label>
-      <input type="password" name="senha" id="senha" />
-      <br />
+        <div class="items-cadastro">
+          <div class="item item-cadastro-login">
+            <label>Nome:</label><br />
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Insira seu login"
+            />
+          </div>
 
+          <div class="item item-cadastro-crm">
+            <label>CRM:</label><br />
+            <input
+              type="text"
+              name="crm"
+              id="crm"
+              placeholder="Insira o número"
+            />
+          </div>
 
-      <div class="item item-cadastro-tipo-medico">
-            <label>Medico</label> <br />
+          <div class="item item-cadastro-senha">
+            <label>Senha:</label><br />
+            <input
+              type="password"
+              name="senha"
+              id="senha"
+              placeholder="************"
+            />
+          </div>
+
+          <div class="item item-cadastro-tipo-medico">
+            <label>Médico</label> <br />
             <select name="medico" id="medico">
               <option selected value="null">---|---</option>
               <option value="medico">Médico</option>
               <option value="residente">Residente</option>
               <option value="professor">Professor</option>
             </select>
-<br/>
-        <div class="item-residencia">
-            <label>Ano da residencia</label><br />
-            <select name="ano_residente" id="ano_residente">
-                <option selected value="null">---|---</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-      </div>
-
-          <div class="tipo-medico">
-              <label>Tipo de medico</label>
-              <select name="tipo_medico" id="tipo_medico">
-                  <option selected value="null">---|---</option>
-                  <option value="mestre">Mestre</option>
-                  <option value="doutor">Doutor</option>
-                  <option value="phd">Phd</option>
-              </select>
-
           </div>
-      </div>
 
-      <br />
-      <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar" />
-    </form>
-      </div>
+          <div class="item item-residencia">
+            <label>Ano da residência</label><br />
+            <select name="ano_residente" id="ano_residente">
+              <option selected value="null">---|---</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
 
-      </body>
+          <div class="item tipo-medico">
+            <label>Tipo de médico</label> <br />
+            <select name="tipo_medico" id="tipo_medico">
+              <option selected value="null">---|---</option>
+              <option value="mestre">Mestre</option>
+              <option value="doutor">Doutor</option>
+              <option value="phd">PHD</option>
+            </select>
+          </div>
+
+          <br />
+          <input
+            type="submit"
+            value="Cadastrar"
+            id="cadastrar"
+            name="cadastrar"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
