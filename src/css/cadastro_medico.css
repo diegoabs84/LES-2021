@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+        555deg,
+        rgba(0, 0, 0, 0.7),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url(../img/img_cadastro-medico/cadastro-medico.jpg) no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .container-cadastro {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .items-cadastro {
+    padding: 70px;
+    text-align: center;
+    box-shadow: 0px -1px 20px 3px rgba(0, 0, 0, 0.5);
+    background-color: rgba(34, 47, 62, 0.7);
+    border-radius: 10px;
+    z-index: 2;
+  }
+  
+  .item {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .item > input,
+  select {
+    border: none;
+    padding: 15px;
+    width: 300px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+  }
+  
+  .items-cadastro > input {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    box-shadow: 0px -1px 20px 3px rgba(131, 149, 167, 0.5);
+    background: transparent;
+    background-color: rgba(10, 189, 227, 0.8);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
