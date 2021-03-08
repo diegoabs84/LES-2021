@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tela de Login de Médicos</title>
     <link rel="stylesheet" href="../src/css/login_medico.css" />
+    <title>Tela de Login de Médicos</title>
   </head>
 
   <body>
-    <form method="POST" action="../controllers/login_medico.php">
-      <label>CRM:</label><input type="text" name="crm" id="crm" />
-      <br />
-      <label>Senha:</label
-      ><input type="password" name="senha" id="senha" />
-      <br />
-      <input type="submit" value="entrar" id="entrar" name="entrar" /><br />
-      <a href="cadastro_medico.html">Cadastre-se</a>
+    <div class="container">
+    <div class="label">
+      <h2>Login</h2> 
+    <form method="POST" action="../controllers/login.php">
+      <div class= " item-crm">
+      </br>
+      <input type="text" name="crm" id="crm" placeholder="Registro CRM"/>
+      </div>
+      <div class = "item-senha">
+      </br>
+      <input type="password" name="senha" id="senha"  placeholder="Insira a senha"/>
+      </div>
+      <div class="subbotao">
+      <input type="submit" value="Entrar" id="entrar" name="entrar" /><br />
+      </div>
+      <div class="cadastro">
+        <p> Não tem cadastro? Clique no link abaixo.</p>
+      <a href="cadastro_medico.html">Cadastre-se</a> 
+      </div>
     </form>
+  </div>
+  </div>
   </body>
+
 </html>
