@@ -2,7 +2,6 @@ window.addEventListener('load', () => {
   let divCadastro = document.getElementById('tipoMedico');
 
   divCadastro.addEventListener('change', (event) => {
-    console.log(event.target.value);
     switch (event.target.value) {
       case 'medico':
         gerarTipoMedico();
