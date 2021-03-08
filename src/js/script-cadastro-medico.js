@@ -13,6 +13,10 @@ window.addEventListener('load', () => {
         limpaConteudo();
         break;
 
+      case 'null':
+        limpaConteudo();
+        break;
+
       default:
         break;
     }
