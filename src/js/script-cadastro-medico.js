@@ -4,13 +4,13 @@ window.addEventListener('load', () => {
   divCadastro.addEventListener('change', (event) => {
     switch (event.target.value) {
       case 'medico':
-        limparConteudo(); 
+        limpaConteudo();
         break;
       case 'residente':
         gerarResidencia();
         break;
       case 'professor':
-	gerarTitulacao();
+        gerarTitulacao();
         break;
 
       case 'null':

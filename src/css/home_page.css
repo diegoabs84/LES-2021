@@ -34,6 +34,8 @@ body {
     url(../img/img_home-page/doctor.jpg) no-repeat;
   background-position: center;
   background-size: cover;
+  z-index: 1;
+  box-shadow: -14px 0px 16px 21px rgba(0, 0, 0, 0.61);
 }
 
 .paciente {
@@ -54,6 +56,7 @@ body {
     url(../img/img_home-page/paciente.jpg) no-repeat;
   background-position: center;
   background-size: cover;
+  box-shadow: 8px 0px 16px 21px rgba(0, 0, 0, 0.61);
 }
 
 .item {
