@@ -9,21 +9,24 @@
     <div class="container">
     <div class="label">
       <h2>Login</h2> 
-    <form method="POST" action="../controllers/login.php">
+    <form method="POST" action="../controllers/login_paciente.php">
+      
       <div class= "item-login">
-      </br>
-      <input type="text" name="CPF" id= "CPF" placeholder= "Inserir CPF"/>
+          <input type="text" name="CPF" id= "CPF" placeholder= "Inserir CPF"/>
       </div>
+
       <div class= "item-senha">
-      </br>
-      <input type="password" name="senha" id= "senha" placeholder= "Inserir Senha"/>
+          <input type="password" name="senha" id= "senha" placeholder= "Inserir Senha"/>
       </div>
+
       <div class= "botao">
-      </br>
-      <input type="submit" value="Entrar" id= "entrar"/>
-      </br> 
-      </div class= "cadastro"> 
-        <p> Cadastre-se aqui!</p>
+          <input type="submit" value="Entrar" id= "entrar"/>
+      </div> 
+
+      <div class= "cadastro"> 
+          <p> Não tem cadastro? <br /> Clique no link abaixo.</p>
+      </div>
+
       <a href="cadastro_paciente.html"> Cadastre-se</a>
       </div>
     </form>

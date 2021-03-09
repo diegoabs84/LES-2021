@@ -7,27 +7,35 @@
 
   <body>
     <div class="container">
-    <div class="label">
-      <h2>Login</h2> 
-    <form method="POST" action="../controllers/login_medico.php">
-      <div class= " item-crm">
-      </br>
-      <input type="text" name="crm" id="crm" placeholder="Registro CRM"/>
-      </div>
-      <div class = "item-senha">
-      </br>
-      <input type="password" name="senha" id="senha"  placeholder="Insira a senha"/>
-      </div>
-      <div class="subbotao">
-      <input type="submit" value="Entrar" id="entrar" name="entrar" /><br />
-      </div>
-      <div class="cadastro">
-        <p> Não tem cadastro? Clique no link abaixo.</p>
-      <a href="cadastro_medico.html">Cadastre-se</a> 
-      </div>
-    </form>
-  </div>
-  </div>
-  </body>
+      <div class="label">
+        <h2>Login</h2>
+        <form method="POST" action="../controllers/login_medico.php">
+          <div class="item-crm">
+            <input type="text" name="crm" id="crm" placeholder="Registro CRM" />
+          </div>
 
+          <div class="item-senha">
+            <input
+              type="password"
+              name="senha"
+              id="senha"
+              placeholder="Insira a senha"
+            />
+          </div>
+
+          <div class="subbotao">
+            <input type="submit" value="Entrar" id="entrar" name="entrar" />
+          </div>
+
+          <div class="cadastro">
+            <p>
+              Não tem cadastro? <br />
+              Clique no link abaixo.
+            </p>
+            <a href="cadastro_medico.html">Cadastre-se</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
