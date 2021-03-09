@@ -1,7 +1,6 @@
 <?php
-  $login_cookie = $_COOKIE['login'];
+  $login_cookie = $_COOKIE['cpf'];
     if(isset($login_cookie)){
-      echo"Bem-Vindo, $login_cookie <br>";
       echo"Bem vindo";
     }else{
       echo"Bem-Vindo, voce não está logado <br>";

@@ -1,27 +1,36 @@
 <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "hospital";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
 $crm = $_POST['crm'];
 $entrar = $_POST['entrar'];
 $senha = md5($_POST['senha']);
-$medico = $_POST['medico'];
-$connect = mysql_connect('localhost:3388','root','');
-$db = mysql_select_db('Hospital_db');
+#$medico = $_POST['medico'];
 
-
-
-      if (isset($entrar)) {
-        $verifica = mysql_query("SELECT * FROM medicos WHERE crm =
-        '$crm' AND senha = '$senha'") or die("erro ao selecionar");
-          if (mysql_num_rows($verifica)<=0){                              // Verificação se o login e senha são as mesmas da database
-            echo"<script language='javascript' type='text/javascript'>
-            alert('Login e/ou senha incorretos');window.location
-            .href='../views/login_medico.html';</script>";
-            die();
-          }else{
-            setcookie("crm",$crm);
-            header("Location:index_medico.php"); // Redirecionamento para index.php se o login/senha forem validados
-
-                          }
-
-
-    }
+if (isset($entrar)) {
+	$query = "SELECT * FROM Medicos WHERE crm ='$crm' AND senha = '$senha'";
+	$verifica = $conn->query($query);
+	if ($verifica->num_rows <= 0){
+    		echo"<script language='javascript' type='text/javascript'>alert('CRM e/ou senha incorretos');window.location.href='../views/login_medico.html';</script>";
+		die();
+	}else{
+		$rowMedico = $verifica->fetch_assoc();
+		if ($rowMedico['tipo_medico'] == 'residente'){
+			setcookie("crm",$crm);
+			header("Location:index_medico.php");
+		}else{
+			setcookie("crm",$crm);
+			header("Location:../views/solicitar_exame.html");
+		}
+        }
+}
 ?>
