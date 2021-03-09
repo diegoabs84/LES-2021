@@ -15,7 +15,7 @@ $cpf = $_POST['cpf'];
 $data = $_POST['data'];
 $tipoExame = $_POST['TipoExame'];
 $recomende = $_POST['recomende'];
-$crm = $_POST['crm'];
+$crm = $_COOKIE['crm'];
 
 $sql = "SELECT nome FROM Pacientes WHERE cpf = '$cpf'";
 $result = $conn->query($sql);
@@ -36,6 +36,7 @@ if ($resultCRM->num_rows > 0) {
 					echo "Exame solicitado com sucesso!<br>";
 					echo "<br>";
 					echo "Paciente: ". $row['nome'] ."<br>";
+					echo "Exame: ". $tipoExame ."<br>";
 					echo "Data do Exame: ". $data ."<br>";
 					echo "Recomendação Médica: ". $recomende ."<br>";
 					echo "Médico: ". $rowMedico['nome'] . " CRM: ". $rowMedico['crm'] ."<br>";
