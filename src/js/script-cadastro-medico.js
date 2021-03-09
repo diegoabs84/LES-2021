@@ -4,13 +4,13 @@ window.addEventListener('load', () => {
   divCadastro.addEventListener('change', (event) => {
     switch (event.target.value) {
       case 'medico':
-        gerarTipoMedico();
+        limparConteudo(); 
         break;
       case 'residente':
         gerarResidencia();
         break;
       case 'professor':
-        limpaConteudo();
+	gerarTitulacao();
         break;
 
       case 'null':
@@ -43,14 +43,14 @@ function gerarResidencia() {
   conteudoVariavel.innerHTML = anoResidente;
 }
 
-function gerarTipoMedico() {
+function gerarTitulacao() {
   let conteudoVariavel = document.getElementById('conteudo-variavel');
   conteudoVariavel.innerHTML = '';
 
-  const tipoMedico = `
-  <div class="item tipo-medico">
-  <label>Tipo de médico</label> <br />
-  <select name="tipo_medico" id="tipo_medico">
+  const titulacao = `
+  <div class="item item-titulacao">
+  <label>Titulação</label> <br />
+  <select name="titulacao" id="titulacao">
     <option selected value="null">
       ---|---
     </option>
@@ -61,7 +61,7 @@ function gerarTipoMedico() {
 </div>
 `;
 
-  conteudoVariavel.innerHTML = tipoMedico;
+  conteudoVariavel.innerHTML = titulacao;
 }
 
 function limpaConteudo() {
