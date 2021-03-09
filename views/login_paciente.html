@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../src/css/login_paciente.css" />
     <title>Tela de Login de Pacientes</title>
   </head>
 
   <body>
-    <form method="POST" action="../controllers/login_paciente.php">
-      <label>CPF:</label><input type="text" name="cpf" id="cpf" />
-      <br />
-      <label>Senha:</label
-      ><input type="password" name="senha" id="senha" />
-      <br />
-      <input type="submit" value="entrar" id="entrar" name="entrar" /><br />
+    <div class="container">
+    <div class="label">
+      <h2>Login</h2> 
+    <form method="POST" action="../controllers/login.php">
+      <div class= "item-login">
+      </br>
+      <input type="text" name="CPF" id= "CPF" placeholder= "Inserir CPF"/>
+      </div>
+      <div class= "item-senha">
+      </br>
+      <input type="password" name="senha" id= "senha" placeholder= "Inserir Senha"/>
+      </div>
+      <div class= "botao">
+      </br>
+      <input type="submit" value="Entrar" id= "entrar"/>
+      </br> 
+      </div class= "cadastro"> 
+        <p> Cadastre-se aqui!</p>
       <a href="cadastro_paciente.html"> Cadastre-se</a>
+      </div>
     </form>
   </body>
 </html>

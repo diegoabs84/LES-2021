@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+      450deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(255, 255, 255, 0.4)  
+    ), url(../img/img_login-paciente/loginpacitene2.jpg) no-repeat;
+    background-size: cover;
+        
+  }
+
+  .container{
+      display: flex;
+      height: 90vh;
+      justify-content: center;
+      align-items: center;
+
+  }
+
+  .label{
+      font-size: 1.2rem;
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: rgba(255, 255, 255, 0.925);
+      padding: 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+      box-shadow: rgb(31, 29, 29);
+      border-radius: 15px;
+
+  }
+
+  .item-login > input{
+      padding: 6.5px;
+      width: fit-content;
+      font-size: 1.2rem;
+      margin-bottom: -15px;
+      text-align: center;
+      border-radius: 15px;
+      border: none;  
+  
+ }
+
+ .item-senha > input{
+     padding: 6.5px;
+     width: fit-content;
+     font-size: 1.2rem;
+     margin-bottom: 20px;
+     text-align: center;
+     border-radius: 15px;
+     border: none;  
+
+}
+
+.botao > input{
+     padding: auto;
+     width: fit-content;
+     font-size: 1.5rem;
+     font-weight: 450;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     margin-bottom: 20px;
+     margin-top: -20px;
+     text-align: center;
+     border-radius: 15px;
+     border: none;
+
+}
+
+.botao > input:hover{
+     text-decoration: wavy;
+     background-color: skyblue;
+
+}
+
+.cadastro p{
+     margin-top: 15px;
+     font-size: 1.5rem;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cadastro a{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-size: 1.5rem;
+     font-weight: 450;  
+     text-decoration: none;
+     margin-top: 20px;
+
+}
+
+a, a:focus, a:active{
+    text-decoration: none;
+    color: white;
+}
