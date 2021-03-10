@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../src/css/solicitar_exame.css" />
     <title>Solicitação de Exame</title>
   </head>
   <body>
-    <form method="POST" action="../controllers/solicitar_exame.php">
-      <label>CPF:</label>
-      <input type="text" name="cpf" id="cpf" />
-      <br />
-
-      <!-- Galera do Front, se alguem souber como fazer um script pra deixar a data minima como a do dia atual, ajudaria bastante -->
-
-      <label for="data">Data Prevista de Exame:</label> <br />
+    <div class="container">
+      <div class="content-box">
+        <form method="POST" action="../controllers/solicitar_exame.php">
+          <div class="item item-cpf">
+            <label>CPF:</label><br />
+            <input
+              type="text"
+              name="cpf"
+              id="cpf"
+              placeholder="000.000.000-00"
+            />
+          </div>
+          <!-- Galera do Front, se alguem souber como fazer um script pra deixar a data maxima como a do dia atual, ajudaria bastante -->
+          <div class="item item-data">
+            <label for="data">Data Prevista de Exame:</label> <br />
             <input
               type="date"
               id="data"
@@ -20,9 +28,11 @@
               min="1910-01-01"
               max="2022-01-01"
             />
-      <br />
-      <label>Tipo de Exame:</label>
-      <div class="item item-cadastro-tipo-exame">
+          </div>
+
+          <div class="item item-cadastro-tipo-exame">
+            <label>Tipo de Exame:</label><br />
+
             <select name="TipoExame">
               <option selected value="null">Exame</option>
               <option value="Ecocardiograma">Ecocardiograma</option>
@@ -30,14 +40,23 @@
               <option value="Mapa">Mapa</option>
             </select>
           </div>
-      <br />
 
-      <label>Recomendações:</label>
-      <input type="text" name="recomende" id="recomende" />
-      <br />
+          <div class="item item-recomendacao">
+            <label>Recomendações:</label><br />
+            <textarea name="recomende" id="recomende"></textarea>
+            <br />
+          </div>
 
-      <br />
-      <input type="submit" value="Solicitar" id="solicitar" name="solicitar" />
-    </form>
+          <div class="item item-submit">
+            <input
+              type="submit"
+              value="Solicitar"
+              id="solicitar"
+              name="solicitar"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
