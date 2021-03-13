@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Completar proximos campos</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+</head>
+<body>
+<script type='text/javascript'>
+    $(document).ready(function(){
+        $("input[name='cpf_paciente']").blur(function(){
+            var $data_prevista = $("input[name='data_prevista']");
+            var $crm_solicitador = $("input[name='crm_solicitador']");
+            var $num_diagnostico = $("input[name='num_diagnostico']");
+            var $diagnostico = $("input[name='diagnostico']");
+
+            $.getJSON('../controllers/diagnostico.php',{
+                cpf_paciente: $( this ).val()
+            },function( json ){
+                $data_prevista.val( json.data_prevista );
+                $crm_solicitador.val( json.crm_solicitador);
+                console.log('--> json', json);
+            });
+        });
+    });
+</script>
+
+<form method="POST" action="">
+    <label>CPF do paciente</label>
+    <input type="text" class="form-control" name="cpf_paciente"><br><br>
+
+    <label>Data do exame</label>
+    <input type="text" class="form-control" name="data_prevista"><br><br>
+
+    <label>CRM</label>
+    <input type="text" class="form-control" name="crm_solicitador"><br><br>
+
+    <label>Número de diagnóstico</label>
+    <input type="text" class="form-control" name="num_diagnostico"><br><br>
+
+    <label>Diagnóstico</label>
+    <input type="text" class="form-control" name="diagnostico"><br><br>
+
+    <input type="submit" value="Editar">
+</form>
+</body>
+</html>
