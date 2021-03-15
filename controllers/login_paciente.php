@@ -23,7 +23,7 @@ if (isset($entrar)) {
 		die();
 	}else{
 		setcookie("cpf",$cpf);
-            	header("Location:index_paciente.php"); 
+        header("Location:index_paciente.php"); 
         }
 }
 
