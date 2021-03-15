@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "matheus";
+$password = "root";
 $dbname = "hospital";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -24,13 +24,17 @@ if (isset($entrar)) {
 		die();
 	}else{
 		$rowMedico = $verifica->fetch_assoc();
-		if ($rowMedico['tipo_medico'] == 'residente'){
+		if ($rowMedico['tipo_medico'] == 'medico'){
 			setcookie("crm",$crm);
-			header("Location:index_medico.php");
-		}else{
+			header("Location:../views/dashboard_medico.html");
+		}else if ($rowMedico['tipo_medico'] == 'residente'){
 			setcookie("crm",$crm);
-			header("Location:../views/solicitar_exame.html");
+			#header("Location:../views/dashboard_residente.html");
+			header("Location:index_medico.php"); #enquanto a tela de residende não for feita
+		}else if ($rowMedico['tipo_medico'] == 'professor'){
+			setcookie("crm",$crm);
+			header("Location:../views/dashboard_professor.html");
 		}
-        }
+    }
 }
 ?>

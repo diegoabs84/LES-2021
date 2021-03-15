@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "cfarias";
+$username = "matheus";
+$password = "root";
 $dbname = "hospital";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 function retorna($cpf_paciente, $conn){
-    $result_paciente = "SELECT * FROM exames WHERE cpf_paciente = '$cpf_paciente' LIMIT 1";
+    $result_paciente = "SELECT * FROM Exames WHERE cpf_paciente = '$cpf_paciente' LIMIT 1";
     $resultado_paciente = mysqli_query($conn, $result_paciente);
     if($resultado_paciente->num_rows){
         $row_paciente = mysqli_fetch_assoc($resultado_paciente);
@@ -37,7 +37,7 @@ if(isset($_POST['cpf_paciente'])) {
     $exame = $_POST['exame'];
     $diagnostico = $_POST['diagnostico'];
 
-    $sql = "INSERT INTO diagnostico (cpf_paciente, crm_responsavel,exame,data_exame,diagnostico) VALUES ('$cpf', '$crm', '$exame','$data','$diagnostico')";
+    $sql = "INSERT INTO Diagnosticos (cpf_paciente, crm_responsavel,exame,data_exame,diagnostico) VALUES ('$cpf', '$crm', '$exame','$data','$diagnostico')";
 
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";

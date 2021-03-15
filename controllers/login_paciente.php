@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "matheus";
+$password = "root";
 $dbname = "hospital";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -23,7 +23,7 @@ if (isset($entrar)) {
 		die();
 	}else{
 		setcookie("cpf",$cpf);
-            	header("Location:index_paciente.php"); 
+        header("Location:index_paciente.php"); 
         }
 }
 
