@@ -43,7 +43,20 @@ if ($resultCRM->num_rows > 0) {
 		  		}
 		  	}
 		} else {
-			echo"<script language='javascript' type='text/javascript'>alert('Paciente não Cadastrado');window.location.href='../views/solicitar_exame.html';</script>";
+			echo"<script language='javascript' type='text/javascript'>alert('Paciente não Cadastrado. Cadastro automatico realizado. Senha padrão definida: 123.');</script>";
+			$senha = MD5('123');
+			$query = "INSERT INTO Pacientes (senha, cpf) VALUES ('$senha','$cpf')";
+  			$cadastrarPaciente = $conn->query($query);
+
+			if($cadastrarPaciente){
+				echo "Exame solicitado com sucesso!<br>";
+				echo "<br>";
+				echo "CPF Paciente: ". $cpf ."<br>";
+				echo "Exame: ". $tipoExame ."<br>";
+				echo "Data do Exame: ". $data ."<br>";
+				echo "Recomendação Médica: ". $recomende ."<br>";
+				echo "Médico: ". $rowMedico['nome'] . " CRM: ". $rowMedico['crm'] ."<br>";
+			}
 		}
 	}
 } else{
