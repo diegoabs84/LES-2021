@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>Tela de Cadastro de Médico</title>
-    <link rel="stylesheet" href="../src/css/cadastro_medico.css" />
+    <link rel="stylesheet" href="../../src/css/cadastro_medico.css" />
   </head>
   <body>
     <div class="container-cadastro">
-      <form method="POST" action="../controllers/cadastro_medico.php">
+      <form method="POST" action="../../controllers/cadastro_medico.php">
         <div class="items-cadastro">
+
           <div class="item item-cadastro-login">
             <label>Nome:</label><br />
             <input
@@ -50,9 +51,10 @@
 
           <div class="item" id="conteudo-variavel"></div>
 
-          <br />
+          
           <input
             type="submit"
+            class="btnSubmit"
             value="Cadastrar"
             id="cadastrar"
             name="cadastrar"
@@ -60,6 +62,6 @@
         </div>
       </form>
     </div>
-    <script src="../src/js/script-cadastro-medico.js"></script>
+    <script src="../../src/js/script-cadastro-medico.js"></script>
   </body>
 </html>

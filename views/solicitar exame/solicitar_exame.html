@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../src/css/solicitar_exame.css" />
+    <link rel="stylesheet" href="../../src/css/solicitar_exame.css" />
     <title>Solicitação de Exame</title>
   </head>
   <body>
     <div class="container">
       <div class="content-box">
-        <form method="POST" action="../controllers/solicitar_exame.php">
+        <form method="POST" action="../../controllers/solicitar_exame.php">
           <div class="item item-cpf">
             <label>CPF:</label><br />
             <input
@@ -34,7 +34,7 @@
             <label>Tipo de Exame:</label><br />
 
             <select name="TipoExame">
-              <option selected value="null">Exame</option>
+              <option selected disabled value="null">Exame</option>
               <option value="Ecocardiograma">Ecocardiograma</option>
               <option value="Eletrocardiograma">Eletrocardiograma</option>
               <option value="Mapa">Mapa</option>
