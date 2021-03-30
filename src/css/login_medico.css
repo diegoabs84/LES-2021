@@ -18,6 +18,28 @@
   background-size: cover;
 }
 
+.link-home{
+  display:flex;
+  justify-content:left;
+  width: 100%;
+  margin-top:-50px;
+  margin-left: -50px;
+  padding-bottom: 50px;
+  padding-top:0;
+}
+
+.link-home a{
+  color:#fff;
+  text-decoration:none;
+  font-size: 1.5rem;
+  
+}
+
+.link-home a img{
+  height:50px;
+  width:50px;
+  filter:invert(100%);
+}
 
 .titulo {
   margin-bottom: 15px;
