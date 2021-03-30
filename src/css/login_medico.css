@@ -1,10 +1,14 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
-body {
-  margin: 0;
+.container {
+  display: flex;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
+  
   background: linear-gradient(
       555deg,
       rgba(0, 0, 0, 0.6),
@@ -14,17 +18,37 @@ body {
   background-size: cover;
 }
 
-.container {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+.link-home{
+  display:flex;
+  justify-content:left;
+  width: 100%;
+  margin-top:-50px;
+  margin-left: -50px;
+  padding-bottom: 50px;
+  padding-top:0;
+}
+
+.link-home a{
+  color:#fff;
+  text-decoration:none;
+  font-size: 1.5rem;
+  
+}
+
+.link-home a img{
+  height:50px;
+  width:50px;
+  filter:invert(100%);
+}
+
+.titulo {
+  margin-bottom: 15px;
 }
 
 .label {
   font-size: 1.2rem;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'sans-serif';
   color: white;
   padding: 70px;
   background-color: rgba(34, 47, 62, 0.6);
@@ -32,7 +56,7 @@ body {
   border-radius: 10px;
 }
 
-.item-crm > input {
+.item-crm  input {
   padding: 7px;
   width: 250px;
   font-size: 1.2rem;
@@ -42,7 +66,7 @@ body {
   border: none;
 }
 
-.item-senha > input {
+.item-senha input {
   padding: 7px;
   width: 250px;
   font-size: 1.2rem;
@@ -52,8 +76,8 @@ body {
   border: none;
 }
 
-.subbotao > input {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.botao-submit input {
+  font-family: 'sans-serif';
   font-size: 1.2rem;
   font-weight: 500;
   color: black;
@@ -63,31 +87,31 @@ body {
   border: none;
   padding: 5px;
   width: 80px;
+  cursor: pointer;
 }
 
-.subbotao input:hover {
+.botao-submit input:hover {
   text-decoration: wavy;
   background-color: skyblue;
 }
 
-.cadastro,
-p {
-  margin-top: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.cadastro p {
+  margin-top: 15px;
   font-size: 1.2rem;
+  font-family: 'sans-serif';
 }
 
-.cadastro,
-a {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: white;
-  margin-top: 20px;
+.cadastro a {
+  display: block;
+  font-family: 'sans-serif';
+  font-size: 1.3rem;
+  font-weight: 450;
   text-decoration: none;
+  color: white;
+  padding-top: 30px;
 }
 
-a:hover {
+.cadastro a:hover {
   text-decoration: wavy;
   color: skyblue;
 }

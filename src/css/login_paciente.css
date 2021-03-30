@@ -1,10 +1,14 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
-body {
-  margin: 0;
+.container-login-paciente {
+  
+  display: flex;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(
       450deg,
       rgba(0, 0, 0, 0.6),
@@ -14,25 +18,51 @@ body {
   background-size: cover;
 }
 
-.container {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.2rem;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'sans-serif';
   color: rgba(255, 255, 255, 0.925);
   padding: 60px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color:rgba(87, 101, 116,0.5);
   box-shadow: rgb(31, 29, 29);
   border-radius: 15px;
 }
 
-.item-login > input {
+.link-home{
+  display:flex;
+  justify-content:left;
+  width: 100%;
+  margin-top:-50px;
+  margin-left: -50px;
+  padding-bottom: 50px;
+  padding-top:0;
+}
+
+.link-home a{
+  color:#fff;
+  text-decoration:none;
+  font-size: 1.5rem;
+  
+}
+
+.link-home a img{
+  height:50px;
+  width:50px;
+  filter:invert(100%);
+}
+
+.titulo {
+  margin-bottom: 15px;
+}
+
+.item-login input {
   padding: 7px;
   width: fit-content;
   font-size: 1.2rem;
@@ -42,7 +72,7 @@ body {
   border: none;
 }
 
-.item-senha > input {
+.item-senha input {
   padding: 7px;
   width: fit-content;
   font-size: 1.2rem;
@@ -52,8 +82,8 @@ body {
   border: none;
 }
 
-.botao > input {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.botao input{
+  font-family: 'sans-serif';
   font-size: 1.2rem;
   font-weight: 500;
   color: black;
@@ -63,9 +93,10 @@ body {
   border: none;
   padding: 5px;
   width: 80px;
+  cursor:pointer;
 }
 
-.botao > input:hover {
+.botao input:hover {
   text-decoration: wavy;
   background-color: skyblue;
 }
@@ -73,23 +104,19 @@ body {
 .cadastro p {
   margin-top: 15px;
   font-size: 1.2rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'sans-serif';
 }
 
 .cadastro a {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.5rem;
+  display: block;
+  font-family: 'sans-serif';
+  font-size: 1.3rem;
   font-weight: 450;
   text-decoration: none;
-  margin-top: 20px;
+  color: white;
+  padding-top: 30px;
 }
 
-a,
-a:focus,
-a:active {
-  text-decoration: none;
-  color: white;
-}
 a:hover {
   text-decoration: wavy;
   color: skyblue;
