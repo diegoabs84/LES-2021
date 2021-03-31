@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="../../src/css/diagnostico.css" />
     <meta charset="utf-8">
     <title>Completar proximos campos</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -28,22 +29,29 @@
 </script>
 
 <form method="POST" action="../../controllers/diagnostico.php">
-    <label>CPF do paciente</label>
-    <input type="text" class="form-control" name="cpf_paciente"><br><br>
-
-    <label>Data do exame</label>
-    <input type="text" class="form-control" name="data_prevista"><br><br>
-
-    <label>CRM</label>
-    <input type="text" class="form-control" name="crm_solicitador"><br><br>
-
-    <label>Exame</label>
-    <input type="text" class="form-control" name="exame"><br><br>
-
-    <label>Diagnóstico</label>
-    <input type="text" class="form-control" name="diagnostico"><br><br>
-
+    <div class="container">
+    <div class="label">
+    <div class="item-cpf">
+        <h1>Diagnóstico</h1>
+    <input type="text" class="form-control" name="cpf_paciente" placeholder="CPF do paciente">
+    </div>
+    <div class="item-data">
+    <input type="text" class="form-control" name="data_prevista" placeholder="Data do Exame">
+    </div>
+    <div class="item-crm">
+    <input type="text" class="form-control" name="crm_solicitador" placeholder="CRM">
+    </div>
+    <div class="item-exame">
+    <input type="text" class="form-control" name="exame" placeholder="Exame">
+    </div>
+    <div class="item-diagnostico">
+    <textarea type="text" class="form-control" name="diagnostico" placeholder="Diagnóstico"></textarea>
+    </div>
+    <div class="botao-salvar">
     <input type="submit" value="Salvar">
+    </div>
+    </div>
+</div>
 </form>
 </body>
 </html>

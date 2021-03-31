@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(
+        555deg,
+        rgba(0, 0, 0, 0.9),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url(../img/diagnostico_img/diagnostico2.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'sans-serif';
+    color: rgba(255, 255, 255, 0.925);
+    padding: 60px;
+    background-color:rgba(52, 60, 68, 0.8);
+    box-shadow: rgb(31, 29, 29);
+    border-radius: 15px;
+  }
+
+    .label h1{
+        margin-bottom: 30px;
+    }
+
+    .label input{
+        margin: 20px 20px;
+    }
+
+    .label textarea{
+        margin: 15px 15px;
+        width: 250px;
+        height: 50px;
+        text-align: center;
+    }
+
+
+  .item-cpf input {
+    padding: 7px;
+    width: fit-content;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+  
+  .item-data input {
+    padding: 7px;
+    width: fit-content;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .item-crm input {
+    padding: 7px;
+    width: fit-content;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .item-exame input {
+    padding: 7px;
+    width: fit-content;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .item-diagnostico input {
+    padding: 7px;
+    width: fit-content;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .botao-salvar input{
+    font-family: 'sans-serif';
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 80px;
+    cursor:pointer;
+  }
+  
+  .botao-salvar input:hover {
+    text-decoration: wavy;
+    background-color: skyblue;
+  }

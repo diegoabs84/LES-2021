@@ -19,6 +19,31 @@
   z-index: 0;
 }
 
+
+.link-home{
+  display:flex;
+  justify-content:left;
+  width: 100%;
+  margin-top:-50px;
+  margin-left: -50px;
+  padding-bottom: 50px;
+  padding-top:0;
+}
+
+.link-home a{
+  color:#fff;
+  text-decoration:none;
+  font-size: 1.5rem;
+  
+}
+
+.link-home a img{
+  height:35px;
+  width:50px;
+  filter:invert(100%);
+}
+
+
 .items-cadastro {
   padding: 70px;
   text-align: center;
@@ -59,3 +84,4 @@ select {
   color: white;
   cursor: pointer;
 }
+
