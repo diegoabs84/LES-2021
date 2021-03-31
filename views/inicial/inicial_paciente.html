@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/css/inicial_paciente.css">
+    <title>Home - Paciente</title>
+</head>
+<body>
+    <!--menu lateral-->
+    <div class="container-tela-inicial-paciente">
+
+        <div class="barra-lateral-esquerda">
+
+            <div class="imagem-menu-lateral"></div>
+
+            <div class="nome-paciente">
+                Victor Emmanuel
+            </div>
+
+            <div class="item-menu-lateral">
+                <div class="menu-lateral-btnGeral" id="geral">geral</div>
+                    <div class="menu-lateral-btnDashboard" id="dashboard">dashboard</div>
+                        <div class="menu-lateral-btnSolicitarExame" id="solicitar-exame">solicitar exame</div>
+                    <div class="menu-lateral-btnExame" id="exame">exame</div>
+                <div class="menu-lateral-btnDadosCadastrais" id="dados-cadastrais"> dados cadastrais</div>
+            </div>
+
+        </div>
+        <!--conteudo gerado via js-->
+        <div class="conteudo-lateral-direito">
+            <div class="conteudo-dinamico-lateral-direito" id="conteudo-gerado"></div>
+        </div>
+
+    </div> <!--fim container-->
+
+
+
+<script src="../../src/js/tela-inicial-paciente/main.js"></script>
+</body>
+</html>
+
+
+
+<!--Aqui precisa ter todas as informacoes que precisam ser exibidas para o paciente
+     - solicitacao de exame
+     - alteracao de dados cadastrais
+     - exibir exames 
+     - menu lateral esquerdo
+     - A direita as telas serao geradas dentro de uma div de forma automatica com js 
+    
+    -->
+    
