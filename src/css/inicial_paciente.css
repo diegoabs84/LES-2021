@@ -56,8 +56,11 @@
     width: 100%;
     padding: 10px;
     text-align: center;
+    text-transform:capitalize;
     margin-bottom: 15px;
     font-size: 30px;
+    font-weight: 900;
+    background-color: #fff;
     
 }
 .conteudo-lateral-direito{
@@ -75,15 +78,15 @@
 }
 
 .conteudo-dinamico-lateral-direito{
-    height: 800px;
-    width: 800px;
+    height: 90%;
+    width: 90%;
     background-color: #fff;
     
 }
 
 .item-menu-lateral{
     text-align:center;
-    text-transform:capitalize;
+    text-transform:uppercase;
     font-size: 25px;
     margin-top: 30px;
 }
