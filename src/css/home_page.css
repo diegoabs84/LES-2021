@@ -9,7 +9,7 @@
   height: 100vh;
   display: grid;
   grid-template-rows: none;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'paciente medico funcionario';
   background: linear-gradient(
     555deg,
