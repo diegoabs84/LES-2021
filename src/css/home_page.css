@@ -10,7 +10,7 @@
   display: grid;
   grid-template-rows: none;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'paciente medico';
+  grid-template-areas: 'paciente medico funcionario';
   background: linear-gradient(
     555deg,
     rgba(0, 0, 0, 0.5),
@@ -74,8 +74,32 @@
   background-size: cover;
   box-shadow: 8px 0px 16px 21px rgba(0, 0, 0, 0.61);
 }
+.funcionario {
+  grid-area: funcionario;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background: url(../img/img_home-page/funcionario.jpg) no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+}
+.funcionario:hover {
+  background: linear-gradient(
+      200deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../img/img_home-page/funcionario.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  box-shadow: -14px 0px 16px 21px rgba(0, 0, 0, 0.60);
+}
 
-.medico, .paciente {
+
+.medico, .paciente , .funcionario{
   text-align: center;
   font-family: 'sans-serif';
   font-weight: 700;
