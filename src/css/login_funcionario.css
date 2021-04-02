@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .container-login-funcionario {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(
+        555deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(255, 255, 255, 0.4)
+      ),
+      url(../img/img_login_fun/fun1.jpg) no-repeat;
+    background-size: cover;
+  }
+  
+  .link-home{
+    display:flex;
+    justify-content:left;
+    width: 100%;
+    margin-top:-50px;
+    margin-left: -50px;
+    padding-bottom: 50px;
+    padding-top:0;
+  }
+  
+  .link-home a{
+    color:#fff;
+    text-decoration:none;
+    font-size: 1.5rem;
+    
+  }
+  
+  .link-home a img{
+    height:50px;
+    width:50px;
+    filter:invert(100%);
+  }
+  
+  .titulo {
+    margin-bottom: 15px;
+  }
+  
+  .label {
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'sans-serif';
+    color: white;
+    padding: 70px;
+    background-color: rgba(34, 47, 62, 0.6);
+    box-shadow: 0px -1px 20px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  .item-login  input {
+    padding: 7px;
+    width: 250px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+  
+  .item-senha input {
+    padding: 7px;
+    width: 250px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+  
+  .botao-submit input {
+    font-family: 'sans-serif';
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 80px;
+    cursor: pointer;
+  }
+  
+  .botao-submit input:hover {
+    text-decoration: wavy;
+    background-color: skyblue;
+  }
+  
+  .cadastro p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-family: 'sans-serif';
+  }
+  
+  .cadastro a {
+    display: block;
+    font-family: 'sans-serif';
+    font-size: 1.3rem;
+    font-weight: 450;
+    text-decoration: none;
+    color: white;
+    padding-top: 30px;
+  }
+  
+  .cadastro a:hover {
+    text-decoration: wavy;
+    color: skyblue;
+  }

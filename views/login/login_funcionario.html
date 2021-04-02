@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../src/css/login_funcionario.css" />
+    <title>Tela de Login de Funcionários</title>
+  </head>
+
+  <body>
+    <div class="container-login-funcionario">
+
+      <div class="label">
+        <div class="link-home"> 
+          <a  href="../index.html"> <img src="../../src/img/common/home.png" alt="home link"/> </a>
+        </div>
+
+        <h2 class="titulo">Login</h2>
+
+        <form method="POST" action="../../controllers/login_funcionario.php">
+
+          <div class="item-login">
+            <input type="text" name="login" id="login" placeholder="Login" />
+          </div>
+
+          <div class="item-senha">
+            <input
+              type="password"
+              name="senha"
+              id="senha"
+              placeholder="Insira a senha"
+            />
+          </div>
+
+          <div class="botao-submit">
+            <input type="submit" value="Entrar" id="entrar" name="entrar" />
+          </div>
+                              
+        </form>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
