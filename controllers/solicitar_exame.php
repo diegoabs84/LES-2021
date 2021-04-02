@@ -60,7 +60,7 @@ if ($resultCRM->num_rows > 0) {
 		}
 	}
 } else{
-	echo"<script language='javascript' type='text/javascript'>alert('Médico não Cadastrado');window.location.href='../views/solicitar_exame.html';</script>";
+	echo"<script language='javascript' type='text/javascript'>alert('Médico não Cadastrado');window.location.href='../views/solicitarexame/solicitar_exame.html';</script>";
 }
 	
 ?>

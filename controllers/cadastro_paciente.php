@@ -21,14 +21,14 @@ $query_select = "SELECT nome FROM Pacientes WHERE nome = '$nome'";
 $select = $conn->query($query_select);
 
 if($cpf == "" || $cpf == null){
-		echo"<script language='javascript' type='text/javascript'>alert('O campo CPF deve ser preenchido');window.location.href='/..views/cadastro_paciente.html';</script>";
+		echo"<script language='javascript' type='text/javascript'>alert('O campo CPF deve ser preenchido');window.location.href='/..views/cadastro/cadastro_paciente.html';</script>";
 }
 
 if ($select->num_rows >= 0){
 	while ($rowPaciente = $select->fetch_assoc()){
   		if($rowPaciente['cpf'] == $cpf){
 
-  	      		echo"<script language='javascript' type='text/javascript'>alert('Esse CPF já está cadastrada');window.location.href='../views/cadastro_paciente.html';</script>";
+  	      		echo"<script language='javascript' type='text/javascript'>alert('Esse CPF já está cadastrada');window.location.href='../views/cadastro/cadastro_paciente.html';</script>";
   	      		die();
 		}
 	}
@@ -36,9 +36,9 @@ if ($select->num_rows >= 0){
   	$cadastrarPaciente = $conn->query($query);
 
   	if($cadastrarPaciente) {
-		echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='../views/login_paciente.html'</script>";
+		echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='../views/login/login_paciente.html'</script>";
 	}else{
-  	        echo"<script language='javascript' type='text/javascript'>alert('Não foi possível cadastrar esse usuário');window.location.href='../views/cadastro_paciente.html'</script>";
+  	        echo"<script language='javascript' type='text/javascript'>alert('Não foi possível cadastrar esse usuário');window.location.href='../views/cadastro/cadastro_paciente.html'</script>";
   	}
 }
 

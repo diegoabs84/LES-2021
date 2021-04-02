@@ -29,13 +29,13 @@ if ($select->num_rows > 0) {
         if($row['nome'] == ''){
 
             if($modificarPaciente) {
-                echo"<script language='javascript' type='text/javascript'>alert('Usuário atualizado com sucesso!');window.location.href='../views/dashboard_paciente.html'</script>";
+                echo"<script language='javascript' type='text/javascript'>alert('Usuário atualizado com sucesso!');window.location.href='../views/dashboard/dashboard_paciente.html'</script>";
             }else{
-                echo"<script language='javascript' type='text/javascript'>alert('Não foi possível atualizar esse usuário');window.location.href='../views/dashboard_paciente.html'</script>";
+                echo"<script language='javascript' type='text/javascript'>alert('Não foi possível atualizar esse usuário');window.location.href='../views/dashboard/dashboard_paciente.html'</script>";
             }
 
         }else{
-            echo"<script language='javascript' type='text/javascript'>alert('Paciente já está com os dados atualizados!');window.location.href='../views/dashboard_paciente.html'</script>";
+            echo"<script language='javascript' type='text/javascript'>alert('Paciente já está com os dados atualizados!');window.location.href='../views/dashboard/dashboard_paciente.html'</script>";
         }
 
     }
