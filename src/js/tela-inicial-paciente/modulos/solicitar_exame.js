@@ -5,6 +5,7 @@ const SolicitarExame = () => {
     let form = '';
     let label = '';
     let input = '';
+    let select ='', option = '';
     let textLabel = {
         cpf: 'CPF',
         data: 'Data Prevista de Exame',
@@ -74,11 +75,9 @@ const SolicitarExame = () => {
     form.appendChild(div);
     
     //criando area de tipo de exame
-    let select = document.createElement('select');
-    let option1 = document.createElement('option');
-    let option2 = document.createElement('option');
-    let option3 = document.createElement('option');
-    let option4 = document.createElement('option');
+    select = document.createElement('select');
+    option = document.createElement('option');
+    
 
     div = document.createElement('div');
     div.className = 'item item-cadastro-tipo-exame';
@@ -89,24 +88,28 @@ const SolicitarExame = () => {
     
     
     select.setAttribute('name','TipoExame');
-    
-    option1.setAttribute('selected','');
-    option1.setAttribute('disabled','');
-    option1.setAttribute('value', 'null');
-    option1.textContent = 'Exame';
-    select.appendChild(option1);
 
-    option2.setAttribute('value','Ecocardiograma');
-    option2.textContent = 'Ecocardiograma';
-    select.appendChild(option2);
+    option = document.createElement('option');
+    option.setAttribute('selected','');
+    option.setAttribute('disabled','');
+    option.setAttribute('value', 'null');
+    option.textContent = 'Exame';
+    select.appendChild(option);
 
-    option3.setAttribute('value','Eletrocardiograma');
-    option3.textContent = 'Eletrocardiograma';
-    select.appendChild(option3);
+    option = document.createElement('option');
+    option.setAttribute('value','Ecocardiograma');
+    option.textContent = 'Ecocardiograma';
+    select.appendChild(option);
 
-    option4.setAttribute('value','Mapa');
-    option4.textContent = 'Mapa';
-    select.appendChild(option4);
+    option = document.createElement('option');
+    option.setAttribute('value','Eletrocardiograma');
+    option.textContent = 'Eletrocardiograma';
+    select.appendChild(option);
+
+    option = document.createElement('option');
+    option.setAttribute('value','Mapa');
+    option.textContent = 'Mapa';
+    select.appendChild(option);
 
     div.appendChild(select);
     

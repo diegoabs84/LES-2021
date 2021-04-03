@@ -1,7 +1,8 @@
 
 const createDadosCadastrais = () => {
 
-    let input,label ='';
+    let input,label,select,option ='';
+    let data = new Date();
 
     //limpa o conteudo na div
     let conteudo = document.getElementById('conteudo-gerado');
@@ -59,7 +60,68 @@ const createDadosCadastrais = () => {
     //adiciona ao form
     form.appendChild(divSenha);
 
-    //monta div de tipo de pele
+    //monta div data de nascimento
+    let divData = document.createElement('div');
+    divData.className = 'item atualizar-cadastro-data-nascimento';
+
+    label = document.createElement('label');
+    label.textContent = 'Data de Nascimento';
+    divData.appendChild(label);
+    
+    input = document.createElement('input');
+    input.setAttribute('type','date');
+    input.setAttribute('name','data');
+    input.setAttribute('id','data');
+    input.setAttribute('value', data.toLocaleDateString());
+    input.setAttribute('min','1910-01-01');
+    divData.appendChild(input);
+
+    //adiciona ao form
+    form.appendChild(divData);
+
+    //montar div cor de pele
+     select = document.createElement('select');
+     
+    
+    let divCor = document.createElement('div');
+    divCor.className = 'item atualizar-cor';
+
+    label = document.createElement('label');
+    label.textContent = 'Cor';
+    divCor.appendChild(label);
+    
+    
+    select.setAttribute('name','cor');
+    select.setAttribute('id','cor');
+    
+    option = document.createElement('option');
+    option.setAttribute('selected','');
+    option.setAttribute('value', 'null');
+    option.textContent = '---|---';
+    select.appendChild(option);
+
+    option = document.createElement('option');
+    option.setAttribute('value','branco');
+    option.textContent = 'Branco';
+    select.appendChild(option);
+
+    option = document.createElement('option');
+    option.setAttribute('value','negro');
+    option.textContent = 'Negro';
+    select.appendChild(option);
+
+    option = document.createElement('option');
+    option.setAttribute('value','pardo');
+    option.textContent = 'Pardo';
+    select.appendChild(option);
+
+    divCor.appendChild(select);
+    
+    //adiciona child no form
+    form.appendChild(divCor);
+
+    //montar div sexo
+
 
 
     //Adiciona tudo ao container pai
