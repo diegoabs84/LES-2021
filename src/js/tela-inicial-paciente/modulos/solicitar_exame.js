@@ -5,6 +5,7 @@ const SolicitarExame = () => {
     let form = '';
     let label = '';
     let input = '';
+    let select ='', option = '';
     let textLabel = {
         cpf: 'CPF',
         data: 'Data Prevista de Exame',
@@ -36,12 +37,13 @@ const SolicitarExame = () => {
 
     // Criar elementos e
     //adicionar elementos dentro do formulario
+
     //criando area de input cpf
     div = document.createElement('div');
     div.className = 'item item-cpf';
 
     label = document.createElement('label');
-    label.innerHTML = textLabel.cpf;
+    label.textContent = textLabel.cpf;
     div.appendChild(label);
     
     input = document.createElement('input');
@@ -49,6 +51,7 @@ const SolicitarExame = () => {
     input.setAttribute('name','cpf');
     input.setAttribute('id','cpf');
     input.setAttribute('placeholder','000.000.000-00');
+    input.setAttribute('maxlength','11');
     div.appendChild(input);
     
     //adiciona child no form
@@ -59,7 +62,7 @@ const SolicitarExame = () => {
     div.className = 'item item-data';
 
     label = document.createElement('label');
-    label.innerHTML = textLabel.data;
+    label.textContent = textLabel.data;
     div.appendChild(label);
     
     input = document.createElement('input');
@@ -73,39 +76,41 @@ const SolicitarExame = () => {
     form.appendChild(div);
     
     //criando area de tipo de exame
-    let select = document.createElement('select');
-    let option1 = document.createElement('option');
-    let option2 = document.createElement('option');
-    let option3 = document.createElement('option');
-    let option4 = document.createElement('option');
+    select = document.createElement('select');
+    option = document.createElement('option');
+    
 
     div = document.createElement('div');
     div.className = 'item item-cadastro-tipo-exame';
 
     label = document.createElement('label');
-    label.innerHTML = textLabel.tipo;
+    label.textContent = textLabel.tipo;
     div.appendChild(label);
     
     
     select.setAttribute('name','TipoExame');
-    
-    option1.setAttribute('selected','');
-    option1.setAttribute('disabled','');
-    option1.setAttribute('value', 'null');
-    option1.textContent = 'Exame';
-    select.appendChild(option1);
 
-    option2.setAttribute('value','Ecocardiograma');
-    option2.textContent = 'Ecocardiograma';
-    select.appendChild(option2);
+    option = document.createElement('option');
+    option.setAttribute('selected',true);
+    option.setAttribute('disabled',true);
+    option.setAttribute('value', 'null');
+    option.textContent = 'Exame';
+    select.appendChild(option);
 
-    option3.setAttribute('value','Eletrocardiograma');
-    option3.textContent = 'Eletrocardiograma';
-    select.appendChild(option3);
+    option = document.createElement('option');
+    option.setAttribute('value','Ecocardiograma');
+    option.textContent = 'Ecocardiograma';
+    select.appendChild(option);
 
-    option4.setAttribute('value','Mapa');
-    option4.textContent = 'Mapa';
-    select.appendChild(option4);
+    option = document.createElement('option');
+    option.setAttribute('value','Eletrocardiograma');
+    option.textContent = 'Eletrocardiograma';
+    select.appendChild(option);
+
+    option = document.createElement('option');
+    option.setAttribute('value','Mapa');
+    option.textContent = 'Mapa';
+    select.appendChild(option);
 
     div.appendChild(select);
     
@@ -120,7 +125,7 @@ const SolicitarExame = () => {
     div.className = 'item item-recomendacao';
 
     label = document.createElement('label');
-    label.innerHTML = textLabel.rec;
+    label.textContent = textLabel.rec;
     div.appendChild(label);
     
     

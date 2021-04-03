@@ -7,7 +7,7 @@ import createDadosCadastrais from './modulos/dadosCadastrais.js';
 
 window.addEventListener('load', () => {
 
-
+//Pegando os elementos
 let geral = document.getElementById('geral');
 let dashboard = document.getElementById('dashboard');
 let solicitarExame = document.getElementById('solicitar-exame');
