@@ -11,7 +11,6 @@ const SolicitarExame = () => {
         tipo: 'Tipo de Exame',
         rec: 'Recomendações'
     };
-    let br = document.createElement('br');
 
     const date = new Date();
     
@@ -44,7 +43,7 @@ const SolicitarExame = () => {
     label = document.createElement('label');
     label.innerHTML = textLabel.cpf;
     div.appendChild(label);
-    div.appendChild(br);
+    
     input = document.createElement('input');
     input.setAttribute('type','text');
     input.setAttribute('name','cpf');
@@ -62,7 +61,7 @@ const SolicitarExame = () => {
     label = document.createElement('label');
     label.innerHTML = textLabel.data;
     div.appendChild(label);
-    div.appendChild(br);
+    
     input = document.createElement('input');
     input.setAttribute('type','date');
     input.setAttribute('name','data');
@@ -86,7 +85,7 @@ const SolicitarExame = () => {
     label = document.createElement('label');
     label.innerHTML = textLabel.tipo;
     div.appendChild(label);
-    div.appendChild(br);
+    
     
     select.setAttribute('name','TipoExame');
     
@@ -123,7 +122,7 @@ const SolicitarExame = () => {
     label = document.createElement('label');
     label.innerHTML = textLabel.rec;
     div.appendChild(label);
-    div.appendChild(br);
+    
     
     textarea.setAttribute('name','recomende');
     textarea.setAttribute('id','recomende')

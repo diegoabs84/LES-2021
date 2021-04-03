@@ -1,8 +1,8 @@
-import SolicitarExame from './solicitar_exame.js';
-import createDashboard from './dashboard.js';
-import createGeral from './geral.js';
-import createVerExame from './ver-exame.js';
-import createDadosCadastrais from './dadosCadastrais.js';
+import SolicitarExame from './modulos/solicitar_exame.js';
+import createDashboard from './modulos/dashboard.js';
+import createGeral from './modulos/geral.js';
+import createVerExame from './modulos/ver-exame.js';
+import createDadosCadastrais from './modulos/dadosCadastrais.js';
 
 
 window.addEventListener('load', () => {
@@ -14,7 +14,10 @@ let solicitarExame = document.getElementById('solicitar-exame');
 let verExame = document.getElementById('exame');
 let dadosCadastrais = document.getElementById('dados-cadastrais');
 
+//Monta a pagina geral assim que a pagina carrega
+createGeral();
 
+//Eventos
 geral.addEventListener('click', createGeral);
 
 dashboard.addEventListener('click', createDashboard);
