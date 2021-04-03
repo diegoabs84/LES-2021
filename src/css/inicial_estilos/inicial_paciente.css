@@ -104,7 +104,7 @@
 
 .conteudo-dinamico-lateral-direito{
     height: 95%;
-    width: 95%;
+    width: 75vw;
     background-color: rgba(255,255,255,0.5);
     overflow-y:scroll;
     border-radius: 10px;

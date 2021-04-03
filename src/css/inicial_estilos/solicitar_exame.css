@@ -27,10 +27,14 @@
   font-weight: 400;
 }
 
-.item-submit > input {
+.item-submit input {
   border: 0;
   box-shadow: 0px -1px 20px 3px rgba(131, 149, 167, 0.5);
-  background-color: rgba(10, 189, 227, 0.8);
+  background-color: rgba(10, 189, 227, 0.5);
   color: white;
   font-weight: 800;
+}
+
+.item-submit input:hover{
+  background-color: rgba(10, 189, 227, 1.0);
 }

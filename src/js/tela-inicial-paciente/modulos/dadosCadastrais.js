@@ -80,9 +80,8 @@ const createDadosCadastrais = () => {
     form.appendChild(divData);
 
     //montar div cor de pele
-     select = document.createElement('select');
+    select = document.createElement('select');
      
-    
     let divCor = document.createElement('div');
     divCor.className = 'item atualizar-cor';
 
@@ -95,7 +94,8 @@ const createDadosCadastrais = () => {
     select.setAttribute('id','cor');
     
     option = document.createElement('option');
-    option.setAttribute('selected','');
+    option.setAttribute('selected',true);
+    option.setAttribute('disabled', true);
     option.setAttribute('value', 'null');
     option.textContent = '---|---';
     select.appendChild(option);
@@ -121,8 +121,58 @@ const createDadosCadastrais = () => {
     form.appendChild(divCor);
 
     //montar div sexo
+    select = document.createElement('select');
+     
+    let divSexo = document.createElement('div');
+    divSexo.className = 'item atualizar-sexo';
 
+    label = document.createElement('label');
+    label.textContent = 'Sexo';
+    divSexo.appendChild(label);
+    
+    
+    select.setAttribute('name','sexo');
+    select.setAttribute('id','sexo');
+    
+    option = document.createElement('option');
+    option.setAttribute('selected',true);
+    option.setAttribute('disabled',true);
+    option.setAttribute('value', 'null');
+    option.textContent = '---|---';
+    select.appendChild(option);
 
+    option = document.createElement('option');
+    option.setAttribute('value','masculino');
+    option.textContent = 'Masculino';
+    select.appendChild(option);
+
+    option = document.createElement('option');
+    option.setAttribute('value','feminino');
+    option.textContent = 'Feminino';
+    select.appendChild(option);
+
+    option = document.createElement('option');
+    option.setAttribute('value','outro');
+    option.textContent = 'Outro';
+    select.appendChild(option);
+
+    divSexo.appendChild(select);
+    
+    //adiciona child no form
+    form.appendChild(divSexo);
+
+    // montar botao submit
+    let divSubmit = document.createElement('div');
+    divSubmit.className = 'item btnSubmit-Atualizar';
+
+    input = document.createElement('input');
+    input.setAttribute('type', 'submit');
+    input.setAttribute('value', 'Enviar');
+    input.setAttribute('id', 'modificar');
+    input.setAttribute('name', 'modificar');
+
+    divSubmit.appendChild(input);
+    form.appendChild(divSubmit);
 
     //Adiciona tudo ao container pai
     container.appendChild(form);

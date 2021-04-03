@@ -51,6 +51,7 @@ const SolicitarExame = () => {
     input.setAttribute('name','cpf');
     input.setAttribute('id','cpf');
     input.setAttribute('placeholder','000.000.000-00');
+    input.setAttribute('maxlength','11');
     div.appendChild(input);
     
     //adiciona child no form
@@ -90,8 +91,8 @@ const SolicitarExame = () => {
     select.setAttribute('name','TipoExame');
 
     option = document.createElement('option');
-    option.setAttribute('selected','');
-    option.setAttribute('disabled','');
+    option.setAttribute('selected',true);
+    option.setAttribute('disabled',true);
     option.setAttribute('value', 'null');
     option.textContent = 'Exame';
     select.appendChild(option);
