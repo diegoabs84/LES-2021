@@ -36,12 +36,13 @@ const SolicitarExame = () => {
 
     // Criar elementos e
     //adicionar elementos dentro do formulario
+
     //criando area de input cpf
     div = document.createElement('div');
     div.className = 'item item-cpf';
 
     label = document.createElement('label');
-    label.innerHTML = textLabel.cpf;
+    label.textContent = textLabel.cpf;
     div.appendChild(label);
     
     input = document.createElement('input');
@@ -59,7 +60,7 @@ const SolicitarExame = () => {
     div.className = 'item item-data';
 
     label = document.createElement('label');
-    label.innerHTML = textLabel.data;
+    label.textContent = textLabel.data;
     div.appendChild(label);
     
     input = document.createElement('input');
@@ -83,7 +84,7 @@ const SolicitarExame = () => {
     div.className = 'item item-cadastro-tipo-exame';
 
     label = document.createElement('label');
-    label.innerHTML = textLabel.tipo;
+    label.textContent = textLabel.tipo;
     div.appendChild(label);
     
     
@@ -120,7 +121,7 @@ const SolicitarExame = () => {
     div.className = 'item item-recomendacao';
 
     label = document.createElement('label');
-    label.innerHTML = textLabel.rec;
+    label.textContent = textLabel.rec;
     div.appendChild(label);
     
     

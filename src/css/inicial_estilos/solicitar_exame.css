@@ -11,33 +11,10 @@
       rgba(0, 0, 0, 0.7),
       rgba(255, 255, 255, 0.3)
     ),
-    url(../img/img_solicitacao-exame/solicitacao-exame.jpg) no-repeat;
+    url(../../img/img_solicitacao-exame/solicitacao-exame.jpg) no-repeat;
   background-size: cover;
 }
 
-
-.item {
-  margin: 10px 10px;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.5rem;
-  font-family: 'sans-serif';
-  font-weight: 600;
-  color: white;
-}
-.item > input,
-select {
-  font-size: 1.2rem;
-  font-family: 'sans-serif';
-  padding: 15px;
-  width: 300px;
-  border-radius: 10px;
-  border: none;
-}
-.item > label {
-  font-weight: Bold;
-  display:block;
-}
 
 .item-recomendacao > textarea {
   height: 150px;
