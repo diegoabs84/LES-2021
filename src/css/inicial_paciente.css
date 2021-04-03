@@ -83,7 +83,8 @@
     margin-bottom: 15px;
     font-size: 30px;
     font-weight: 900;
-    background-color: #fff;
+    background-color: rgba(16, 172, 132,1.0);
+    color: #fff;
     
 }
 .conteudo-lateral-direito{
