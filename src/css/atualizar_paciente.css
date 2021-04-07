@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .container-cadastro {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;    
+    background: linear-gradient(
+        555deg,
+        rgba(0, 0, 0, 0.8),
+        rgba(255, 255, 255, 0.4)
+      ),
+      url(../img/img_atualizar_paciente/atualizar_paciente.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  .items-cadastro h1{
+    font-size: 35px;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .items-cadastro {
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    padding: 70px;
+    background-color: rgba(34, 47, 62, 0.6);
+    box-shadow: 0px -1px 20px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+
+  .items-cadastro input {
+    padding: 7px;
+    width: 250px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .item-cadastro-cor{
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 18px;  
+  }
+
+  .item-cadastro-nascimento{
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: -25px;
+  }
+
+  .item-cadastro-sexo{
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+  }
+
+  .btnModificar input{
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: -40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 130px;
+    cursor: pointer;
+  }
+
+  .btnModificar input:hover {
+    text-decoration: wavy;
+    background-color: skyblue;
+  }
+  
