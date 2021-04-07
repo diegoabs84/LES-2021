@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../../src/css/atualizar_paciente.css" />
     <title>Modificação de Dados - Paciente</title>
   </head>
 
@@ -8,9 +9,9 @@
     <div class="container-cadastro">
       <form method="POST" action="../../controllers/atualizar_paciente.php">
         <div class="items-cadastro">
+          <h1>Atualizar Dados</h1>
           <!-- -->
           <div class="item item-cadastro-nome">
-            <label>Nome:</label> <br />
             <input
               type="text"
               name="nome"
@@ -20,12 +21,11 @@
           </div>
 
           <div class="item item-cadastro-senha">
-            <label>Senha:</label> <br />
             <input
               type="password"
               name="senha"
               id="senha"
-              placeholder="************"
+              placeholder="Insira sua senha"
             />
           </div>
 
@@ -53,20 +53,22 @@
           </div>
           <br />
           <div class="item item-cadastro-sexo">
+            <label>Sexo: </label> <br />
             <select name="sexo" id="sexo">
-              <option selected value="null">Sexo</option>
+              <option value="null">---|---</option>
               <option value="masculino">Masculino</option>
               <option value="feminino">Feminino</option>
               <option value="outro">Outro</option>
             </select>
           </div>
-
-          <input
-            type="submit"
+          <div class="btnModificar">
+          <input 
+            type="submit"           
             value="Modificar"
             id="modificar"
             name="modificar"
           />
+        </div>
         </div>
     </div>
   </body>
