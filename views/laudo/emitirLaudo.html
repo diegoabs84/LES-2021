@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="../../src/css/emitir_laudos.css" />
+    <title>Emição de Laudo</title>
 </head>
 <body>
+    <div class="container-emitir-laudo">
+        <div class="content-box">
+            <script type='text/javascript'>
+                $(document).ready(function(){
+                    $("input[name='cpf_paciente']").blur(function(){
+                        var $crm_responsavel = $("input[name='crm_responsavel']");
+                        var $data_exame = $("input[name='data_exame']");
+                        var $diagnostico = $("input[name='diagnostico']");
+                        var $exame = $("input[name='exame']");
 
-<script type='text/javascript'>
-    $(document).ready(function(){
-        $("input[name='cpf_paciente']").blur(function(){
-            var $crm_responsavel = $("input[name='crm_responsavel']");
-            var $data_exame = $("input[name='data_exame']");
-            var $diagnostico = $("input[name='diagnostico']");
-            var $exame = $("input[name='exame']");
+                        $.getJSON('../../controllers/emitir_laudo.php',{
+                            cpf_paciente: $( this ).val()
+                        },function( json ){
+                            $cpf_paciente.val( json.cpf_paciente );
+                            $crm_responsavel.val( json.crm_responsavel);
+                            $exame.val(json.exame);
 
-            $.getJSON('../../controllers/emitir_laudo.php',{
-                cpf_paciente: $( this ).val()
-            },function( json ){
-                $cpf_paciente.val( json.cpf_paciente );
-                $crm_responsavel.val( json.crm_responsavel);
-                $exame.val(json.exame);
+                            console.log('--> json', json);
+                        });
+                    });
+                });
+            </script>
+            <div class="container-quadrado">
+                <form method="POST" action="../../controllers/emitir_laudo.php">
+                    <div class="container">
+                    <div class="label">
+                    <h2 class="titulo">Emitir</h2>
 
-                console.log('--> json', json);
-            });
-        });
-    });
-</script>
+                    <div class="item-laudo">
+                    <textarea type="text" class="form-control" name="laudo" placeholder="Laudo"></textarea>
+                    </div>
 
-<form method="POST" action="../../controllers/emitir_laudo.php">
-    <div class="container">
-    <div class="label">
-    <h1>Emitir</h1>
-
-    <div>
-    <textarea type="text" class="form-control" name="laudo" placeholder="Laudo"></textarea>
+                    <div class="item-crm">
+                    <input type="text" class="form-control" name="crm_responsavel" placeholder="CRM">
+                    </div>
+                    
+                    <div class="botao-salvar">
+                    <input type="submit" value="Salvar">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="item-crm">
-    <input type="text" class="form-control" name="crm_responsavel" placeholder="CRM">
-    </div>
-    
-    <div class="botao-salvar">
-    <input type="submit" value="Salvar">
-    </div>
-    </div>
-</div>
 </form>
 </body>

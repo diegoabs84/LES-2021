@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+.container-emitir-laudo {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(
+        555deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(255, 255, 255, 0.4)
+      ),
+      url(../img/img_emitir_laudo/laudo.jpg) no-repeat;
+    background-size: cover;
+  }
+
+
+.titulo {
+    margin-bottom: 15px;
+}  
+
+.item-submit input {
+    border: 0;
+    box-shadow: 0px -1px 20px 3px rgba(131, 149, 167, 0.5);
+    background-color: rgba(10, 189, 227, 0.5);
+    color: white;
+    font-weight: 800;
+}
+  
+.item-submit input:hover{
+    background-color: rgba(10, 189, 227, 1.0);
+}
+
+.label {
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'sans-serif';
+    color: white;
+    padding: 70px;
+    background-color: rgba(34, 47, 62, 0.6);
+    box-shadow: 0px -1px 20px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+
+.item-crm  input {
+    padding: 7px;
+    width: 250px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+}
+.botao-salvar input {
+    font-family: 'sans-serif';
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 80px;
+    cursor: pointer;
+  }
+  .item-laudo  textarea {
+    padding: 7px;
+    width: 250px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
