@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        450deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(255, 255, 255, 0.4)
+      ),
+      url(../img/img_emitir_laudo/laudomedico2.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  .label h1{
+    font-family: sans-serif;
+    font-size: xx-large;
+    margin-bottom: 40px;
+  }
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.925);
+    padding: 60px;
+    background-color:rgba(87, 101, 116,0.8);
+    box-shadow: rgb(31, 29, 29);
+    border-radius: 15px;
+  }
+
+  .item-laudo {
+    padding: 7px;
+    margin-bottom: 20px;
+
+  }
+
+  .item-crm input {
+    padding: 7px;
+    width: 175px;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .botao-emitir input{
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 80px;
+    cursor:pointer;
+  }
+  
+  .botao-emitir input:hover {
+    text-decoration: wavy;
+    background-color: skyblue;
+  }
+
+
+  .link-home{
+    display:flex;
+    justify-content:left;
+    width: 100%;
+    margin-top:-50px;
+    margin-left: -50px;
+    padding-bottom: 50px;
+    padding-top:0;
+  }
+  
+  .link-home a{
+    color:#fff;
+    text-decoration:none;
+    font-size: 1.5rem;
+    
+  }
+  
+  .link-home a img{
+    height:50px;
+    width:50px;
+    filter:invert(100%);
+  }
+
+  
