@@ -29,8 +29,8 @@ if (isset($entrar)) {
 			header("Location:../views/dashboard/dashboard_medico.html");
 		}else if ($rowMedico['tipo_medico'] == 'residente'){
 			setcookie("crm",$crm);
-			#header("Location:../views/dashboard_residente.html");
-			header("Location:index_medico.php"); #enquanto a tela de residende não for feita
+			header("Location:../views/dashboard/dashboard_residente.html");
+			#header("Location:index_medico.php"); #enquanto a tela de residende não for feita
 		}else if ($rowMedico['tipo_medico'] == 'professor'){
 			setcookie("crm",$crm);
 			header("Location:../views/dashboard/dashboard_professor.html");
