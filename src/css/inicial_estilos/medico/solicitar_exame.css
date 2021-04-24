@@ -11,7 +11,7 @@
       rgba(0, 0, 0, 0.7),
       rgba(255, 255, 255, 0.3)
     ),
-    url(../../img/img_solicitacao-exame/solicitacao-exame.jpg) no-repeat;
+    url(../../../img/img_solicitacao-exame/solicitacao-exame.jpg) no-repeat;
   background-size: cover;
 }
 

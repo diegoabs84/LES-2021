@@ -1,13 +1,63 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inicial Medico</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/padrao-telas_inicial.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/medico/inicial_medico.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/padrao-itens.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/medico/solicitar_exame.css" >
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/dados_cadastrais.css">
+    <script src="../../src/js/tela-inicial-medico/main.js" type="module" defer></script>
+    
+    <title>Medico</title>
 </head>
 <body>
+    <!--menu lateral-->
+    <div class="container-tela-inicial">
 
-<h1>PAG INICIAL MEDICO</h1>
+        <div class="barra-lateral-esquerda">
+
+            <div class="imagem-menu-lateral"></div>
+
+            <div class="nome-menu-lateral">
+                nome do medico
+            </div>
+
+            <div class="item-menu-lateral">
+                <div class="menu-lateral-btn" id="geral">geral</div>
+
+                <div class="menu-lateral-btn" id="dashboard">dashboard</div>
+
+                <div class="menu-lateral-btn" id="solicitar-exame">solicitar exame</div>
+                
+                <div class="menu-lateral-btn" id="dados-cadastrais"> dados cadastrais</div>
+            </div>
+
+        </div>
+        <!--conteudo gerado via js-->
+        <div class="conteudo-lateral-direito">
+            <div class="conteudo-dinamico-lateral-direito" id="conteudo-gerado">conteudo gerado automaticamente</div>
+        </div>
+
+    </div> <!--fim container-->
+
+
+
+
 </body>
 </html>
+
+
+
+<!--Aqui precisa ter todas as informacoes que precisam ser exibidas para o medico
+     - Dashboard - deve exibir: exames nao diagnosticados, quantidade de pacientes, pacientes atendidos dia e por mes.
+     - Diagnostico
+     - solicitacao de exame
+     - alteracao de dados cadastrais 
+     - menu lateral esquerdo
+     - A direita as telas serao geradas dentro de uma div de forma automatica com js 
+    
+    -->
+    

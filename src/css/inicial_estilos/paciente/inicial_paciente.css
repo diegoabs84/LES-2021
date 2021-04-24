@@ -17,7 +17,6 @@
 
     .menu-lateral-btnGeral,
     .menu-lateral-btnDashboard,
-    .menu-lateral-btnSolicitarExame,
     .menu-lateral-btnExame,
     .menu-lateral-btnDadosCadastrais{
         font-size: 20px;
@@ -30,7 +29,6 @@
 @media only screen and (max-width: 720px){
     .menu-lateral-btnGeral,
     .menu-lateral-btnDashboard,
-    .menu-lateral-btnSolicitarExame,
     .menu-lateral-btnExame,
     .menu-lateral-btnDadosCadastrais{
         font-size: 15px;
@@ -94,7 +92,7 @@
     align-items:center;
     width:100%;
     height: 100%;
-    background-image: url('../../img/img_inicial_paciente/green_field_menu.jpg');
+    background-image: url('../../../img/img_inicial_paciente/green_field_menu.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     
@@ -119,7 +117,6 @@
 }
 .menu-lateral-btnGeral,
 .menu-lateral-btnDashboard,
-.menu-lateral-btnSolicitarExame,
 .menu-lateral-btnExame,
 .menu-lateral-btnDadosCadastrais{
 
@@ -134,7 +131,6 @@
 
 .menu-lateral-btnGeral:hover,
 .menu-lateral-btnDashboard:hover,
-.menu-lateral-btnSolicitarExame:hover,
 .menu-lateral-btnExame:hover,
 .menu-lateral-btnDadosCadastrais:hover{
     background-color: #48dbfb;
