@@ -1,0 +1,40 @@
+
+.container-solicitar-exame {
+  height: 100%;
+  display: flex;
+  padding: 0;
+  justify-content:center;
+  align-items:center;
+  
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url(../../../img/img_solicitacao-exame/solicitacao-exame.jpg) no-repeat;
+  background-size: cover;
+}
+
+
+.item-recomendacao > textarea {
+  height: 150px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-family: 'sans-serif';
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.item-submit input {
+  border: 0;
+  box-shadow: 0px -1px 20px 3px rgba(131, 149, 167, 0.5);
+  background-color: rgba(10, 189, 227, 0.5);
+  color: white;
+  font-weight: 800;
+}
+
+.item-submit input:hover{
+  background-color: rgba(10, 189, 227, 1.0);
+}

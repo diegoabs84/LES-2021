@@ -4,31 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../src/css/inicial_estilos/inicial_paciente.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/padrao-telas_inicial.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/paciente/inicial_paciente.css">
     <link rel="stylesheet" href="../../src/css/inicial_estilos/padrao-itens.css">
-    <link rel="stylesheet" href="../../src/css/inicial_estilos/solicitar_exame.css" >
     <link rel="stylesheet" href="../../src/css/inicial_estilos/dados_cadastrais.css">
+    <script src="../../src/js/tela-inicial-paciente/main.js" type="module" defer></script>
     
     <title>Home - Paciente</title>
 </head>
 <body>
     <!--menu lateral-->
-    <div class="container-tela-inicial-paciente">
+    <div class="container-tela-inicial">
 
         <div class="barra-lateral-esquerda">
 
             <div class="imagem-menu-lateral"></div>
 
-            <div class="nome-paciente">
+            <div class="nome-menu-lateral">
                 nome do paciente
             </div>
 
             <div class="item-menu-lateral">
-                <div class="menu-lateral-btnGeral" id="geral">geral</div>
-                    <div class="menu-lateral-btnDashboard" id="dashboard">dashboard</div>
-                        <div class="menu-lateral-btnSolicitarExame" id="solicitar-exame">solicitar exame</div>
-                    <div class="menu-lateral-btnExame" id="exame">exame</div>
-                <div class="menu-lateral-btnDadosCadastrais" id="dados-cadastrais"> dados cadastrais</div>
+                <div class="menu-lateral-btn" id="geral">geral</div>
+
+                <div class="menu-lateral-btn" id="dashboard">dashboard</div>
+
+                <div class="menu-lateral-btn" id="exame">exame</div>
+
+                <div class="menu-lateral-btn" id="dados-cadastrais"> dados cadastrais</div>
             </div>
 
         </div>
@@ -41,14 +44,14 @@
 
 
 
-<script src="../../src/js/tela-inicial-paciente/main.js" type="module"></script>
+
 </body>
 </html>
 
 
 
 <!--Aqui precisa ter todas as informacoes que precisam ser exibidas para o paciente
-     - solicitacao de exame
+     
      - alteracao de dados cadastrais
      - exibir exames 
      - menu lateral esquerdo

@@ -1,0 +1,253 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body{
+    overflow-x: hidden;
+}
+
+
+.container-tela-inicial {
+
+    position:relative;
+    width: 100vw;
+    background-color: #fafaff;
+  
+}
+
+
+.sidebar{
+    position:fixed;
+    width: 300px;
+    height: 100%;
+    background-color: #7380f3;
+    transition: all 0.7s;
+    overflow: hidden;
+}
+
+
+.sidebar ul{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+}
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sidebar ul li:nth-child(1){
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fafaff;
+}
+
+.sidebar ul li:hover
+{
+    background-color: #81b29a;
+    color: #264653;
+}
+
+.sidebar ul li:nth-child(1):hover{
+    background: transparent;
+    color: #fff;
+    cursor:default;
+}
+
+.sidebar ul li a{
+    display:flex;
+}
+
+.sidebar ul li a .icon{
+    position:relative;
+    display:block;
+    min-width: 60px;
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.sidebar ul li a .icon .fas{
+    color:#fafaff;
+    font-size: 24px;
+}
+
+.sidebar ul li a .title{
+    position:relative;
+    display: block;
+    padding: 0 10px;
+    height:60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    min-height:100vh;
+    left: 300px;
+    background-color: #fafaff;
+    transition: all 0.7s;
+}
+
+
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.toggle{
+    
+    background-color: #7380f3;
+    color: #fafaff;
+    cursor:pointer;
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    transition: all 0.5s;
+}
+
+.toggle i {
+    font-size: 25px;
+}
+
+/*Efeito da sidebar*/
+
+.sidebar.active{
+    width:60px;
+}
+
+.main.active{
+    width: calc(100% - 60px);
+    left:60px;
+}
+
+.toggle.active{
+    background-color: #fafaff;
+    color: #000;
+}
+
+/*----*/
+
+.search{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.search input{
+    width:100%;
+    height: 100%;
+    padding: 5px 20px;
+    padding-left: 35px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.search .fas {
+    position:absolute;
+    top: 15px;
+    left: 15px;
+}
+
+
+
+.conteudo-dinamico{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.5);
+    overflow-y:scroll;
+    padding: 20px;
+}
+
+/*Media Queries*/
+
+@media (max-width: 992px){
+
+    .sidebar{
+        left: -300px;
+    }
+    
+    .sidebar.active{
+        left:0;
+        width: 300px;
+    }
+    
+    .main{
+        width: 100%;
+        left:0;
+    }
+    
+    .main.active{
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+    
+    }
+    
+    @media (max-width: 768px){
+    
+        .details{
+            grid-template-columns: repeat(1,1fr);
+        }
+    
+        .pacientHeader h2{
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 480px){
+    
+        .cardBox{
+            grid-template-columns: repeat(1,1fr);
+        }
+    
+        .details .diagnosePacients table{
+            width: 600px;
+            overflow-x: auto;
+        }
+    
+        .sidebar{
+            width: 100%;
+            left: -100%;
+            z-index: 1;
+        }
+    
+        .sidebar.active{
+            width: 100%;
+            left: 0;
+        }
+    
+        .toggle{
+            border: none;
+        }
+    
+        .toggle.active{
+            z-index: 2;
+            background: transparent;
+            border-left: none;
+        }
+    
+        
+    }
+    
+    /*---*/

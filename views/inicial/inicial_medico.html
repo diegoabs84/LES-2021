@@ -1,13 +1,109 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inicial Medico</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/fontawesome.min.css" >
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/regular.min.css">
+
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/dados_cadastrais.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/medico/solicitar_exame.css" >
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/medico/dashboard.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/padrao-itens.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/padrao-telas_inicial.css">
+    <script src="../../src/js/tela-inicial-medico/main.js" type="module" defer></script>
+    
+    <title>Medico</title>
 </head>
 <body>
+    <!--menu lateral-->
+    <div class="container-tela-inicial">
 
-<h1>PAG INICIAL MEDICO</h1>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a>
+                        <span class="icon">
+                            <i class="fas fa-user-md"></i>
+                        </span>
+                        <span class="title"><h2>Nome do medico</h2></span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="dashboard">
+                        <span class="icon"><i class="fas fa-star-of-life"></i></span>
+                        <span class="title" >Dashboard</span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="solicitar-exame">
+                        <span class="icon"><i class="fas fa-notes-medical"></i></span>
+                        <span class="title" >Solicitar Exame</span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="dados-cadastrais">
+                        <span class="icon"><i class="fas fa-users-cog"></i></span>
+                        <span class="title" >Dados Cadastrais</span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="logout">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="title" >Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div><!--Fim do sidebar-->
+
+        </div>
+        <!--conteudo gerado via js-->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"><i class="fas fa-bars"></i></div>
+
+                <div class="search">
+                    <input type="text" placeholder="Search here...">
+                    <i class="fas fa-search"></i>
+                </div>
+
+                
+
+            </div>
+
+
+            <div class="conteudo-dinamico" id="conteudo-gerado">conteudo gerado automaticamente</div>
+
+            
+        </div>
+
+    </div> <!--fim container-->
+
+
+
+
 </body>
 </html>
+
+
+
+<!--Aqui precisa ter todas as informacoes que precisam ser exibidas para o medico
+     - Dashboard - deve exibir: exames nao diagnosticados, quantidade de pacientes, pacientes atendidos dia e por mes.
+     - Diagnostico
+     - solicitacao de exame
+     - alteracao de dados cadastrais 
+     - menu lateral esquerdo
+     - A direita as telas serao geradas dentro de uma div de forma automatica com js 
+    
+    -->
+    
