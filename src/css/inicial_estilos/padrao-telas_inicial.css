@@ -1,126 +1,180 @@
 *{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'sans-serif';
-    z-index: 0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-@media only screen and (max-width:1200px){
 
-    .imagem-menu-lateral {
-        display: none;
-    }
-
-    .nome-menu-lateral {
-        display:none;
-    }
-
-    .menu-lateral-btn{
-        font-size: 20px;
-        
-    }
-
-    
+body{
+    overflow-x: hidden;
 }
-
-@media only screen and (max-width: 720px){
-    .menu-lateral-btn{
-        font-size: 15px;
-        
-    }
-}
-
 
 
 .container-tela-inicial {
 
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 20% 1fr;
-    grid-template-areas: 'menu-lateral conteudo-direito';
-    height: 100vh;
+    position:relative;
     width: 100vw;
+    background-color: #fafaff;
   
 }
 
 
-.barra-lateral-esquerda {
-    grid-area: menu-lateral;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items:center;
-    background-color:rgba(29, 209, 161,0.7);
-    width: 100%;
+.sidebar{
+    position:fixed;
+    width: 300px;
     height: 100%;
-    box-shadow: 13px 0px 30px 14px rgba(0,0,0,0.75);
-    z-index: 1;
-    
+    background-color: #7380f3;
+    transition: all 0.7s;
+    overflow: hidden;
 }
 
-.imagem-menu-lateral{
-    background-color: black;
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    margin: 15px 10px;
-}
 
-.nome-menu-lateral{
-    
-    height: fit-content;
+.sidebar ul{
+    position:absolute;
+    top:0;
+    left:0;
     width: 100%;
-    padding: 10px;
-    text-align: center;
-    text-transform:capitalize;
-    margin-bottom: 15px;
-    font-size: 30px;
-    font-weight: 900;
-    background-color: rgba(16, 172, 132,1.0);
-    color: #fff;
-    
 }
-.conteudo-lateral-direito{
-    grid-area: conteudo-direito;
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sidebar ul li:nth-child(1){
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fafaff;
+}
+
+.sidebar ul li:hover
+{
+    background-color: #81b29a;
+    color: #264653;
+}
+
+.sidebar ul li:nth-child(1):hover{
+    background: transparent;
+    color: #fff;
+    cursor:default;
+}
+
+.sidebar ul li a{
+    display:flex;
+}
+
+.sidebar ul li a .icon{
+    position:relative;
+    display:block;
+    min-width: 60px;
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.sidebar ul li a .icon .fas{
+    color:#fafaff;
+    font-size: 24px;
+}
+
+.sidebar ul li a .title{
+    position:relative;
+    display: block;
+    padding: 0 10px;
+    height:60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    min-height:100vh;
+    left: 300px;
+    background-color: #fafaff;
+    transition: all 0.7s;
+}
+
+
+
+.topbar {
+    width: 100%;
+    height: 60px;
     display: flex;
-    justify-content:center;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.toggle{
+    
+    background-color: #7380f3;
+    color: #fafaff;
+    cursor:pointer;
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content: center;
     align-items:center;
+    transition: all 0.5s;
+}
+
+.toggle i {
+    font-size: 25px;
+}
+
+/*Efeito da sidebar*/
+
+.sidebar.active{
+    width:60px;
+}
+
+.main.active{
+    width: calc(100% - 60px);
+    left:60px;
+}
+
+.toggle.active{
+    background-color: #fafaff;
+    color: #000;
+}
+
+/*----*/
+
+.search{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.search input{
     width:100%;
     height: 100%;
-    background-image: url('../../img/img_inicial_paciente/green_field_menu.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    
-    
-    
+    padding: 5px 20px;
+    padding-left: 35px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.2);
 }
 
-.conteudo-dinamico-lateral-direito{
-    height: 95%;
-    width: 75vw;
+.search .fas {
+    position:absolute;
+    top: 15px;
+    left: 15px;
+}
+
+
+
+.conteudo-dinamico{
+    height: 100%;
+    width: 100%;
     background-color: rgba(255,255,255,0.5);
     overflow-y:scroll;
-    border-radius: 10px;
-}
-
-.item-menu-lateral{
-    text-align:center;
-    text-transform:uppercase;
-    font-size: 25px;
-    margin-top: 30px;
-    width: 100%;
-}
-.menu-lateral-btn{
-
-    margin: 18px 0px;
     padding: 20px;
-    color: #fff;
-    border-bottom: 1px solid #fff;
-    cursor: pointer;
-    transition: all 0.6s;
-    
 }
 
-.menu-lateral-btn:hover{
-    background-color: #48dbfb;
-}
