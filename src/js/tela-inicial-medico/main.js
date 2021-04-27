@@ -6,13 +6,13 @@ import createDadosCadastrais from './modulos/dadosCadastrais.js';
 window.addEventListener('load', () => {
 
 //Pegando os elementos
-let logout = document.getElementById('logout');
 let dashboard = document.getElementById('dashboard');
 let solicitarExame = document.getElementById('solicitar-exame');
 let dadosCadastrais = document.getElementById('dados-cadastrais');
+let logout = document.getElementById('logout');
 
 //Monta a pagina geral assim que a pagina carrega
-
+createDashboard();
 
 //Eventos
 
@@ -22,7 +22,11 @@ solicitarExame.addEventListener('click', SolicitarExame);
 
 dadosCadastrais.addEventListener('click', createDadosCadastrais);
 
-logout.addEventListener('click', ()=>{});
+logout.addEventListener('click', ()=>{
+    let isSure = confirm("Realmente deseja sair?");
+    if(isSure) window.location.href= '../index.html';
+    
+});
 
 
 

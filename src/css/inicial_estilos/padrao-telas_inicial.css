@@ -178,3 +178,76 @@ body{
     padding: 20px;
 }
 
+/*Media Queries*/
+
+@media (max-width: 992px){
+
+    .sidebar{
+        left: -300px;
+    }
+    
+    .sidebar.active{
+        left:0;
+        width: 300px;
+    }
+    
+    .main{
+        width: 100%;
+        left:0;
+    }
+    
+    .main.active{
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+    
+    }
+    
+    @media (max-width: 768px){
+    
+        .details{
+            grid-template-columns: repeat(1,1fr);
+        }
+    
+        .pacientHeader h2{
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 480px){
+    
+        .cardBox{
+            grid-template-columns: repeat(1,1fr);
+        }
+    
+        .details .diagnosePacients table{
+            width: 600px;
+            overflow-x: auto;
+        }
+    
+        .sidebar{
+            width: 100%;
+            left: -100%;
+            z-index: 1;
+        }
+    
+        .sidebar.active{
+            width: 100%;
+            left: 0;
+        }
+    
+        .toggle{
+            border: none;
+        }
+    
+        .toggle.active{
+            z-index: 2;
+            background: transparent;
+            border-left: none;
+        }
+    
+        
+    }
+    
+    /*---*/
