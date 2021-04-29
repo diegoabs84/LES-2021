@@ -4,13 +4,14 @@ const createDashboard = () => {
 
     let conteudo = document.getElementById('conteudo-gerado');
     conteudo.innerHTML = "";
+    document.title = "Medico - Dashboard";
     let html = `
     
     <div class="cardBox">   <!--Cards de dados-->
 
                 <div class="card">
                     <div>
-                        <div class="numbers">1000</div>
+                        <div class="numbers">10</div>
                         <div class="cardName">Pacientes Atendidos <span style="color:#269d8f">Hoje</span></div>
                     </div>
                     <div class="iconBox">
@@ -20,7 +21,7 @@ const createDashboard = () => {
 
                 <div class="card">
                     <div>
-                        <div class="numbers">500</div>
+                        <div class="numbers">50</div>
                         <div class="cardName">Pacientes em espera</div>
                     </div>
                     <div class="iconBox">
@@ -30,7 +31,7 @@ const createDashboard = () => {
 
                 <div class="card">
                     <div>
-                        <div class="numbers">2200</div>
+                        <div class="numbers">220</div>
                         <div class="cardName">Total de Atendimentos</div>
                     </div>
                     <div class="iconBox">
@@ -41,8 +42,8 @@ const createDashboard = () => {
             </div> 
 
             <div class="details"> <!--Detalhes dos pacientes-->
-                <div class="diagnosePacients">
-                    <div class="pacientHeader">
+                <div class="infoTable">
+                    <div class="infoTableHeader">
                         <h2>Diagnosticar Pacientes</h2>
                         <a href="#" class="btnViewAll">Ver Todos</a>
                     </div>
@@ -86,12 +87,12 @@ const createDashboard = () => {
 
                 </div>
 
-                <div class="recentPacients">
+                <div class="recentsViewer">
                     <div class="pacientHeader">
                         <h2>Pacientes Diagnosticados Recentemente</h2>
                     </div>
 
-                    <div class="recentPacientsData">
+                    <div class="recentsViewerData">
                         <div class="data" id="1">
                             <span>Jose</span>
                             <span>Silva</span>

@@ -4,6 +4,8 @@ const createDadosCadastrais = () => {
     let input,label,select,option ='';
     let data = new Date();
 
+    document.title = "Medico - Cadastro";
+
     //limpa o conteudo na div
     let conteudo = document.getElementById('conteudo-gerado');
     conteudo.innerHTML = '';
