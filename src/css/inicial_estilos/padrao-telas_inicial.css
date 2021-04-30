@@ -95,6 +95,7 @@ body{
     width: calc(100% - 300px);
     min-height:100vh;
     left: 300px;
+    background: url(../../img/common/pattern.jpg) repeat;
     background-color: #fafaff;
     transition: all 0.7s;
 }
@@ -168,12 +169,162 @@ body{
     left: 15px;
 }
 
+/* Cards de gerenciamentp*/
+
+.cardBox{
+    position:relative;
+    width: 100%;
+    padding: 20px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:20px;
+}
+
+.cardBox .card{
+    position:relative;
+    background-color: #fff;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    cursor:default;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 5px 10px 10px 0px rgba(0,0,0,0.5);
+}
+
+.cardBox .card .numbers{
+    font-size: 2.0rem;
+    font-weight: 600;
+}
+
+.cardBox .card .cardName{
+    color: #264653;
+}
+
+.cardBox .card .iconBox i {
+    color:#81b29a;
+    font-size: 2.0rem;
+}
+
+/* Detalhamento de dados exibidos na tabela*/
+
+.details{
+    position:relative;
+    width:100%;
+    padding:20px;
+    padding-top:0;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap:20px;
+}
+
+.details .infoTable{
+    position:relative;
+    display: grid;
+    min-height: 530px;
+    background-color: #fff;
+    padding:20px;
+    overflow-y:auto;
+    
+}
+
+.details .infoTableHeader{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+}
+
+.infoTableHeader h2{
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.btnViewAll{
+    position:relative;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color:#81b29a;
+    color:#fafaff;
+    border-radius: 6px;
+}
+
+.details .infoTable table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top:10px;
+}
+
+.details .infoTable table thead td{
+    font-weight: 600;
+}
+
+.details .infoTable table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .infoTable table tbody tr:last-child{
+    border-bottom:none;
+}
+
+.details .infoTable table tbody tr:hover{
+    background-color: #7380f3;
+    color:#fafaff;
+}
+
+.details .infoTable table tr td{
+    padding: 10px 5px;
+}
+.details .infoTable table thead tr td {
+    text-align:left;
+}
+.details .infoTable table tbody tr td:last-child{
+    text-align:right;
+}
+
+.details .infoTable table thead tr td:last-child{
+    text-align:right;
+}
+
+
+.recentsViewer{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    min-height: 530px;
+    background-color: #f1f2f6;
+    padding:20px;
+}
+
+.recentsViewerData{
+    
+    margin-top:20px;
+    width:100%;
+    height:100%;
+}
+
+.recentsViewerData .data{
+    padding: 20px;
+    margin-bottom: 5px;
+    background-color:#fff;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.recentsViewerData .data:hover{
+    background-color: #81b29a;
+}
+
+.recentsViewerData .data span:nth-child(3){
+    display:block;
+}
+
+/*---*/
+
 
 
 .conteudo-dinamico{
     height: 100%;
     width: 100%;
-    background-color: rgba(255,255,255,0.5);
     overflow-y:scroll;
     padding: 20px;
 }
@@ -209,7 +360,7 @@ body{
             grid-template-columns: repeat(1,1fr);
         }
     
-        .pacientHeader h2{
+        .infoTableHeader h2{
             font-weight: 600;
             font-size: 1rem;
         }
@@ -221,7 +372,7 @@ body{
             grid-template-columns: repeat(1,1fr);
         }
     
-        .details .diagnosePacients table{
+        .details .infoTable table{
             width: 600px;
             overflow-x: auto;
         }
