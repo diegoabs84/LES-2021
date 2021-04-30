@@ -39,9 +39,17 @@ const SolicitarExame = () => {
     // Criar elementos e
     //adicionar elementos dentro do formulario
 
+    //div para juntar todos
+    let wrapper = document.createElement('div');
+    wrapper.className = "wrap";
+
+    //div para juntar os itens cpf, data e tipo de exame
+    let flex = document.createElement('div');
+    flex.className = "flex";
+
     //criando area de input cpf
     div = document.createElement('div');
-    div.className = 'item item-cpf';
+    div.className = 'item-cpf';
 
     label = document.createElement('label');
     label.textContent = textLabel.cpf;
@@ -55,12 +63,12 @@ const SolicitarExame = () => {
     input.setAttribute('maxlength','11');
     div.appendChild(input);
     
-    //adiciona child no form
-    form.appendChild(div);
+    //adiciona child no flex
+    flex.appendChild(div);
 
     //criando area de input data
     div = document.createElement('div');
-    div.className = 'item item-data';
+    div.className = 'item-data';
 
     label = document.createElement('label');
     label.textContent = textLabel.data;
@@ -74,7 +82,7 @@ const SolicitarExame = () => {
     input.setAttribute('min','1910-01-01');
     
     div.appendChild(input);
-    form.appendChild(div);
+    flex.appendChild(div);
     
     //criando area de tipo de exame
     select = document.createElement('select');
@@ -82,7 +90,7 @@ const SolicitarExame = () => {
     
 
     div = document.createElement('div');
-    div.className = 'item item-cadastro-tipo-exame';
+    div.className = 'item-cadastro-tipo-exame';
 
     label = document.createElement('label');
     label.textContent = textLabel.tipo;
@@ -115,15 +123,16 @@ const SolicitarExame = () => {
 
     div.appendChild(select);
     
-    //adiciona child no form
-    form.appendChild(div);
+    //adiciona child no wrapper
+    flex.appendChild(div);
+    wrapper.appendChild(flex);
 
 
     //area de recomendacoes
     let textarea = document.createElement('textarea');
 
     div = document.createElement('div');
-    div.className = 'item item-recomendacao';
+    div.className = 'item-recomendacao';
 
     label = document.createElement('label');
     label.textContent = textLabel.rec;
@@ -135,11 +144,11 @@ const SolicitarExame = () => {
     
     
     div.appendChild(textarea);
-    form.appendChild(div);
+    wrapper.appendChild(div);
 
     //botao de submit
     div = document.createElement('div');
-    div.className = 'item item-submit';
+    div.className = 'item-submit';
 
     input = document.createElement('input');
     input.setAttribute('type', 'submit');
@@ -148,8 +157,10 @@ const SolicitarExame = () => {
     input.setAttribute('name', 'solicitar');
 
     div.appendChild(input);
-    form.appendChild(div);
+    wrapper.appendChild(div);
 
+    //adicionar wrapper no form
+    form.appendChild(wrapper);
 
     //adiciona o formulario ja preenchido com elementos filhos
     container.appendChild(form);
