@@ -1,14 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "matheus";
-$password = "root";
-$dbname = "hospital";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+include_once('database.php');
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$database = new database;
+$conn = $database->connect();
 
 function retorna($cpf_paciente, $conn){
     $result_paciente = "SELECT * FROM Diagnosticos WHERE cpf_paciente = '$cpf_paciente' LIMIT 1";
@@ -17,26 +12,37 @@ function retorna($cpf_paciente, $conn){
         $row_paciente = mysqli_fetch_assoc($resultado_paciente);
         $valores['cpf_paciente'] = $row_paciente['cpf_paciente'];
         $valores['crm_responsavel'] = $row_paciente['crm_responsavel'];
-        $valores['data_exame'] = $row_paciente['data_exame'];
         $valores['diagnostico'] = $row_paciente['diagnostico'];
         $valores['exame'] = $row_paciente['exame'];
     }else{
-        $valores['data_exame'] = 'Data não encontrada';
+        $valores['crm_responsavel'] = NULL;
+        $valores['diagnostico'] = 'Não Existe Diagnostico Cadastrado';
+        $valores['exame'] = NULL;
     }
     return json_encode($valores);
 }
 
-function inserirLaudo(){
+if(isset($_GET['cpf_paciente'])){
+    echo retorna($_GET['cpf_paciente'], $conn);
+}
 
-    $cpf = $row_paciente['cpf_paciente'];
+if(isset($_POST['cpf_paciente'])){
+
+    $cpf = $_POST['cpf_paciente'];
     $laudo = $_POST['laudo'];
-    $crm_residente = $_POST['crm_residente'];
+    $crm_residente = $_COOKIE['crm'];
 
-    $sqlLaudo = "INSERT INTO Laudos (cpf_paciente, laudo, crm_residente) VALUES ('$cpf', '$laudo', '$crm_residente')";
-	$cadastroLaudo = $conn->query($sqlLaudo);
+    $exame = $_POST['exame'];
 
-    if($cadastroLaudo){
-        echo "Cadastro de laudo realizado com sucesso!";
+    if($exame != NULL){
+        $sqlLaudo = "INSERT INTO Laudos (cpf_paciente, laudo, crm_residente) VALUES ('$cpf', '$laudo', '$crm_residente')";
+        $cadastroLaudo = $conn->query($sqlLaudo);
+
+        if($cadastroLaudo){
+            echo "Cadastro de laudo realizado com sucesso!";
+        }
+    }else{
+        echo "Tentativa de Cadastro Invalida! Verifique a Existência de um Diagnostico.";
     }
 
 }

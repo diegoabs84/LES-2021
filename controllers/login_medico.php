@@ -1,20 +1,13 @@
 <?php
 
-$servername = "localhost";
-$username = "matheus";
-$password = "root";
-$dbname = "hospital";
+include_once('database.php');
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$database = new database;
+$conn = $database->connect();
 
 $crm = $_POST['crm'];
 $entrar = $_POST['entrar'];
 $senha = md5($_POST['senha']);
-#$medico = $_POST['medico'];
 
 if (isset($entrar)) {
 	$query = "SELECT * FROM Medicos WHERE crm ='$crm' AND senha = '$senha'";
@@ -30,7 +23,6 @@ if (isset($entrar)) {
 		}else if ($rowMedico['tipo_medico'] == 'residente'){
 			setcookie("crm",$crm);
 			header("Location:../views/dashboard/dashboard_residente.html");
-			#header("Location:index_medico.php"); #enquanto a tela de residende não for feita
 		}else if ($rowMedico['tipo_medico'] == 'professor'){
 			setcookie("crm",$crm);
 			header("Location:../views/dashboard/dashboard_professor.html");
