@@ -1,14 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "matheus";
-$password = "root";
-$dbname = "hospital";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+include_once('database.php');
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$database = new database;
+$conn = $database->connect();
 
 function retorna($cpf_paciente, $conn){
     $result_paciente = "SELECT * FROM Diagnosticos WHERE cpf_paciente = '$cpf_paciente' LIMIT 1";
