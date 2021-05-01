@@ -1,15 +1,9 @@
 <?php
 
-$servername = "localhost";
-$username = "matheus";
-$password = "root";
-$dbname = "hospital";
+include_once('database.php');
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$database = new database;
+$conn = $database->connect();
 
 $nome = $_POST['nome'];
 $senha = MD5($_POST['senha']);
