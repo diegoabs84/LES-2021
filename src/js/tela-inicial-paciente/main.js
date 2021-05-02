@@ -1,29 +1,51 @@
 
 import createDashboard from './modulos/dashboard.js';
-import createGeral from './modulos/geral.js';
-import createVerExame from './modulos/ver-exame.js';
 import createDadosCadastrais from './modulos/dadosCadastrais.js';
 
 
 window.addEventListener('load', () => {
 
 //Pegando os elementos
-let geral = document.getElementById('geral');
+
 let dashboard = document.getElementById('dashboard');
-let verExame = document.getElementById('exame');
 let dadosCadastrais = document.getElementById('dados-cadastrais');
+let logout = document.getElementById('logout');
 
 //Monta a pagina geral assim que a pagina carrega
-createGeral();
+createDashboard();
 
 //Eventos
-geral.addEventListener('click', createGeral);
+
 
 dashboard.addEventListener('click', createDashboard);
 
-verExame.addEventListener('click', createVerExame);
-
 dadosCadastrais.addEventListener('click', createDadosCadastrais);
+
+logout.addEventListener('click', ()=>{
+    let isSure = confirm("Realmente deseja sair?");
+    if(isSure) window.location.href= '../index.html';
+    
+});
+
+
+
+// sidebar 
+let isToggled = document.querySelector('.toggle');
+let sidebar = document.querySelector('.sidebar');
+let main = document.querySelector('.main');
+
+isToggled.addEventListener('click', toggleMenu);
+
+
+function toggleMenu(){
+    isToggled.classList.toggle('active');
+    sidebar.classList.toggle('active');
+    main.classList.toggle('active');
+}
+
+
+
+
 
 });
 
