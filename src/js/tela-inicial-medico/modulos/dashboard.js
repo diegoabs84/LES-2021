@@ -55,7 +55,9 @@ const createDashboard = () => {
                                 <td>Sobrenome</td>
                                 <td>CPF</td>
                                 <td>Status</td>
-                                <td>Diagnostico</td>
+                                <td>Prontuario</td>
+                                <td>Laudo</td>
+                                <td>Diagnosticar</td>
                             </tr>
                         </thead>
 
@@ -65,7 +67,9 @@ const createDashboard = () => {
                                 <td>Silva</td>
                                 <td>000.000.000-00</td>
                                 <td><span class="status">Em Espera</span></td>
-                                <td><a href='#'>Visualizar</a></td>
+                                <td><a id="prontuario" href='#'>Abrir</a></td>
+                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="diagnostico" href='#'>Realizar</a></td>
                             </tr>
 
                             <tr>
@@ -73,14 +77,18 @@ const createDashboard = () => {
                                 <td>Trompete</td>
                                 <td>000.000.000-00</td>
                                 <td><span class="status">Em Espera</span></td>
-                                <td><a href='#'>Visualizar</a></td>
+                                <td><a id="prontuario" href='#'>Abrir</a></td>
+                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="diagnostico" href='#'>Realizar</a></td>
                             </tr>
                             <tr>
                                 <td>Genivaldo</td>
                                 <td>Ojuara</td>
                                 <td>000.000.000-00</td>
                                 <td><span class="status">Em Espera</span></td>
-                                <td><a href='#'>Visualizar</a></td>
+                                <td><a id="prontuario" href='#'>Abrir</a></td>
+                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="diagnostico" href='#'>Realizar</a></td>
                             </tr>
                         </tbody>
                     </table>

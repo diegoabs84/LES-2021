@@ -95,7 +95,8 @@ body{
     width: calc(100% - 300px);
     min-height:100vh;
     left: 300px;
-    background: url(../../img/common/pattern.jpg) repeat;
+    background: url(../../img/common/pattern1.jpg) repeat;
+    background-size: cover;
     background-color: #fafaff;
     transition: all 0.7s;
 }
