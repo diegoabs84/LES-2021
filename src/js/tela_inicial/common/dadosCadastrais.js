@@ -1,7 +1,8 @@
 
 const createDadosCadastrais = () => {
 
-    
+    //falta puxar os dados de cidade e completar os campos pelo cep via API
+
     let data = new Date();
     let html ='';
     document.title = "Paciente - Atualizar Cadastro";

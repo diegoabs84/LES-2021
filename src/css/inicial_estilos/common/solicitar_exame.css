@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.container-solicitar-exame,
+.container-solicitar-exame form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background: rgba(115,128,243,0.2);
+  border-radius: 50px;
+  
+}
+
+.wrap {
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.wrap label{
+  display:block;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.wrap .item-submit{
+  margin: 30px;
+}
+.wrap .item-submit input {
+  padding: 7px 80px;
+  cursor: pointer;
+  border: none;
+  border-radius:7px;
+  transition: all 0.5s;
+  
+}
+.wrap .item-submit input:hover{
+  background-color: #7380f3;
+  color:#fafaff;
+}
+
+.flex{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.item-cpf, .item-data, .item-cadastro-tipo-exame {
+  margin: 10px 10px;
+}
+
+.item-data input,
+.item-cpf input,
+.item-cadastro-tipo-exame select {
+  padding: 10px;
+  width: 250px;
+  font-size: 1.2rem;
+}
+
+.item-data input{
+  cursor:pointer;
+}
+.item-cadastro-tipo-exame select{
+  padding: 5px;
+  cursor:pointer;
+}
+
+.item-recomendacao{
+  width: 100%;
+  
+}
+.item-recomendacao textarea {
+  height: 250px;
+  width: 80%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Media Queries*/
+
+@media (max-width: 810px){
+
+  .item-cpf, .item-data, .item-cadastro-tipo-exame {
+    margin: 10px 0px;
+  }
+
+
+}
+
+@media (max-width: 700px){
+
+  .flex{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+    flex-direction: column;
+  }
+
+
+
+}

@@ -1,0 +1,63 @@
+
+
+.sidebar{
+    background-color: #264653;
+}
+
+.sidebar ul li:hover
+{
+    background-color: #17b980;
+    color: #eef2ff;
+}
+
+
+
+
+.main{
+    background-color: #eef2ff;
+    /*
+    background: url('../../../img/common/pattern2.jpg') repeat;
+    background-size: 500px;
+    filter:hue-rotate(180deg);
+    */
+}
+
+
+.toggle{
+    background-color:#264653;
+}
+
+
+
+.details .infoTable{
+    width: 100%;
+    
+}
+
+.cardBox{
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+.details .infoTable table tbody tr:hover{
+    background-color: #264653;
+    color: #eef2ff;
+}
+
+.details .infoTable table tbody tr:hover a{
+    color: #eef2ff;
+}
+
+.recentsViewerData .data span:nth-child(2){
+    display:block;
+}
+
+
+
+@media (max-width: 480px){
+    
+    .cardBox{
+        grid-template-columns: 1fr;
+    }
+}
