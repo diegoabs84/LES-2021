@@ -1,6 +1,6 @@
 
 import createDashboard from './modulos/dashboard.js';
-import createDadosCadastrais from './modulos/dadosCadastrais.js';
+import createDadosCadastrais from '../common/dadosCadastrais.js';
 
 
 window.addEventListener('load', () => {

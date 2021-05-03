@@ -1,6 +1,6 @@
-import SolicitarExame from './modulos/solicitar_exame.js';
+import SolicitarExame from '../common/solicitar_exame.js';
 import createDashboard from './modulos/dashboard.js';
-import createDadosCadastrais from './modulos/dadosCadastrais.js';
+import createDadosCadastrais from '../common/dadosCadastrais.js';
 
 
 window.addEventListener('load', () => {
