@@ -2,9 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inicial Professor</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/fontawesome.min.css" >
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/regular.min.css">
+
+    
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/common/solicitar_exame.css" >
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/common/padrao-telas_inicial.css">
+    
+    <script src="../../src/js/tela_inicial/medico/main.js" type="module" defer></script>
+    
+    <title>Professor</title>
 </head>
 <body>
-<h1>PAG INICIAL PROFESSOR</h1>
+    <!--menu lateral-->
+    <div class="container-tela-inicial">
+
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a>
+                        <span class="icon">
+                            <i class="fas fa-user-md"></i>
+                        </span>
+                        <span class="title"><h2>Nome do Professor</h2></span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="dashboard">
+                        <span class="icon"><i class="fas fa-star-of-life"></i></span>
+                        <span class="title" >Dashboard</span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="solicitar-exame">
+                        <span class="icon"><i class="fas fa-notes-medical"></i></span>
+                        <span class="title" >Solicitar Exame</span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="prontuario">
+                        <span class="icon"><i class="fas fa-stethoscope"></i></span>
+                        <span class="title" >Prontuarios</span>
+                    </a>
+                </li>
+                <!---->
+                <!--RIP dados cadastrais pro medico-->
+                <!--F-->
+                <li>
+                    <a id="logout">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="title" >Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div><!--Fim do sidebar-->
+
+        </div>
+        <!--conteudo gerado via js-->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"><i class="fas fa-bars"></i></div>
+
+                <div class="search">
+                    <input type="text" placeholder="Search here...">
+                    <i class="fas fa-search"></i>
+                </div>
+
+                
+
+            </div>
+
+
+            <div class="conteudo-dinamico" id="conteudo-gerado">conteudo gerado automaticamente</div>
+
+            
+        </div>
+
+    </div> <!--fim container-->
+
+
+
+
 </body>
 </html>
