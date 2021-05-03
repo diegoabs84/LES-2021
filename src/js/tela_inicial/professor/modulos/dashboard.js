@@ -2,37 +2,32 @@
 
 const createDashboard = () => {
 
+    let data = new Date();
+    let dataEditada = `${data.getDate()} / ${data.getMonth()+1} / ${data.getFullYear()}`;
+
     let conteudo = document.getElementById('conteudo-gerado');
     conteudo.innerHTML = "";
-    document.title = "Medico - Dashboard";
+    document.title = "Professor - Dashboard";
     let html = `
     
-    <div class="cardBox">   <!--Cards de dados-->
+            <div class="cardBox">   <!--Cards de dados-->
 
                 <div class="card">
                     <div>
-                        <div class="numbers">10</div>
-                        <div class="cardName">Pacientes Atendidos <span style="color:#269d8f">Hoje</span></div>
+                        <div class="numbers">000.000</div>
+                        <div class="cardName"><span style="color:#17b980">CRM</span></div>
                     </div>
                     <div class="iconBox">
-                        <i class="far fa-smile"></i>
+                        
                     </div>
                 </div>
 
-                <div class="card">
-                    <div>
-                        <div class="numbers">50</div>
-                        <div class="cardName">Pacientes em espera</div>
-                    </div>
-                    <div class="iconBox">
-                        <i class="fas fa-user-injured"></i>
-                    </div>
-                </div>
+            
 
                 <div class="card">
                     <div>
-                        <div class="numbers">220</div>
-                        <div class="cardName">Total de Atendimentos</div>
+                        <div class="numbers">${dataEditada}</div>
+                        <div class="cardName">Data de Hoje</div>
                     </div>
                     <div class="iconBox">
                         <i class="far fa-calendar-alt"></i>
@@ -41,54 +36,50 @@ const createDashboard = () => {
 
             </div> 
 
-            <div class="details"> <!--Detalhes dos pacientes-->
+            <div class="details"> <!--Detalhes dos laudos dos residentes-->
                 <div class="infoTable">
                     <div class="infoTableHeader">
-                        <h2>Diagnosticar Pacientes</h2>
+                        <h2>Laudos de Residentes</h2>
                         <a href="#" class="btnViewAll">Ver Todos</a>
                     </div>
 
                     <table>
                         <thead>
                             <tr>
-                                <td>Nome</td>
-                                <td>Sobrenome</td>
+                                <td>Residente</td>
+                                <td>Paciente</td>
                                 <td>CPF</td>
-                                <td>Status</td>
                                 <td>Prontuario</td>
                                 <td>Laudo</td>
-                                <td>Diagnosticar</td>
+                                
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td>Jose</td>
-                                <td>Silva</td>
+                                <td>Dr. Jose</td>
+                                <td>Mario</td>
                                 <td>000.000.000-00</td>
-                                <td><span class="status">Em Espera</span></td>
                                 <td><a id="prontuario" href='#'>Abrir</a></td>
                                 <td><a id="laudo" href='#'>Visualizar</a></td>
-                                <td><a id="diagnostico" href='#'>Realizar</a></td>
+                                
                             </tr>
 
                             <tr>
-                                <td>Maria</td>
+                                <td>Dr. Maria</td>
                                 <td>Trompete</td>
                                 <td>000.000.000-00</td>
-                                <td><span class="status">Em Espera</span></td>
                                 <td><a id="prontuario" href='#'>Abrir</a></td>
                                 <td><a id="laudo" href='#'>Visualizar</a></td>
-                                <td><a id="diagnostico" href='#'>Realizar</a></td>
+                                
                             </tr>
                             <tr>
-                                <td>Genivaldo</td>
+                                <td>Dr. Genivaldo</td>
                                 <td>Ojuara</td>
                                 <td>000.000.000-00</td>
-                                <td><span class="status">Em Espera</span></td>
                                 <td><a id="prontuario" href='#'>Abrir</a></td>
                                 <td><a id="laudo" href='#'>Visualizar</a></td>
-                                <td><a id="diagnostico" href='#'>Realizar</a></td>
+                                
                             </tr>
                         </tbody>
                     </table>
@@ -97,23 +88,20 @@ const createDashboard = () => {
 
                 <div class="recentsViewer">
                     <div class="pacientHeader">
-                        <h2>Pacientes Diagnosticados Recentemente</h2>
+                        <h2>Laudos Abertos Recentemente</h2>
                     </div>
 
                     <div class="recentsViewerData">
                         <div class="data" id="1">
-                            <span>Jose</span>
-                            <span>Silva</span>
+                            <span>Joseph</span>
                             <span>000.000.000-00</span>
                         </div>
                         <div class="data" id="2">
-                            <span>Jose</span>
-                            <span>Silva</span>
+                            <span>Luigi</span>
                             <span>000.000.000-00</span>
                         </div>
                         <div class="data" id="3">
-                            <span>Jose</span>
-                            <span>Silva</span>
+                            <span>Mario</span>
                             <span>000.000.000-00</span>
                         </div>
                     </div>

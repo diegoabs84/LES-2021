@@ -15,7 +15,7 @@ const SolicitarExame = () => {
 
     const date = new Date();
     
-    document.title = "Medico - Solicitar Exame";
+    document.title = "Solicitar Exame";
 
     //pega o elemento no html e limpa 
     let conteudoGerado = document.getElementById('conteudo-gerado');
