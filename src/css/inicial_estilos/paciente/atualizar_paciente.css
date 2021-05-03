@@ -1,0 +1,102 @@
+
+.conteudo-dinamico form{
+    display: grid;
+    grid-template-rows: repeat(10,auto);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color:rgba(115,128,243,0.2);
+    border-radius: 50px;
+}
+
+.conteudo-dinamico form  .basicInfo input,
+.conteudo-dinamico form .adressInfo input,
+.conteudo-dinamico form .contactInfo input,
+.conteudo-dinamico form .loginInfo input
+{
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
+
+.conteudo-dinamico form h2 {
+    text-align: left;
+    border-bottom: 1px dotted black;
+    margin-bottom: 20px;
+}
+
+.basicInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basicInfo select{
+    width: 100%;
+}
+
+.basicInfo label,
+.contactInfo div label{
+    display:block;
+}
+
+
+
+.adressInfo{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,100px);
+    text-align: center;
+    grid-column-gap: 20px;
+}
+
+.adressInfo div input
+{
+    width: 100%;
+    padding: 15px 0;
+}
+
+.loginInfo div{
+    margin-bottom: 10px;
+}
+
+.loginInfo div input{
+    width: 30%;
+    padding: 15px 0;
+}
+
+.adressInfo .cidadeData select{
+    padding: 10px 0;
+    margin-left: 25px;
+}
+
+
+.contactInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.btnAccept input{
+    width: 30%;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: none;
+    text-transform:uppercase;
+    font-weight:700;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.btnAccept input:hover{
+    background-color: #7380f3;
+    color:#fafaff;
+}

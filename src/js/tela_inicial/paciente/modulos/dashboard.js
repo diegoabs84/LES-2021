@@ -20,7 +20,7 @@ const createDashboard = () => {
                 <div class="card">
                     <div>
                         <div class="numbers">000.000.000-00</div>
-                        <div class="cardName"><span style="color:#269d8f">CPF</span></div>
+                        <div class="cardName"><span style="color:#17b980">CPF</span></div>
                     </div>
                     <div class="iconBox">
                         

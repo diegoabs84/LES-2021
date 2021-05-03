@@ -1,13 +1,13 @@
-import SolicitarExame from './modulos/solicitar_exame.js';
+
 import createDashboard from './modulos/dashboard.js';
-import createDadosCadastrais from './modulos/dadosCadastrais.js';
+import createDadosCadastrais from '../common/dadosCadastrais.js';
 
 
 window.addEventListener('load', () => {
 
 //Pegando os elementos
+
 let dashboard = document.getElementById('dashboard');
-let solicitarExame = document.getElementById('solicitar-exame');
 let dadosCadastrais = document.getElementById('dados-cadastrais');
 let logout = document.getElementById('logout');
 
@@ -16,9 +16,8 @@ createDashboard();
 
 //Eventos
 
-dashboard.addEventListener('click', createDashboard);
 
-solicitarExame.addEventListener('click', SolicitarExame);
+dashboard.addEventListener('click', createDashboard);
 
 dadosCadastrais.addEventListener('click', createDadosCadastrais);
 
@@ -43,6 +42,9 @@ function toggleMenu(){
     sidebar.classList.toggle('active');
     main.classList.toggle('active');
 }
+
+
+
 
 
 });

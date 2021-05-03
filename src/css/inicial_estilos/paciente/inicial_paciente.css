@@ -1,3 +1,23 @@
+
+.sidebar{
+    background-color: #6270dd;
+}
+
+.sidebar ul li:hover
+{
+    background-color: #17b980;
+    color: #264653;
+}
+
+.main{
+    background-color: #eef2ff;
+}
+
+.toggle{
+    background-color:#6270dd;
+}
+
+
 .details {
     grid-template-columns: 1fr;
 }
@@ -8,4 +28,10 @@
 
 .cardBox{
     grid-template-columns: 1fr 1fr;
+}
+
+
+.details .infoTable table tbody tr:hover{
+    background-color: #6270dd;
+    color: #eef2ff;
 }
