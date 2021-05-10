@@ -2,9 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inicial Residente</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/fontawesome.min.css" >
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="../../src/css/assets/fontawesome/css/regular.min.css">
+
+   
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/common/padrao-telas_inicial.css">
+    <link rel="stylesheet" href="../../src/css/inicial_estilos/residente/inicial_residente.css">
+    
+    <script src="../../src/js/tela_inicial/residente/main.js" type="module" defer></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" defer></script>
+    
+    <title>Residente</title>
 </head>
 <body>
-<h1>PAG INICIAL RESIDENTE</h1>
+    <!--menu lateral-->
+    <div class="container-tela-inicial">
+
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a>
+                        <span class="icon">
+                            <i class="fas fa-user-md"></i>
+                        </span>
+                        <span class="title"><h2>Nome do Residente</h2></span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="dashboard">
+                        <span class="icon"><i class="fas fa-star-of-life"></i></span>
+                        <span class="title" >Dashboard</span>
+                    </a>
+                </li>
+                <!---->
+                <li>
+                    <a id="emitir-laudo">
+                        <span class="icon"><i class="fas fa-notes-medical"></i></span>
+                        <span class="title" >Emitir Laudo</span>
+                    </a>
+                </li>
+                <!---->
+               
+                <li>
+                    <a id="prontuario">
+                        <span class="icon"><i class="fas fa-stethoscope"></i></span>
+                        <span class="title" >Prontuarios</span>
+                    </a>
+                </li>
+
+                <!---->
+                <li>
+                    <a id="logout">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="title" >Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div><!--Fim do sidebar-->
+
+        </div>
+        <!--conteudo gerado via js-->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"><i class="fas fa-bars"></i></div>
+
+                <div class="search">
+                    <input type="text" placeholder="Search here...">
+                    <i class="fas fa-search"></i>
+                </div>
+
+                
+
+            </div>
+
+
+            <div class="conteudo-dinamico" id="conteudo-gerado">conteudo gerado automaticamente</div>
+
+            
+        </div>
+
+    </div> <!--fim container-->
+
+
+
+
 </body>
 </html>
+
+
