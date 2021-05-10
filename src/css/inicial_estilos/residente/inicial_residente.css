@@ -1,0 +1,30 @@
+.sidebar{
+    background-color: #7380f3;
+}
+
+.sidebar ul li:hover
+{
+    background-color: #81b29a;
+    color: #264653;
+}
+
+.main{
+    background-color: #eef2ff;
+}
+
+.toggle{
+    background-color:#6270dd;
+}
+
+
+.details .infoTable{
+    width: 100%;
+}
+
+
+
+
+.details .infoTable table tbody tr:hover{
+    background-color: #6270dd;
+    color: #eef2ff;
+}
