@@ -38,7 +38,7 @@ const createDashboard = () => {
                         <div class="cardName">Total de Laudos</div>
                     </div>
                     <div class="iconBox">
-                        <i class="far fa-calendar-alt"></i>
+                    <i class="fas fa-file-signature"></i>
                     </div>
                 </div>
 
