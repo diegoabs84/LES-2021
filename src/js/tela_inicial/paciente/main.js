@@ -23,7 +23,7 @@ dadosCadastrais.addEventListener('click', createDadosCadastrais);
 
 logout.addEventListener('click', ()=>{
     let isSure = confirm("Realmente deseja sair?");
-    if(isSure) window.location.href= '../index.html';
+    if(isSure) window.location.href= '/';
     
 });
 

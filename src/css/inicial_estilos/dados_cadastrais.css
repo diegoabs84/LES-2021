@@ -1,0 +1,31 @@
+.container-atualizar-cadastro{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    
+}
+
+/*
+.container-atualizar-cadastro form{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap: wrap;
+   
+}
+*/
+
+
+.btnSubmit-Atualizar input{
+    border: 0;
+    box-shadow: 0px -1px 20px 3px rgba(131, 149, 167, 0.5);
+    background-color: rgba(10, 189, 227, 0.5);
+    color: white;
+    font-weight: 800;
+}
+
+.btnSubmit-Atualizar input:hover{
+    background-color: rgba(10, 189, 227, 1.0);
+}

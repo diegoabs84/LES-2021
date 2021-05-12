@@ -7,6 +7,19 @@ const createDashboard = () => {
 
     let conteudo = document.getElementById('conteudo-gerado');
     conteudo.innerHTML = "";
+
+    //pegar dados do paciente
+    var xmlhttp = new XMLHttpRequest();
+    
+    xmlhttp.onload = function(){
+        var json = JSON.parse(this.responseText);
+        document.getElementById('nome_residente').innerHTML = json.nome_residente;
+    };
+
+    xmlhttp.open("GET", "/residente/dados", false);
+    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xmlhttp.send();
+
     document.title = "Residente - Dashboard";
     let html = `
     

@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="../../src/css/emitir_laudos.css" />
     <title>Emição de Laudo</title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" defer></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 </head>
 <body>
     <div class="container-emitir-laudo">
@@ -12,15 +12,16 @@
                 $(document).ready(function(){
                     $("input[name='cpf_paciente']").blur(function(){
                         var $crm_responsavel = $("input[name='crm_responsavel']");
+                        // var $data_exame = $("input[name='data_exame']");
                         var $diagnostico = $("textarea[name='diagnostico']");
-                        var $exame = $("input[name='exame']");
+                        // var $exame = $("input[name='exame']");
 
-                        $.getJSON('../../controllers/emitir_laudo.php',{
+                        $.getJSON('/source/App/retorna/retorna_diagnostico.php',{
                             cpf_paciente: $( this ).val()
                         },function( json ){
+                            // $cpf_paciente.val( json.cpf_paciente );
                             $crm_responsavel.val( json.crm_responsavel);
                             $diagnostico.val(json.diagnostico);
-                            $exame.val(json.exame);
 
                             console.log('--> json', json);
                         });
@@ -28,17 +29,13 @@
                 });
             </script>
             <div class="container-quadrado">
-                <form method="POST" action="../../controllers/emitir_laudo.php">
+                <form method="POST" action="/residente/emitir_laudo">
                     <div class="container">
                     <div class="label">
                     <h2 class="titulo">Emitir</h2>
 
                     <div class="item-cpf">
-                        <input type="text" class="form-control" name="cpf_paciente" placeholder="CPF do Paciente"></input>
-                    </div>
-
-                    <div class="item-exame">
-                        <input type="text" class="form-control" name="exame" placeholder="Exame"></input>
+                        <input type="text" class="form-control" name="cpf_paciente" placeholder="CPF do paciente"></input>
                     </div>
 
                     <div class="item-diagnostico">

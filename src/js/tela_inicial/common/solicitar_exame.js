@@ -34,7 +34,7 @@ const SolicitarExame = () => {
     //cria o formulario
     form = document.createElement('form');
     form.setAttribute('method', 'POST');
-    form.setAttribute('action', '../../controllers/solicitar_exame.php');
+    form.setAttribute('action', '/solicitar_exame');
 
     // Criar elementos e
     //adicionar elementos dentro do formulario

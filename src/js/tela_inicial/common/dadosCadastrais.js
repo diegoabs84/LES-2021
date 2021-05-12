@@ -13,7 +13,7 @@ const createDadosCadastrais = () => {
 
     html = `
     
-    <form method="POST" action="../../controllers/atualizar_paciente.php">
+    <form method="POST" action="/paciente/atualizar">
         
       
             <h2>Informacao Pessoal</h2>

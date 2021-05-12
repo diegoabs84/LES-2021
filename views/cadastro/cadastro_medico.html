@@ -3,17 +3,16 @@
   <head>
     <title>Tela de Cadastro de Médico</title>
     <link rel="stylesheet" href="../../src/css/cadastro_medico.css" />
-    <script src="../../src/js/cadastro/script-cadastro-medico.js" defer></script>
   </head>
   <body>
     <div class="container-cadastro">
 
 
-      <form method="POST" action="../../controllers/cadastro_medico.php">
+      <form method="POST" action="/funcionario/cadastro_medico">
         <div class="items-cadastro">
 
           <div class="link-home">
-            <a  href="../login/login_medico.html"> <img src="../../src/img/common/seta_voltar.png" alt="home link"/> </a>
+            <a  href="/funcionario/dashboard"> <img src="../../src/img/common/seta_voltar.png" alt="home link"/> </a>
           </div>
 
           <div class="item item-cadastro-login">
@@ -69,6 +68,6 @@
         </div>
       </form>
     </div>
-    
+    <script src="../../src/js/script-cadastro-medico.js"></script>
   </body>
 </html>

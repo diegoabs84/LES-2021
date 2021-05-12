@@ -7,6 +7,21 @@ const createDashboard = () => {
 
     let conteudo = document.getElementById('conteudo-gerado');
     conteudo.innerHTML = "";
+    let crm;
+
+    //pegar dados do paciente
+    var xmlhttp = new XMLHttpRequest();
+    
+    xmlhttp.onload = function(){
+        var json = JSON.parse(this.responseText);
+        crm = json.crm;
+        document.getElementById('nome_professor').innerHTML = json.nome;
+    };
+ 
+    xmlhttp.open("GET", "/professor/dados", false);
+    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xmlhttp.send(); 
+
     document.title = "Professor - Dashboard";
     let html = `
     
@@ -14,7 +29,7 @@ const createDashboard = () => {
 
                 <div class="card">
                     <div>
-                        <div class="numbers">000.000</div>
+                        <div class="numbers">${crm}</div>
                         <div class="cardName"><span style="color:#17b980">CRM</span></div>
                     </div>
                     <div class="iconBox">

@@ -29,7 +29,7 @@ const laudo = () => {
                 });
             </script>
             <div class="container-quadrado">
-                <form method="POST" action="../../controllers/emitir_laudo.php">
+                <form method="POST" action="/residente/emitir_laudo">
                     <div class="container">
                     <div class="label">
                     <h2 class="titulo">Emitir</h2>
