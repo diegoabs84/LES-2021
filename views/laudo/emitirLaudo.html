@@ -16,7 +16,7 @@
                         var $diagnostico = $("textarea[name='diagnostico']");
                         // var $exame = $("input[name='exame']");
 
-                        $.getJSON('/source/App/retorna/retorna_diagnostico.php',{
+                        $.getJSON('/controller/App/retorna/retorna_diagnostico.php',{
                             cpf_paciente: $( this ).val()
                         },function( json ){
                             // $cpf_paciente.val( json.cpf_paciente );
