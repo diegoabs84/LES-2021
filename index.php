@@ -1,11 +1,11 @@
 <?php
 
-include_once(__DIR__ . '/source/App/Web.php');
-include_once(__DIR__ . '/source/App/Paciente.php');
-include_once(__DIR__ . '/source/App/Medico.php');
-include_once(__DIR__ . '/source/App/Professor.php');
-include_once(__DIR__ . '/source/App/Residente.php');
-include_once(__DIR__ . '/source/App/Funcionario.php');
+include_once(__DIR__ . '/controller/App/Web.php');
+include_once(__DIR__ . '/controller/App/Paciente.php');
+include_once(__DIR__ . '/controller/App/Medico.php');
+include_once(__DIR__ . '/controller/App/Professor.php');
+include_once(__DIR__ . '/controller/App/Residente.php');
+include_once(__DIR__ . '/controller/App/Funcionario.php');
 
 $web = new Web;
 $paciente = new Paciente;
