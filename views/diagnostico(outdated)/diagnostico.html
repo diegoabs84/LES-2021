@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- <link rel="stylesheet" href="../../src/css/diagnostico.css" /> -->
+    <meta charset="utf-8">
+    <title>Diagnostico</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+</head>
+<body>
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <div class="label">
+            <h1>Diagnóstico</h1>
+            <div class="info-paciente">
+                <p id="nome_paciente">Nome</p>
+                <p id="cpf_paciente">CPF</p>
+                <p id="sexo_paciente">Sexo</p>
+                <!-- idade no formato X anos, X meses, X dias -->
+                <p id="idade_paciente">Idade</p> 
+            </div>
+            <div class="info-exame">
+                <p id="id_exame">ID Exame</p>
+                <p id="nome_exame">Nome Exame</p>
+            </div>
+            <div class="item-diagnostico">
+                <textarea type="text" class="form-control" name="diagnostico" placeholder="Diagnóstico"></textarea>
+            </div>
+            <div class="imagem-diagnostico">
+                <label>Imagem:</label>
+                <input type="file" name="arquivo"/>
+            </div>
+            <div class="botao-salvar">
+                <input type="submit" value="Salvar">
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    var xmlhttp = new XMLHttpRequest();
+
+    var url = window.location.href;
+    var inicio_palavra = url.indexOf("/diagnostico/") + 13;
+    var id_exame = url.substring(inicio_palavra, url.length);
+    var url_final = "/medico/dados_exame/" + id_exame;
+
+    xmlhttp.onload = function(){
+        var json = JSON.parse(this.responseText);
+
+        console.log(json);
+
+        document.getElementById("nome_paciente").innerHTML = "Nome: " + json.nome_paciente;
+        document.getElementById("cpf_paciente").innerHTML = "CPF: " + json.cpf_paciente;
+        document.getElementById("sexo_paciente").innerHTML = "Sexo: " + json.sexo_paciente;
+        // document.getElementById("idade_paciente").innerHTML = "" + json.;
+        document.getElementById("id_exame").innerHTML = "Exame (Codigo): " + json.id_exame;
+        document.getElementById("nome_exame").innerHTML = "Nome Exame: " + json.nome_exame;
+    };
+        
+    xmlhttp.open("POST", url_final, true);
+    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xmlhttp.send();
+
+</script>
+
+</body>
+</html>

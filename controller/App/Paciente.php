@@ -111,7 +111,7 @@ class Paciente{
         $cpf_paciente = $_COOKIE['cpf'];
 
         $result_paciente = "SELECT * FROM Pacientes WHERE cpf = '$cpf_paciente'";
-        $result_exame = "SELECT * FROM Exames WHERE cpf_paciente = '$cpf_paciente'";
+        $result_exame = "SELECT * FROM Exames WHERE cpf_exame = '$cpf_paciente'";
         $result_medico = "SELECT * FROM Medicos";
 
         $resultado_paciente = $db->query($result_paciente);
@@ -129,7 +129,7 @@ class Paciente{
             $valores = array("nome"=>$row_paciente['nome'], "cpf"=>$row_paciente['cpf']);
 
             while($row_exame = $resultado_exame->fetch_assoc()){
-                $valor = array("crm_solicitador"=>$row_exame['crm_solicitador'], "status"=>$row_exame['status']);
+                $valor = array("crm_exame"=>$row_exame['crm_exame'], "status"=>$row_exame['status']);
                 array_push($array_exames, $valor);
             }
 
@@ -137,13 +137,77 @@ class Paciente{
 
             while($row_medico = $resultado_medico->fetch_assoc()){
                 for($i = 0; $i < $elementCount; $i++){
-                    if($array_exames[$i]['crm_solicitador'] === $row_medico['crm']){
-                        $valoresAdicionais = array("nome"=>$row_medico['nome'], "crm"=>$array_exames[$i]['crm_solicitador'], "status"=>$array_exames[$i]['status']);
+                    if($array_exames[$i]['crm_exame'] === $row_medico['crm']){
+                        $valoresAdicionais = array("nome"=>$row_medico['nome'], "crm"=>$array_exames[$i]['crm_exame'], "status"=>$array_exames[$i]['status']);
                         array_push($valores, $valoresAdicionais);
                     }
                 }
             }
             return json_encode($valores);
         }
+    }
+
+    public function prontuario($cpf_paciente){
+        $database = new database;
+        $db = $database->connect();
+
+        $result_paciente = "SELECT * FROM Pacientes WHERE cpf = '$cpf_paciente'";
+        $result_exame = "SELECT * FROM Exames WHERE cpf_exame = '$cpf_paciente'";
+        $result_diagnostico = "SELECT * FROM Diagnosticos WHERE cpf_diagnostico = '$cpf_paciente'";
+        $result_laudo = "SELECT * FROM Laudos WHERE cpf_laudo = '$cpf_paciente'";
+        $result_medico = "SELECT * FROM Medicos";
+
+        $resultado_paciente = $db->query($result_paciente);
+        $resultado_exame = $db->query($result_exame);
+        $resultado_diagnostico = $db->query($result_diagnostico);
+        $resultado_laudo = $db->query($result_laudo);
+        $resultado_medico = $db->query($result_medico);
+
+        if ($resultado_paciente->num_rows <= 0){
+            echo"<script language='javascript' type='text/javascript'>alert('Não existe esse Paciente');</script>";
+            die();
+        }
+        else{
+            $valores = array();
+            $array_exames = array();
+            $array_diagnosticos = array();
+            $array_laudos = array();
+            $array_medicos = array();
+            
+            $row_paciente = $resultado_paciente->fetch_assoc();
+            $valores = array("nome"=>$row_paciente['nome'], "sobrenome"=>$row_paciente['sobrenome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
+            "cor"=>$row_paciente['cor'], "sexo"=>$row_paciente['sexo'], "cep"=>$row_paciente['cep'], "rua"=>$row_paciente['rua'], "bairro"=>$row_paciente['bairro'],
+            "numero"=>$row_paciente['numero'], "complemento"=>$row_paciente['complemento'], "cidade"=>$row_paciente['cidade'], "uf"=>$row_paciente['uf'],
+            "telefone"=>$row_paciente['telefone'], "email"=>$row_paciente['email']);
+
+            while($row_exame = $resultado_exame->fetch_assoc()){
+                $valor = array("id_exame"=>$row_exame['id_exame'], "data_exame"=>$row_exame['data_exame'], "nome_exame"=>$row_exame['nome_exame'], 
+                "crm_exame"=>$row_exame['crm_exame'], "status"=>$row_exame['status'], "recomendacao"=>$row_exame['recomendacao']);
+                array_push($array_exames, $valor);
+            }
+            array_push($valores, $array_exames);
+
+            while($row_diagnostico = $resultado_diagnostico->fetch_assoc()){
+                $valor = array("id_diagnostico"=>$row_diagnostico['id_diagnostico'], "crm_diagnostico"=>$row_diagnostico['crm_diagnostico'], 
+                "id_exame"=>$row_diagnostico['id_exame'], "diagnostico"=>$row_diagnostico['diagnostico'], "imagem"=>$row_diagnostico['imagem']);
+                array_push($array_diagnosticos, $valor);
+            }
+            array_push($valores, $array_diagnosticos);
+
+            while($row_laudo = $resultado_laudo->fetch_assoc()){
+                $valor = array("id_laudo"=>$row_laudo['id_laudo'], "laudo"=>$row_laudo['laudo'], "crm_laudo"=>$row_laudo['crm_laudo']);
+                array_push($array_laudos, $valor);
+            }
+            array_push($valores, $array_laudos);
+
+            while($row_medico = $resultado_medico->fetch_assoc()){
+                $valor = array("nome"=>$row_medico['nome'], "crm"=>$row_medico['crm'], "tipo_medico"=>$row_medico['tipo_medico'], "titulacao"=>$row_medico['titulacao'],
+                "ano_residencia"=>$row_medico['ano_residencia']);
+                array_push($array_medicos, $valor);
+            }
+            array_push($valores, $array_medicos);
+        }
+        
+        return json_encode($valores);
     }
 }

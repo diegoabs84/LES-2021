@@ -10,10 +10,32 @@ const createDashboard = () => {
 
     //pegar dados do paciente
     var xmlhttp = new XMLHttpRequest();
+
+    let nome1, sobrenome1, cpf1, id_exame1;
+    let nome2, sobrenome2, cpf2, id_exame2;
+    let nome3, sobrenome3, cpf3, id_exame3;
     
     xmlhttp.onload = function(){
         var json = JSON.parse(this.responseText);
+
+        console.log(json);
+
         document.getElementById('nome_residente').innerHTML = json.nome_residente;
+
+        nome1 = json[0].nome_paciente;
+        sobrenome1 = json[0].sobrenome_paciente;
+        cpf1 = json[0].cpf_paciente;
+        id_exame1 = json[0].id_exame;
+
+        nome2 = json[1].nome_paciente;
+        sobrenome2 = json[1].sobrenome_paciente;
+        cpf2 = json[1].cpf_paciente;
+        id_exame2 = json[1].id_exame;
+
+        nome3 = json[2].nome_paciente;
+        sobrenome3 = json[2].sobrenome_paciente;
+        cpf3 = json[2].cpf_paciente;
+        id_exame3 = json[2].id_exame;
     };
 
     xmlhttp.open("GET", "/residente/dados", false);
@@ -27,7 +49,7 @@ const createDashboard = () => {
 
                 <div class="card">
                     <div>
-                        <div class="numbers">10</div>
+                        <div class="numbers">??</div>
                         <div class="cardName">Laudos Emitidos <span style="color:#269d8f">Hoje</span></div>
                     </div>
                     <div class="iconBox">
@@ -47,7 +69,7 @@ const createDashboard = () => {
 
                 <div class="card">
                     <div>
-                        <div class="numbers">220</div>
+                        <div class="numbers">??</div>
                         <div class="cardName">Total de Laudos</div>
                     </div>
                     <div class="iconBox">
@@ -71,7 +93,7 @@ const createDashboard = () => {
                                 <td>Sobrenome</td>
                                 <td>CPF</td>
                                 
-                                <td>Prontuario</td>
+                                <td>Solicitação Exame</td>
                                 <td>Laudo</td>
                                 
                             </tr>
@@ -79,31 +101,31 @@ const createDashboard = () => {
 
                         <tbody>
                             <tr>
-                                <td>Jose</td>
-                                <td>Silva</td>
-                                <td>000.000.000-00</td>
+                                <td>${nome1}</td>
+                                <td>${sobrenome1}</td>
+                                <td>${cpf1}</td>
                                 
-                                <td><a id="prontuario" href='#'>Abrir</a></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="solicitacao_exame" href='#'>Abrir</a></td>
+                                <td><a id="laudo" href='/residente/emitir_laudo/${id_exame1}'>Emitir</a></td>
                                 
                             </tr>
 
                             <tr>
-                                <td>Maria</td>
-                                <td>Trompete</td>
-                                <td>000.000.000-00</td>
+                                <td>${nome2}</td>
+                                <td>${sobrenome2}</td>
+                                <td>${cpf2}</td>
                                 
-                                <td><a id="prontuario" href='#'>Abrir</a></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="solicitacao_exame" href='#'>Abrir</a></td>
+                                <td><a id="laudo" href='/residente/emitir_laudo/${id_exame2}'>Emitir</a></td>
                                 
                             </tr>
                             <tr>
-                                <td>Genivaldo</td>
-                                <td>Ojuara</td>
-                                <td>000.000.000-00</td>
+                                <td>${nome3}</td>
+                                <td>${sobrenome3}</td>
+                                <td>${cpf3}</td>
                                 
-                                <td><a id="prontuario" href='#'>Abrir</a></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="solicitacao_exame" href='#'>Abrir</a></td>
+                                <td><a id="laudo" href='/residente/emitir_laudo/${id_exame3}'>Emitir</a></td>
                                 
                             </tr>
                         </tbody>

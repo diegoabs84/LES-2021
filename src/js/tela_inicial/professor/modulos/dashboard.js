@@ -7,15 +7,53 @@ const createDashboard = () => {
 
     let conteudo = document.getElementById('conteudo-gerado');
     conteudo.innerHTML = "";
+
     let crm;
+    let residente1, paciente1, cpf1, id_laudo1;
+    let residente2, paciente2, cpf2, id_laudo2;
+    let residente3, paciente3, cpf3, id_laudo3;
 
     //pegar dados do paciente
     var xmlhttp = new XMLHttpRequest();
     
     xmlhttp.onload = function(){
         var json = JSON.parse(this.responseText);
-        crm = json.crm;
-        document.getElementById('nome_professor').innerHTML = json.nome;
+
+        console.log(json);
+
+        // json[0][x] - medicos
+        // json[1] - residente logado
+        // json[2][x] - pacientes
+        // json[3][x] - laudos
+
+        crm = json[1].crm;
+        document.getElementById('nome_professor').innerHTML = json[1].nome;
+        
+        id_laudo1 = json[3][0].id_laudo;
+        for(var i = 0; i < json[0].length; i++){
+            if(json[0][i].crm == json[3][0].crm_laudo){
+                residente1 = json[0][i].nome;
+                for(var j = 0; j < json[2].length; j++){
+                    if(json[2][j].cpf_paciente == json[3][0].cpf_laudo){
+                        paciente1 = json[2][j].nome_paciente;
+                        cpf1 = json[2][j].cpf_paciente;
+                    } 
+                }
+            }
+        }
+
+        id_laudo2 = json[3][1].id_laudo;
+        for(var i = 0; i < json[0].length; i++){
+            if(json[0][i].crm == json[3][1].crm_laudo){
+                residente2 = json[0][i].nome;
+                for(var j = 0; j < json[2].length; j++){
+                    if(json[2][j].cpf_paciente == json[3][1].cpf_laudo){
+                        paciente2 = json[2][j].nome_paciente;
+                        cpf2 = json[2][j].cpf_paciente;
+                    }
+                }
+            }
+        }
     };
  
     xmlhttp.open("GET", "/professor/dados", false);
@@ -72,28 +110,28 @@ const createDashboard = () => {
 
                         <tbody>
                             <tr>
-                                <td>Dr. Jose</td>
-                                <td>Mario</td>
-                                <td>000.000.000-00</td>
+                                <td>${residente1}</td>
+                                <td>${paciente1}</td>
+                                <td>${cpf1}</td>
                                 <td><a id="prontuario" href='#'>Abrir</a></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="laudo" href='/professor/validar_laudo/${id_laudo1}'>Validar</a></td>
                                 
                             </tr>
 
                             <tr>
-                                <td>Dr. Maria</td>
-                                <td>Trompete</td>
-                                <td>000.000.000-00</td>
+                                <td>${residente2}</td>
+                                <td>${paciente2}</td>
+                                <td>${cpf2}</td>
                                 <td><a id="prontuario" href='#'>Abrir</a></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="laudo" href='/professor/validar_laudo/${id_laudo2}'>Validar</a></td>
                                 
                             </tr>
                             <tr>
-                                <td>Dr. Genivaldo</td>
-                                <td>Ojuara</td>
-                                <td>000.000.000-00</td>
+                                <td>${residente3}</td>
+                                <td>${paciente3}</td>
+                                <td>${cpf3}</td>
                                 <td><a id="prontuario" href='#'>Abrir</a></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="laudo" href='/professor/validar_laudo/${id_laudo3}'>Validar</a></td>
                                 
                             </tr>
                         </tbody>
@@ -103,7 +141,7 @@ const createDashboard = () => {
 
                 <div class="recentsViewer">
                     <div class="pacientHeader">
-                        <h2>Laudos Abertos Recentemente</h2>
+                        <h2>Laudos Validados Recentemente</h2>
                     </div>
 
                     <div class="recentsViewerData">

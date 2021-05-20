@@ -10,23 +10,7 @@ const laudo = () => {
     <div class="container-emitir-laudo">
         <div class="content-box">
             <script type='text/javascript'>
-                $(document).ready(function(){
-                    $("input[name='cpf_paciente']").blur(function(){
-                        var $crm_responsavel = $("input[name='crm_responsavel']");
-                        var $diagnostico = $("textarea[name='diagnostico']");
-                        var $exame = $("input[name='exame']");
-
-                        $.getJSON('../../controllers/emitir_laudo.php',{
-                            cpf_paciente: $( this ).val()
-                        },function( json ){
-                            $crm_responsavel.val( json.crm_responsavel);
-                            $diagnostico.val(json.diagnostico);
-                            $exame.val(json.exame);
-
-                            console.log('--> json', json);
-                        });
-                    });
-                });
+                
             </script>
             <div class="container-quadrado">
                 <form method="POST" action="/residente/emitir_laudo">
