@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Prontuario</title>
+    </head>
+    <body>
+        <h1>Prontuario</h1>
+
+        <div class="personal-info">
+            <p id="nome_paciente">Nome</p>
+            <p id="cpf_paciente">CPF</p>
+            <p id="idade_paciente">Idade</p>
+            <p id="endereco_paciente">Endereço</p>
+            <p id="telefone_paciente">Telefone</p>
+            <p id="email_paciente">Email</p>
+            <p id="sexo_paciente">Sexo</p>
+            <p id="cor_paciente">Cor</p>
+        </div>
+
+        <div class="caso-info">
+            <h2 id="id_exame">ID Exame</h2>
+            <!-- Parte do exame -->
+            <h3>Dados:</h3>
+            <p id="nome_exame">Exame</p>
+            <p id="data_prevista">Data Exame</p>
+            <p id="recomendacao">Recomendação para o Exame</p>
+            <p id="status">Status Exame</p>
+            <p id="medico_solicitante">Medico Solicitante do Exame</p>
+            <!-- Parte diagnostico -->
+            <h3>Diagnostico:</h3>
+            <p id="diagnostico">Diagnostico</p>
+            <p id="medico_diagnostico">Medico Diagnostico</p>
+            <p>Imagem Diagnostico: </p>
+            <img id="img_diagnostico" src="" alt="Imagem Diagnostico">
+            <!-- Parte laudo -->
+            <h3>Laudo:</h3>
+            <p id="laudo">Laudo</p>
+            <p id="residente_laudo">Residente Laudo</p>
+        </div>
+
+        <!-- The End Folks kkk -->
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            
+            var url = window.location.href;
+            var inicio_palavra = url.indexOf("/prontuario");
+            var url_final = url.substring(inicio_palavra, url.length);
+    
+            xmlhttp.onload = function(){
+                var json = JSON.parse(this.responseText);
+
+                // json[0][x] - exames
+                // json[1][x] - diagnosticos
+                // json[2][x] - laudos
+                // json[3] - medicos
+
+                console.log(json);
+
+                //info pessoal
+                document.getElementById('nome_paciente').innerHTML = "Paciente: " + json.nome;
+                // document.getElementById('idade_paciente').innerHTML = json;
+                document.getElementById('endereco_paciente').innerHTML = "Endereço: Rua " + json.rua + ", " + json.bairro + ", " + json.numero + ", " + json.complemento;
+                document.getElementById('telefone_paciente').innerHTML = "Telefone: " + json.telefone;
+                document.getElementById('email_paciente').innerHTML = "Email: " + json.email;
+                document.getElementById('sexo_paciente').innerHTML = "Sexo: " + json.sexo;
+                document.getElementById('cpf_paciente').innerHTML = "CPF: " + json.cpf;
+                document.getElementById('cor_paciente').innerHTML = "Cor: " + json.cor;
+
+                //info exame
+                document.getElementById('id_exame').innerHTML = "Código do Exame: " + json[0][0].id_exame;
+                document.getElementById('nome_exame').innerHTML = "Tipo de Exame: " + json[0][0].nome_exame;
+                document.getElementById('data_prevista').innerHTML = "Data Realização: " + json[0][0].data_exame;
+                document.getElementById('recomendacao').innerHTML = "Recomendação: " + json[0][0].recomendacao;
+                document.getElementById('status').innerHTML = "Status: " + json[0][0].status;
+                for(var i = 0; i < json[3].length; i++){
+                    if(json[0][0].crm_exame == json[3][i].crm){
+                        document.getElementById('medico_solicitante').innerHTML = "Médico Solicitador: Dr. " + json[3][i].nome + ", CRM: " + json[3][i].crm;
+                    }
+                }
+
+                //info diagnostico do exame
+                if(json[1][0].id_exame == json[0][0].id_exame){
+                    document.getElementById('diagnostico').innerHTML = "Diagnostico: " + json[1][0].diagnostico;
+                    for(var i = 0; i < json[3].length; i++){
+                        if(json[1][0].crm_diagnostico == json[3][i].crm){
+                            document.getElementById('medico_diagnostico').innerHTML = "Médico Responsavel pelo Diagnostico: <br> Nome: Dr(a). " 
+                            + json[3][i].nome + ", CRM: " + json[3][i].crm;
+                        }   
+                    }
+                }
+                document.getElementById('img_diagnostico').src = "../src/uploads_diagnostico/" + json[1][0].imagem;
+
+                //info laudo do exame
+                document.getElementById('laudo').innerHTML = "Laudo: " + json[2][0].laudo
+                for(var i = 0; i < json[3].length; i++){
+                    if(json[2][0].crm_laudo == json[3][i].crm){
+                        document.getElementById('medico_diagnostico').innerHTML = "Médico Residente Responsável pelo Laudo: <br> Nome: Dr(a). " 
+                        + json[3][i].nome + ", CRM: " + json[3][i].crm;
+                    }   
+                }
+            };
+        
+            xmlhttp.open("POST", url_final, true);
+            xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            xmlhttp.send();
+        </script>
+    </body>
+</html>

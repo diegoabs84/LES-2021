@@ -20,11 +20,7 @@ $endpoint = explode('/', $request);
 
 switch($endpoint[1]){
 
-    case '':
-        $view = $web->home();
-        require_once __DIR__ . $view;
-        break;
-    
+    // PACIENTE    
     case 'paciente':
         switch($endpoint[2]){
 
@@ -65,25 +61,8 @@ switch($endpoint[1]){
 
         }
         break;
-
-    case 'solicitar_exame' :
-        if ($_SERVER['REQUEST_METHOD'] == "GET"){
-            require_once __DIR__ . '/views/solicitar_exame/solicitar_exame.html';
-        }else if ($_SERVER['REQUEST_METHOD'] == "POST"){
-            $view = $medico->solicitarExame();
-            require_once __DIR__ . $view;
-        }
-        break;
-
-    case 'login_medicos' :
-        if ($_SERVER['REQUEST_METHOD'] == "GET"){
-            require_once __DIR__ . '/views/login/login_medico.html';
-        }else if ($_SERVER['REQUEST_METHOD'] == "POST"){
-            $view = $medico->loginMedico();
-            require_once __DIR__ . $view;
-        }
-        break;
-
+    
+    // MEDICO
     case 'medico':
         switch($endpoint[2]){
 
@@ -93,15 +72,6 @@ switch($endpoint[1]){
 
             case 'dados':
                 echo $medico->retornaDados();
-                break;
-
-            case 'diagnostico' :
-                if ($_SERVER['REQUEST_METHOD'] == "GET"){
-                    require_once __DIR__ . '/views/diagnostico/diagnostico.html';
-                }else if ($_SERVER['REQUEST_METHOD'] == "POST"){
-                    $view = $medico->diagnostico();
-                    require_once __DIR__ . $view;
-                }
                 break;
         }
         break;
@@ -117,9 +87,24 @@ switch($endpoint[1]){
                 echo $professor->retornaDados();
                 break;
 
+            case 'dados_laudo':
+                $id_laudo = $endpoint[3];
+                echo $professor->retornaLaudo($id_laudo);
+                break;
+            
+            case 'validar_laudo':
+                $id_laudo = $endpoint[3];
+                if ($_SERVER['REQUEST_METHOD'] == "GET"){
+                    require_once __DIR__ . '/views/validar_laudo/validar_laudo.html';
+                }else if ($_SERVER['REQUEST_METHOD'] == "POST"){
+                    $professor->validarLaudo($id_laudo);
+                }
+                break;
+
         }
         break;
-
+    
+    // RESIDENTE
     case 'residente':
         switch($endpoint[2]){
     
@@ -131,20 +116,24 @@ switch($endpoint[1]){
                 echo $residente->retornaDados();
                 break;
 
-            case 'dados_diagnostico':
-                echo $residente->retornaDiagnostico();
+            case 'dados_exame':
+                $id_exame = $endpoint[3];
+                echo $residente->retornaExame($id_exame);
                 break;
 
             case 'emitir_laudo' :
-                if ($_SERVER['REQUEST_METHOD'] == "POST"){
-                    $view = $residente->inserirLaudo();
-                    require_once __DIR__ . $view;
+                $id_exame = $endpoint[3];
+                if ($_SERVER['REQUEST_METHOD'] == "GET"){
+                    require_once __DIR__ . '/views/laudo/laudo.html';
+                }else if ($_SERVER['REQUEST_METHOD'] == "POST"){
+                    $residente->inserirLaudo($id_exame);
                 }
                 break;
     
         }   
         break;
-
+    
+    // FUNCIONARIO
     case 'funcionario':
         switch($endpoint[2]){
 
@@ -170,6 +159,38 @@ switch($endpoint[1]){
                 }
                 break;
 
+        }
+        break;
+
+    // WEB
+    case '':
+        $view = $web->home();
+        require_once __DIR__ . $view;
+        break;
+
+    case 'login_medicos' :
+        if ($_SERVER['REQUEST_METHOD'] == "GET"){
+            require_once __DIR__ . '/views/login/login_medico.html';
+        }else if ($_SERVER['REQUEST_METHOD'] == "POST"){
+            $view = $web->loginMedico();
+            require_once __DIR__ . $view;
+        }
+        break;
+
+    case 'solicitar_exame' :
+        if ($_SERVER['REQUEST_METHOD'] == "GET"){
+            require_once __DIR__ . '/views/solicitar_exame/solicitar_exame.html';
+        }else if ($_SERVER['REQUEST_METHOD'] == "POST"){
+            $web->solicitarExame();
+        }
+        break;
+
+    case 'prontuario':
+        $cpf_paciente = $endpoint[2];
+        if ($_SERVER['REQUEST_METHOD'] == "GET"){
+            require_once __DIR__ . '/views/prontuario/prontuario.html';
+        }else if ($_SERVER['REQUEST_METHOD'] == "POST"){
+            echo $paciente->prontuario($cpf_paciente);
         }
         break;
 

@@ -121,6 +121,11 @@ const SolicitarExame = () => {
     option.textContent = 'Mapa';
     select.appendChild(option);
 
+    option = document.createElement('option');
+    option.setAttribute('value','ROTZ');
+    option.textContent = 'ROTZ';
+    select.appendChild(option);
+
     div.appendChild(select);
     
     //adiciona child no wrapper
