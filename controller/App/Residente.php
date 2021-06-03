@@ -2,8 +2,6 @@
 
 include_once(__DIR__ . '/../database.php');
 
-//use database;
-
 class Residente{
     
     public function inserirLaudo($id_exame){
@@ -30,7 +28,7 @@ class Residente{
         if($cadastro_diagnostico){
             echo "Diagnostico Efetuado com Sucesso!<br>";
 
-            $sqlStatus = "UPDATE Exames SET status = 'Laudo NV' WHERE id_exame = '$id_exame'";
+            $sqlStatus = "UPDATE Exames SET status = 'Laudo Nao Verificado' WHERE id_exame = '$id_exame'";
             $mudar_status = $db->query($sqlStatus);
 
             if($mudar_status){

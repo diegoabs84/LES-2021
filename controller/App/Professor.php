@@ -2,8 +2,6 @@
 
 include_once(__DIR__ . '/../database.php');
 
-//use database;
-
 class Professor{
 
     public function retornaDados(){
@@ -108,14 +106,14 @@ class Professor{
         $id_exame = $row_laudo['id_exame'];
 
         if($anotacao == ""){
-            $sqlStatus = "UPDATE Exames SET status = 'Laudo V' WHERE id_exame = '$id_exame'";
+            $sqlStatus = "UPDATE Exames SET status = 'Laudo Validado' WHERE id_exame = '$id_exame'";
             $mudar_status = $db->query($sqlStatus);
 
             if($mudar_status){
                 echo "Laudo Validado!<br><br>";
             }
         }else{
-            $sqlStatus = "UPDATE Exames SET status = 'Laudo R' WHERE id_exame = '$id_exame'";
+            $sqlStatus = "UPDATE Exames SET status = 'Laudo para Revisão' WHERE id_exame = '$id_exame'";
             $mudar_status = $db->query($sqlStatus);
 
             if($mudar_status){

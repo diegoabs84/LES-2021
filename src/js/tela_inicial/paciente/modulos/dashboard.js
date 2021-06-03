@@ -9,9 +9,9 @@ const createDashboard = () => {
     let data = new Date();
     let dataEditada = `${data.getDate()} / ${data.getMonth()+1} / ${data.getFullYear()}`;
     let cpf;
-    let crm1, nome1, status1;
-    let crm2, nome2, status2;
-    let crm3, nome3, status3;
+    let crm1, nome1, status1, id_exame1;
+    let crm2, nome2, status2, id_exame2;
+    let crm3, nome3, status3, id_exame3;
     
     //pegar dados do paciente
     var xmlhttp = new XMLHttpRequest();
@@ -26,14 +26,17 @@ const createDashboard = () => {
         crm1 = json[0].crm;
         nome1 = json[0].nome;
         status1 = json[0].status;
+        id_exame1 = json[0].id_exame;
 
         crm2 = json[1].crm;
         nome2 = json[1].nome;
         status2 = json[1].status;
+        id_exame2 = json[1].id_exame;
 
         crm3 = json[2].crm;
         nome3 = json[2].nome;
         status3 = json[2].status;
+        id_exame3 = json[2].id_exame;
     };
 
     xmlhttp.open("GET", "/paciente/dados", false);
@@ -96,7 +99,7 @@ const createDashboard = () => {
                                 <td>${nome1}</td>
                                 <td>${crm1}</td>
                                 <td><span class="status">${status1}</span></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="laudo" href='/resultado/${id_exame1}'>Visualizar</a></td>
                                 
                             </tr>
 
@@ -105,7 +108,7 @@ const createDashboard = () => {
                                 <td>${nome2}</td>
                                 <td>${crm2}</td>
                                 <td><span class="status">${status2}</span></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="laudo" href='/resultado/${id_exame2}'>Visualizar</a></td>
                                 
                             </tr>
                             <tr>
@@ -113,7 +116,7 @@ const createDashboard = () => {
                                 <td>${nome3}</td>
                                 <td>${crm3}</td>
                                 <td><span class="status">${status3}</span></td>
-                                <td><a id="laudo" href='#'>Visualizar</a></td>
+                                <td><a id="laudo" href='/resultado/${id_exame3}'>Visualizar</a></td>
                                 
                             </tr>
                         </tbody>
