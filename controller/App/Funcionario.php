@@ -2,8 +2,6 @@
 
 include_once(__DIR__ . '/../database.php');
 
-//use database;
-
 class Funcionario{
 
     public function loginFuncionario(){
@@ -36,28 +34,56 @@ class Funcionario{
         $titulacao = $_POST['titulacao'];
         $ano_residente = $_POST['ano_residente'];
 
-        $query_select = "SELECT nome, crm FROM Medicos";
-        $select = $db->query($query_select);
+        $result_medico = "SELECT * FROM Medicos";
+        $resultado_medico = $db->query($result_medico);
 
+         // filtro de inserção
         if($crm == "" || $crm == null){
-            header("Location:/funcionario/cadastrar_medico");
+            echo"<script language='javascript' type='text/javascript'>alert('Insira o CRM');
+            window.location.href='/funcionario/cadastro_medico'</script>";
+            die();
+        }else if($senha == "d41d8cd98f00b204e9800998ecf8427e" || $senha == null){
+            echo"<script language='javascript' type='text/javascript'>alert('Insira a Senha');
+            window.location.href='/funcionario/cadastro_medico'</script>";
+            die();
+        }else if($nome == "" || $nome == null){
+            echo"<script language='javascript' type='text/javascript'>alert('Insira o Nome');
+            window.location.href='/funcionario/cadastro_medico'</script>";
+            die();
         }
 
-        if ($select->num_rows >= 0){
-            while ($rowMedico = $select->fetch_assoc()){
+        // filtro de validação
+        if(!filter_var($crm, FILTER_VALIDATE_INT)){
+            echo"<script language='javascript' type='text/javascript'>alert('CRM inválido');
+            window.location.href='/funcionario/cadastro_medico'</script>";
+            die();
+        }else if(strlen($crm) != 5){
+            echo"<script language='javascript' type='text/javascript'>alert('CRM inválido');
+            window.location.href='/funcionario/cadastro_medico'</script>";
+            die();
+        }
+
+        if ($resultado_medico->num_rows >= 0){
+            while ($rowMedico = $resultado_medico->fetch_assoc()){
+                // filtro de existência
                 if($rowMedico['crm'] == $crm){
-                    header("Location:/funcionario/cadastrar_medico");
+                    echo"<script language='javascript' type='text/javascript'>alert('CRM já cadastrado');
+                    window.location.href='/funcionario/cadastro_medico'</script>";
                     die();
                 }
             }
-            $query = "INSERT INTO Medicos (nome, senha, crm, tipo_medico, titulacao, ano_residencia) 
+            $cadastro_medico = "INSERT INTO Medicos (nome, senha, crm, tipo_medico, titulacao, ano_residencia) 
             VALUES ('$nome','$senha','$crm','$tipo_medico','$titulacao','$ano_residente')";
-            $cadastrarMedico = $db->query($query);
+            $medico_cadastrado = $db->query($cadastro_medico);
 
-            if($cadastrarMedico) {
-                header("Location:/login_medicos");
+            if($medico_cadastrado) {
+                echo"<script language='javascript' type='text/javascript'>alert('Cadastro com Sucesso');
+                window.location.href='/funcionario/dashboard'</script>";
+                die();
             }else{
-                header("Location:/funcionario/cadastro_medico");
+                echo"<script language='javascript' type='text/javascript'>alert('Erro no Cadastro');
+                window.location.href='/funcionario/cadastro_medico'</script>";
+                die();
             }
         }
     }

@@ -23,11 +23,11 @@ const createDadosCadastrais = () => {
                 <div class="skinColorData">
                     <label>Cor:</label> 
                     <select name="cor" id="cor">
-                    <option selected value="null">------</option>
-                    <option value="branco">Branco</option>
-                    <option value="negro">Negro</option>
-                    <option value="pardo">Pardo</option>
-                    <option value="amarelo">Amarelo</option>
+                    <option selected value="">------</option>
+                    <option value="Branco">Branco</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Pardo">Pardo</option>
+                    <option value="Amarelo">Amarelo</option>
                     </select>
                 </div>
 
@@ -48,10 +48,10 @@ const createDadosCadastrais = () => {
                 <div class="genderData">
                     <label>Sexo: </label>
                     <select name="sexo" id="sexo">
-                    <option value="null">------</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="outro">Outro</option>
+                    <option value="">------</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
                     </select>
                 </div>
 
@@ -85,11 +85,11 @@ const createDadosCadastrais = () => {
 
                 <div class="cidadeData">
                 <select id="cidade" name="cidade">
-                    <option selected disabled value="null">Cidade</option>
+                    <option selected disabled value="">Cidade</option>
                 </select>
 
                 <select id="uf" name="uf">
-                    <option selected disabled value="null">UF</option>
+                    <option selected disabled value="">UF</option>
                 </select>
 
                 </div>

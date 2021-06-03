@@ -2,63 +2,7 @@
 
 include_once(__DIR__ . '/../database.php');
 
-//use database;
-
 class Medico{
-
-    // public function retornaExame($id_exame){
-    //     $database = new database;
-    //     $db = $database->connect();
-
-    //     $result_exame = "SELECT * FROM Exames WHERE id_exame = '$id_exame'";
-    //     $resultado_exame = $db->query($result_exame);
-
-    //     $row_exame = $resultado_exame->fetch_assoc();
-    //     $cpf_exame = $row_exame['cpf_exame'];
-
-    //     $result_paciente = "SELECT * FROM Pacientes WHERE cpf = '$cpf_exame'";
-    //     $resultado_paciente = $db->query($result_paciente);
-    //     $row_paciente = $resultado_paciente->fetch_assoc();
-
-    //     $valores = array("nome_paciente"=>$row_paciente['nome'], "cpf_paciente"=>$row_paciente['cpf'], "sexo_paciente"=>$row_paciente['sexo'], 
-    //     "data_nasc"=>$row_paciente['data_nasc'], "id_exame"=>$row_exame['id_exame'], "nome_exame"=>$row_exame['nome_exame']);
-
-    //     return json_encode($valores);
-        
-    // }
-
-    // public function diagnostico($id_exame){
-    //     $database = new database;
-    //     $db = $database->connect();
-
-        // $result_exame = "SELECT * FROM Exames WHERE id_exame = '$id_exame'";
-        // $resultado_exame = $db->query($result_exame);
-        // $row_exame = $resultado_exame->fetch_assoc();
-        // $cpf_exame = $row_exame['cpf_exame'];
-        // $crm_exame = $row_exame['crm_exame'];
-        // $diagnostico = $_POST['diagnostico'];
-
-        // $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
-        // $novo_nome = md5(time()) . $extensao;
-        // $diretorio = "src/uploads_diagnostico/";
-
-        // move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
-        
-        // $sqlDiagnostico = "INSERT INTO Diagnosticos (crm_diagnostico, id_exame, diagnostico, cpf_diagnostico, imagem) 
-        // VALUES ('$crm_exame', '$id_exame', '$diagnostico', '$cpf_exame', '$novo_nome')";
-        // $cadastro_diagnostico = $db->query($sqlDiagnostico);
-
-        // if($cadastro_diagnostico){
-        //     echo "Diagnostico Efetuado com Sucesso!<br>";
-
-        //     $sqlStatus = "UPDATE Exames SET status = 'Diagnosticado' WHERE id_exame = '$id_exame'";
-        //     $mudar_status = $db->query($sqlStatus);
-
-        //     if($mudar_status){
-        //         echo "<br>Status Atualizado com Sucesso!";
-        //     }
-        // }
-    // }
 
     public function retornaDados(){
         $database = new database;
