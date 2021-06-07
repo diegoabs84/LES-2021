@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Laudo Final - Resultado</title>
+    </head>
+    <body>
+        <h1>Laudo Final - Resultado</h1>
+
+        <div class="personal-info">
+            <p id="nome_paciente">Nome</p>
+            <p id="cpf_paciente">CPF</p>
+            <p id="idade_paciente">Idade</p>
+            <p id="endereco_paciente">Endereço</p>
+            <p id="telefone_paciente">Telefone</p>
+            <p id="email_paciente">Email</p>
+            <p id="sexo_paciente">Sexo</p>
+            <p id="cor_paciente">Cor</p>
+        </div>
+
+        <div class="caso-info">
+            <h2 id="id_exame">ID Exame</h2>
+            <!-- Parte do exame -->
+            <h3>Dados:</h3>
+            <p id="nome_exame">Exame</p>
+            <p id="data_prevista">Data Exame</p>
+            <p id="recomendacao">Recomendação para o Exame</p>
+            <p id="diagnostico_previo">Diagnostico Previo</p>
+            <p id="status">Status Exame</p>
+            <p id="medico_solicitante">Medico Solicitante do Exame</p>
+            <!-- Parte laudo -->
+            <h3>Laudo:</h3>
+            <p id="laudo">Laudo</p>
+            <p id="residente_laudo">Residente Laudo</p>
+            <p>Imagem Laudo: </p>
+            <img id="img_laudo" src="" alt="Imagem Laudo">
+        </div>
+
+        <!-- The End Folks kkk -->
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            
+            var url = window.location.href;
+            var inicio_palavra = url.indexOf("/resultado");
+            var url_final = url.substring(inicio_palavra, url.length);
+    
+            xmlhttp.onload = function(){
+                var json = JSON.parse(this.responseText);
+
+                // json[0][x] - exame
+                // json[1][x] - laudo
+                // json[2] - medicos
+
+                console.log(json);
+
+                //info pessoal
+                document.getElementById('nome_paciente').innerHTML = "Paciente: " + json.nome;
+                // document.getElementById('idade_paciente').innerHTML = json;
+                document.getElementById('endereco_paciente').innerHTML = "Endereço: Rua " + json.rua + ", Bairro: " + json.bairro + ", nº " + json.numero + ", " + json.complemento;
+                document.getElementById('telefone_paciente').innerHTML = "Telefone: " + json.telefone;
+                document.getElementById('email_paciente').innerHTML = "Email: " + json.email;
+                document.getElementById('sexo_paciente').innerHTML = "Sexo: " + json.sexo;
+                document.getElementById('cpf_paciente').innerHTML = "CPF: " + json.cpf;
+                document.getElementById('cor_paciente').innerHTML = "Cor: " + json.cor;
+
+                //info exame
+                document.getElementById('id_exame').innerHTML = "Código do Exame: " + json[0][0].id_exame;
+                document.getElementById('nome_exame').innerHTML = "Tipo de Exame: " + json[0][0].nome_exame;
+                document.getElementById('data_prevista').innerHTML = "Data Realização: " + json[0][0].data_exame;
+                document.getElementById('recomendacao').innerHTML = "Recomendação: " + json[0][0].recomendacao;
+                document.getElementById('diagnostico_previo').innerHTML = "Diagnostico Previo: " + json[0][0].diagnostico_previo;
+                document.getElementById('status').innerHTML = "Status: " + json[0][0].status;
+                for(var i = 0; i < json[2].length; i++){
+                    if(json[0][0].crm_exame == json[2][i].crm){
+                        document.getElementById('medico_solicitante').innerHTML = "Médico Solicitador: Dr. " + json[2][i].nome + ", CRM: " + json[2][i].crm;
+                    }
+                }
+
+                //info laudo do exame
+                document.getElementById('laudo').innerHTML = "Laudo: " + json[1][0].laudo
+                for(var i = 0; i < json[2].length; i++){
+                    if(json[1][0].crm_laudo == json[2][i].crm){
+                        document.getElementById('residente_laudo').innerHTML = "Médico Residente Responsável pelo Laudo: <br> Nome: Dr(a). " 
+                        + json[2][i].nome + ", CRM: " + json[2][i].crm;
+                    }   
+                }
+                document.getElementById("img_laudo").src = "../../src/uploads_laudo/" + json[1][0].imagem;
+            };
+        
+            xmlhttp.open("POST", url_final, true);
+            xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            xmlhttp.send();
+        </script>
+    </body>
+</html>
