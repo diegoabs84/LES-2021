@@ -196,9 +196,9 @@ switch($endpoint[1]){
 
 	case 'resultado':
 		$id_exame = $endpoint[2];
-		if ($_SERVER['REQUEST_METHOD'] == "GET"){
+		if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			require_once __DIR__ . '/views/resultado/resultado.html';
-		}else if ($_SERVER['REQUEST_METHOD'] == "POST"){
+		} elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
 			echo $paciente->resultado($id_exame);
 		}
 		break;
