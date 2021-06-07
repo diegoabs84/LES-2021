@@ -280,4 +280,69 @@ class Paciente{
         
         return json_encode($valores);
     }
+
+	public function resultado($id_exame){
+		$database = new database;
+		$db = $database->connect();
+
+		$result_exame = "SELECT * FROM Exames WHERE id_exame = '$id_exame'";
+		$result_laudo = "SELECT * FROM Laudos WHERE id_exame = '$id_exame'";
+		$result_medico = "SELECT * FROM Medicos";
+
+		$resultado_exame = $db->query($result_exame);
+		$resultado_laudo = $db->query($result_laudo);
+		$resultado_medico = $db->query($result_medico);
+
+		if ($resultado_exame->num_rows <= 0){
+			echo"<script language='javascript' type='text/javascript'>alert('Não existe esse Exame');</script>";
+			die();
+		}
+		else{
+			$valores = array();
+			$array_exames = array();
+			$array_laudos = array();
+			$array_medicos = array();
+
+			while($row_exame = $resultado_exame->fetch_assoc()){
+				$valor = array("id_exame"=>$row_exame['id_exame'], "data_exame"=>$row_exame['data_exame'], "nome_exame"=>$row_exame['nome_exame'],
+					"crm_exame"=>$row_exame['crm_exame'], "status"=>$row_exame['status'], "recomendacao"=>$row_exame['recomendacao'],
+					"diagnostico_previo"=>$row_exame['diagnostico_previo']);
+
+				$cpf_paciente = $row_exame['cpf_exame'];
+				$status_avaliador = $row_exame['status'];
+				array_push($array_exames, $valor);
+			}
+
+			while($row_laudo = $resultado_laudo->fetch_assoc()){
+				$valor = array("id_laudo"=>$row_laudo['id_laudo'], "laudo"=>$row_laudo['laudo'], "crm_laudo"=>$row_laudo['crm_laudo'], "imagem"=>$row_laudo['imagem']);
+				array_push($array_laudos, $valor);
+			}
+
+			while($row_medico = $resultado_medico->fetch_assoc()){
+				$valor = array("nome"=>$row_medico['nome'], "crm"=>$row_medico['crm'], "tipo_medico"=>$row_medico['tipo_medico'], "titulacao"=>$row_medico['titulacao'],
+					"ano_residencia"=>$row_medico['ano_residencia']);
+				array_push($array_medicos, $valor);
+			}
+
+			$result_paciente = "SELECT * FROM Pacientes WHERE cpf = '$cpf_paciente'";
+			$resultado_paciente = $db->query($result_paciente);
+
+			$row_paciente = $resultado_paciente->fetch_assoc();
+			$valores = array("nome"=>$row_paciente['nome'], "sobrenome"=>$row_paciente['sobrenome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
+				"cor"=>$row_paciente['cor'], "sexo"=>$row_paciente['sexo'], "cep"=>$row_paciente['cep'], "rua"=>$row_paciente['rua'], "bairro"=>$row_paciente['bairro'],
+				"numero"=>$row_paciente['numero'], "complemento"=>$row_paciente['complemento'], "cidade"=>$row_paciente['cidade'], "uf"=>$row_paciente['uf'],
+				"telefone"=>$row_paciente['telefone'], "email"=>$row_paciente['email']);
+
+			array_push($valores, $array_exames);
+			array_push($valores, $array_laudos);
+			array_push($valores, $array_medicos);
+		}
+
+		if($status_avaliador == "Laudo Validado"){
+			return json_encode($valores);
+		}else{
+			echo"<script language='javascript' type='text/javascript'>alert('Laudo final ainda não disponivel.');</script>";
+			die();
+		}
+	}
 }
