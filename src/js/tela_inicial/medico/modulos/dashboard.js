@@ -64,7 +64,7 @@ const createDashboard = () => {
                 <div class="card">
                     <div>
                         <div class="numbers">${total_espera}</div>
-                        <div class="cardName">Pacientes em espera</div>
+                        <div class="cardName">Laudos Prontos</div>
                     </div>
                     <div class="iconBox">
                         <i class="fas fa-user-injured"></i>

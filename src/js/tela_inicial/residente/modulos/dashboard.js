@@ -135,7 +135,7 @@ const createDashboard = () => {
 
                 <div class="recentsViewer">
                     <div class="pacientHeader">
-                        <h2>Laudos Emitidos Recentemente</h2>
+                        <h2>Laudos para Revisão </h2>
                     </div>
 
                     <div class="recentsViewerData">
