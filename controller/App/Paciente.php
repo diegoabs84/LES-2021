@@ -251,7 +251,7 @@ class Paciente{
             $array_medicos = array();
             
             $row_paciente = $resultado_paciente->fetch_assoc();
-            $valores = array("nome"=>$row_paciente['nome'], "sobrenome"=>$row_paciente['sobrenome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
+            $valores = array("nome"=>$row_paciente['nome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
             "cor"=>$row_paciente['cor'], "sexo"=>$row_paciente['sexo'], "cep"=>$row_paciente['cep'], "rua"=>$row_paciente['rua'], "bairro"=>$row_paciente['bairro'],
             "numero"=>$row_paciente['numero'], "complemento"=>$row_paciente['complemento'], "cidade"=>$row_paciente['cidade'], "uf"=>$row_paciente['uf'],
             "telefone"=>$row_paciente['telefone'], "email"=>$row_paciente['email']);
@@ -328,7 +328,7 @@ class Paciente{
 			$resultado_paciente = $db->query($result_paciente);
 
 			$row_paciente = $resultado_paciente->fetch_assoc();
-			$valores = array("nome"=>$row_paciente['nome'], "sobrenome"=>$row_paciente['sobrenome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
+			$valores = array("nome"=>$row_paciente['nome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
 				"cor"=>$row_paciente['cor'], "sexo"=>$row_paciente['sexo'], "cep"=>$row_paciente['cep'], "rua"=>$row_paciente['rua'], "bairro"=>$row_paciente['bairro'],
 				"numero"=>$row_paciente['numero'], "complemento"=>$row_paciente['complemento'], "cidade"=>$row_paciente['cidade'], "uf"=>$row_paciente['uf'],
 				"telefone"=>$row_paciente['telefone'], "email"=>$row_paciente['email']);
