@@ -41,6 +41,10 @@ switch($endpoint[1]){
                 echo $paciente->retornaDados();
                 break;
 
+            case 'dados_atualizacao':
+                echo $paciente->retornaAtualizacao();
+                break;
+
             case 'cadastro':
                 if (count($endpoint) == 3 && $_SERVER['REQUEST_METHOD'] == "GET"){
                     require_once __DIR__ . '/views/cadastro/cadastro_paciente.html';

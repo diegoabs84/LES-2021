@@ -345,4 +345,37 @@ class Paciente{
 			die();
 		}
 	}
+
+    public function retornaAtualizacao(){
+        $database = new database;
+		$db = $database->connect();
+
+		$result_cidade = "SELECT * FROM Cidades";
+		$result_estado = "SELECT * FROM Estados";
+
+        $resultado_cidade = $db->query($result_cidade);
+		$resultado_estado = $db->query($result_estado);
+
+        $valores = array();
+        $array_cidades = array();
+        $array_estados = array();
+
+        if ($resultado_estado->num_rows <= 0){
+			echo"<script language='javascript' type='text/javascript'>alert('Erro');</script>";
+			die();
+		}else{
+            while($row_estado = $resultado_estado->fetch_assoc()){
+                $valor = array("id_estado"=>$row_estado['id'], "estado"=>$row_estado['nome'], "uf"=>$row_estado['uf']);
+				array_push($array_estados, $valor);
+			}
+            array_push($valores, $array_estados);
+
+            while($row_cidade = $resultado_cidade->fetch_assoc()){
+                $valor = array("cidade"=>$row_cidade['nome'], "id_estado"=>$row_cidade['id_estado']);
+				array_push($array_cidades, $valor);
+			}
+            array_push($valores, $array_cidades);
+        }
+        return json_encode($valores);
+    }
 }
