@@ -30,23 +30,22 @@ class Medico{
             }
 
             $total_pacientes = count($array_exames);
-            $total_espera = 0;
+            $total_validado = 0;
 
             for($i = 0; $i < $total_pacientes; $i++){
-                if($array_exames[$i]['status'] === "Em Espera"){
-                    $total_espera++;
+                if($array_exames[$i]['status'] === "Laudo Validado"){
+                    $total_validado++;
                 }
             }
 
             $row_medico = $resultado_medico->fetch_assoc();
-            $valores = array("nome_medico"=>$row_medico['nome'], "crm"=>$row_medico['crm'], "total_pacientes"=>$total_pacientes, "total_espera"=>$total_espera);
+            $valores = array("nome_medico"=>$row_medico['nome'], "crm"=>$row_medico['crm'], "total_pacientes"=>$total_pacientes, "total_validado"=>$total_validado);
 
             while($row_paciente = $resultado_paciente->fetch_assoc()){
                 for($i = 0; $i < $total_pacientes; $i++){
                     if($array_exames[$i]['cpf_exame'] === $row_paciente['cpf']){
-                        $valoresAdicionais = array("nome_paciente"=>$row_paciente['nome'], "sobrenome_paciente"=>$row_paciente['sobrenome'] , 
-                        "id_exame"=>$array_exames[$i]['id_exame'], "cpf_paciente"=>$array_exames[$i]['cpf_exame'], "status"=>$array_exames[$i]['status']);
-                        
+                        $valoresAdicionais = array("nome_paciente"=>$row_paciente['nome'],"id_exame"=>$array_exames[$i]['id_exame'], 
+                        "cpf_paciente"=>$array_exames[$i]['cpf_exame'], "status"=>$array_exames[$i]['status']);
                         array_push($valores, $valoresAdicionais);
                     }
                 }

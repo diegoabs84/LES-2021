@@ -13,10 +13,12 @@ class Professor{
         $result_medico = "SELECT * FROM Medicos";
         $result_paciente = "SELECT * FROM Pacientes";
         $result_laudo = "SELECT * FROM Laudos";
+        $result_exame = "SELECT * FROM Exames";
 
         $resultado_medico = $db->query($result_medico);
         $resultado_paciente = $db->query($result_paciente);
         $resultado_laudo = $db->query($result_laudo);
+        $resultado_exame = $db->query($result_exame);
 
         if ($resultado_medico->num_rows <= 0){
             echo"<script language='javascript' type='text/javascript'>alert('Não existe esse Médico');</script>";
@@ -52,10 +54,15 @@ class Professor{
             array_push($valores, $array_pacientes);
 
             while($row_laudo = $resultado_laudo->fetch_assoc()){
-                $valoresAdicionais = array("id_laudo"=>$row_laudo['id_laudo'], "cpf_laudo"=>$row_laudo['cpf_laudo'], 
-                "laudo"=>$row_laudo['laudo'], "crm_laudo"=>$row_laudo['crm_laudo'], "imagem"=>$row_laudo['imagem']);
-                        
-                array_push($array_laudos, $valoresAdicionais);
+                while($row_exame = $resultado_exame->fetch_assoc()){
+                    if($row_exame['id_exame'] == $row_laudo['id_exame']){
+                        if($row_exame['status'] == "Laudo Nao Validado"){
+                            $valoresAdicionais = array("id_laudo"=>$row_laudo['id_laudo'], "cpf_laudo"=>$row_laudo['cpf_laudo'], 
+                            "laudo"=>$row_laudo['laudo'], "crm_laudo"=>$row_laudo['crm_laudo'], "imagem"=>$row_laudo['imagem']);
+                            array_push($array_laudos, $valoresAdicionais);
+                        }
+                    }
+                }
             }
 
             array_push($valores, $array_laudos);
@@ -113,7 +120,7 @@ class Professor{
                 echo "Laudo Validado!<br><br>";
             }
         }else{
-            $sqlStatus = "UPDATE Exames SET status = 'Laudo para Revisão' WHERE id_exame = '$id_exame'";
+            $sqlStatus = "UPDATE Exames SET status = 'Laudo para Revisão', anotacao = '$anotacao' WHERE id_exame = '$id_exame'";
             $mudar_status = $db->query($sqlStatus);
 
             if($mudar_status){

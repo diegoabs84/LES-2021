@@ -251,7 +251,7 @@ class Paciente{
             $array_medicos = array();
             
             $row_paciente = $resultado_paciente->fetch_assoc();
-            $valores = array("nome"=>$row_paciente['nome'], "sobrenome"=>$row_paciente['sobrenome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
+            $valores = array("nome"=>$row_paciente['nome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
             "cor"=>$row_paciente['cor'], "sexo"=>$row_paciente['sexo'], "cep"=>$row_paciente['cep'], "rua"=>$row_paciente['rua'], "bairro"=>$row_paciente['bairro'],
             "numero"=>$row_paciente['numero'], "complemento"=>$row_paciente['complemento'], "cidade"=>$row_paciente['cidade'], "uf"=>$row_paciente['uf'],
             "telefone"=>$row_paciente['telefone'], "email"=>$row_paciente['email']);
@@ -328,7 +328,7 @@ class Paciente{
 			$resultado_paciente = $db->query($result_paciente);
 
 			$row_paciente = $resultado_paciente->fetch_assoc();
-			$valores = array("nome"=>$row_paciente['nome'], "sobrenome"=>$row_paciente['sobrenome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
+			$valores = array("nome"=>$row_paciente['nome'], "data_nasc"=>$row_paciente['data_nasc'], "cpf"=>$row_paciente['cpf'],
 				"cor"=>$row_paciente['cor'], "sexo"=>$row_paciente['sexo'], "cep"=>$row_paciente['cep'], "rua"=>$row_paciente['rua'], "bairro"=>$row_paciente['bairro'],
 				"numero"=>$row_paciente['numero'], "complemento"=>$row_paciente['complemento'], "cidade"=>$row_paciente['cidade'], "uf"=>$row_paciente['uf'],
 				"telefone"=>$row_paciente['telefone'], "email"=>$row_paciente['email']);
@@ -345,4 +345,37 @@ class Paciente{
 			die();
 		}
 	}
+
+    public function retornaAtualizacao(){
+        $database = new database;
+		$db = $database->connect();
+
+		$result_cidade = "SELECT * FROM Cidades";
+		$result_estado = "SELECT * FROM Estados";
+
+        $resultado_cidade = $db->query($result_cidade);
+		$resultado_estado = $db->query($result_estado);
+
+        $valores = array();
+        $array_cidades = array();
+        $array_estados = array();
+
+        if ($resultado_estado->num_rows <= 0){
+			echo"<script language='javascript' type='text/javascript'>alert('Erro');</script>";
+			die();
+		}else{
+            while($row_estado = $resultado_estado->fetch_assoc()){
+                $valor = array("id_estado"=>$row_estado['id'], "estado"=>$row_estado['nome'], "uf"=>$row_estado['uf']);
+				array_push($array_estados, $valor);
+			}
+            array_push($valores, $array_estados);
+
+            while($row_cidade = $resultado_cidade->fetch_assoc()){
+                $valor = array("cidade"=>$row_cidade['nome'], "id_estado"=>$row_cidade['id_estado']);
+				array_push($array_cidades, $valor);
+			}
+            array_push($valores, $array_cidades);
+        }
+        return json_encode($valores);
+    }
 }

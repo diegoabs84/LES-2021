@@ -51,9 +51,20 @@
 
                 console.log(json);
 
+                //calculo idade
+                let data = new Date();
+                let data_nasc = json.data_nasc;
+                let ano_nasc = data_nasc.split("-");
+                let anos = data.getFullYear() - ano_nasc[0];
+                let meses = data.getMonth()+1 - ano_nasc[1];
+
                 //info pessoal
                 document.getElementById('nome_paciente').innerHTML = "Paciente: " + json.nome;
-                // document.getElementById('idade_paciente').innerHTML = json;
+                if(ano_nasc[1] > data.getMonth()+1){
+                    document.getElementById('idade_paciente').innerHTML = anos - 1 + " anos, " + meses * (-1) + " meses";
+                }else{
+                    document.getElementById('idade_paciente').innerHTML = anos + " anos, " + meses + " meses";
+                }
                 document.getElementById('endereco_paciente').innerHTML = "Endereço: Rua " + json.rua + ", Bairro: " + json.bairro + ", nº " + json.numero + ", " + json.complemento;
                 document.getElementById('telefone_paciente').innerHTML = "Telefone: " + json.telefone;
                 document.getElementById('email_paciente').innerHTML = "Email: " + json.email;

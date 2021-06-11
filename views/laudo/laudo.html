@@ -25,6 +25,12 @@
                     <div class="item-diagnostico">
                         <p id="diagnostico_previo">Diagnostico Previo</p>
                     </div>
+
+                    <!-- Só aparece quando tiver dados -->
+                    <div class="item-anotacao">
+                        <p id="anotacao"></p>
+                    </div>
+
                     <div class="item-laudo">
                         <textarea type="text" class="form-control" name="laudo" placeholder="Laudo"></textarea>
                     </div>
@@ -59,6 +65,12 @@
                 document.getElementById("id_exame").innerHTML = "Exame (Codigo): " + json.id_exame;
                 document.getElementById("nome_exame").innerHTML = "Nome Exame: " + json.nome_exame;
                 document.getElementById("diagnostico_previo").innerHTML = "Diagnostico Previo: " + json.diagnostico_previo;
+
+                // Só aparece quando tiver dados
+                if(!json.anotacao == null || !json.anotacao == ""){
+                    document.getElementById("anotacao").innerHTML = "Anotação para Revisão: " + json.anotacao;
+                }
+                
             };
                 
             xmlhttp.open("POST", url_final, true);

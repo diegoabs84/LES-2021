@@ -11,6 +11,21 @@ const createDadosCadastrais = () => {
     let conteudo = document.getElementById('conteudo-gerado');
     conteudo.innerHTML = '';
 
+    var xmlhttp = new XMLHttpRequest();
+    
+    xmlhttp.onload = function(){
+        var json = JSON.parse(this.responseText);
+
+        console.log(json);
+    };
+
+    xmlhttp.open("GET", "/paciente/dados_atualizacao", false);
+    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xmlhttp.send(); 
+
+    //titulo da pagina
+    document.title = "Paciente - Dashboard";
+
     html = `
     
     <form method="POST" action="/paciente/atualizar">
