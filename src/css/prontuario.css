@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .personal-info {
+    font-size: 1.5rem;
+    height: 30vh;
+    font-family: 'sans-serif';
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(34, 47, 62, 0.6);
+    }
+      
+  .caso-info {
+    font-size: 1.5rem;
+    line-height: 2;
+    text-align: center;
+    font-family: 'sans-serif';
+    color: white;
+    background-color: rgba(34, 47, 62, 0.6); 
+  }
